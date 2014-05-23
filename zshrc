@@ -1,7 +1,7 @@
 if [ -n $DISPLAY ]; then
-	export BROWSER="firefox"
+	export BROWSER="chromium"
 else
-	export BROWSER="w3m"
+	export BROWSER="lynx"
 fi
 
 bindkey -v
