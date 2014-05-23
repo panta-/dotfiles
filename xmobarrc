@@ -1,0 +1,30 @@
+Config { font = "-*-terminus-medium-r-*-*-32-*-*-*-*-*-*-*"
+       , bgColor = "black"
+       , fgColor = "grey"
+       , position = TopW L 96
+       , lowerOnStart = True
+       , border = NoBorder
+       , borderColor = "yellow"
+       , allDesktops = False
+       , overrideRedirect = False
+       , hideOnStart = False
+       , persistent = False
+       , commands = [ Run StdinReader
+                    , Run BatteryP ["BAT0"] ["-t", "<watts>, <left>%, <timeleft>", "-L", "10", "-H", "80", "-l", "red", "-h", "green", "--", "-L", "10", "-H", "12", "-l", "green", "-m", "orange", "-h", "red", "-p", "yellow"] 600
+                    , Run MultiCpu ["-t", "CPU:<total>%", "-L", "3", "-H", "50", "--normal", "green", "--high", "red"] 50
+                    --, Run Network "wlp3s0" [ "-t", "<rx>|<tx>kB", "-L", "5", "-H", "100", "--normal", "green", "--high", "red"] 50
+                    --, Run Volume "default" "Master" [] 600
+                    --, Run Memory ["-t", "Mem: <usedratio>%"] 600
+                    --, Run Com "uname" ["-s", "-r"] "" 36000
+                    --, Run Wireless "wlp3s0" [ "-t", "<essid>" ] 600
+                    --, Run ThermalZone 0 ["-t", "<id>: <temp>C"] 600
+                    , Run CoreTemp [ "-t", "Temp:<core0>C", "-L", "40", "-H", "60", "-l", "lightblue", "-n", "gray90", "-h", "red" ] 600
+                    , Run Date "%a %b %_d %Y %H:%M" "date" 200
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = "%StdinReader% }{ %battery% %multicpu% %coretemp% <fc=#ee9a00>%date%</fc>"
+       --, template = "%StdinReader% }{ %battery% %multicpu% %wlp3s0wi% %wlp3s0% %coretemp% <fc=#ee9a00>%date%</fc>"
+       }
+
+-- vim: ft=haskell

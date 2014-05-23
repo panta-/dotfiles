@@ -1,0 +1,37 @@
+# video
+#vo=opengl,vdpau,vaapi,xv,
+fs=yes
+ontop=yes
+
+# audio
+#softvol=yes
+#softvol-max=100
+#volume=100
+#volstep=2
+alang=jpn,jp,el,gr,gre,en,eng,
+
+# subtitles
+slang=el,gr,gre,en,eng
+autosub-match=fuzzy
+sub-paths=sub:Subtitles:subtitles
+subcp=utf8:cp1253 # Greek Windows (diff ISO-8859-7 include capitals w/ accent)
+#subcp=utf8:iso-8859-7 # Greek ISO
+
+# osd
+osd-level=3
+
+# input
+joystick=no
+
+# profiles
+[vo.vdpau]
+hwdec=vdpau
+
+[vo.vaapi]
+hwdec=vaapi
+
+[tv]
+fs-screen=1
+ao=alsa:no-block:device=[hw:0,3]
+osd-level=0
+msglevel=all=error

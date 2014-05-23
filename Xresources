@@ -1,0 +1,165 @@
+
+! Xcursor --------------------------------------------------------------
+Xcursor*size:                         48
+Xcursor*theme:                        Vanilla-DMZ-AA
+
+! Xft settings ---------------------------------------------------------
+Xft*antialias:                        true
+Xft*dpi:                              227	
+Xft*hinting:                          true
+Xft*hintstyle:                        hintslight
+Xft*rgba:                             rgb
+
+! dzen2 ----------------------------------------------------------------
+dzen2*background:                     black
+dzen2*font:                           -xos4-terminus-medium-r-normal--28-280-72-72-c-140-iso10646-1
+dzen2*foreground:                     #22EE11
+
+! xpdf -----------------------------------------------------------------
+xpdf*antialias:                       yes
+xpdf*background:                      white
+xpdf*enableFreetype:                  yes
+xpdf*foreground:                      black
+xpdf*urlCommand:                      /usr/bin/firefox %s
+
+! xterm -----------------------------------------------------------------
+xterm*faceName:                       Terminus:style=Regular:size=9
+XTerm*locale:													true
+!xterm*reverseVideo: on
+
+! URxvt settings -------------------------------------------------------
+!URxvt*background:                     #0f0f0f
+!URxvt*foreground:                     #c8c8c8
+!URxvt*color0:                         #251f1f
+!URxvt*color8:                         #5e5e5e
+!URxvt*color1:                         #eb4509
+!URxvt*color9:                         #eb4509
+!URxvt*color2:                         #94e76b
+!URxvt*color10:                        #95e76b
+!URxvt*color3:                         #ffac18
+!URxvt*color11:                        #ffac18
+!URxvt*color4:                         #46aede
+!URxvt*color12:                        #46aede
+!URxvt*color5:                         #e32c57
+!URxvt*color13:                        #e32c57
+!URxvt*color6:                         #d6dbac
+!URxvt*color14:                        #d6dbac
+!URxvt*color7:                         #efefef
+!URxvt*color15:                        #efefef
+!URxvt*colorBD:                        yellow2
+!URxvt*colorIT:                        green2
+!URxvt*colorUL:                        white
+URxvt*reverseVideo:                   false
+!URxvt*font:                           xft:Terminus:style=Regular:size=32
+!URxvt*boldFont:                       xft:Terminus:style=Bold:size=32
+URxvt*font:                           xft:Source Code Pro:style=Regular:size=8
+URxvt*boldFont:                       xft:Source Code Pro:style=Bold:size=8
+URxvt*saveLines:                      1000
+URxvt*scrollBar:                      false
+URxvt*scrollBar_right:                false
+URxvt*scrollstyle:                    rxvt
+URxvt*scrollTtyKeypress:              true
+URxvt*scrollTtyOutput:                false
+URxvt*scrollWithBuffer:               true
+URxvt*perl-ext-common:                default,matcher
+URxvt*matcher.button:                 1
+URxvt*url-launcher:                   /usr/bin/firefox
+URxvt*keysym.C-Delete:                perl:matcher:last
+URxvt*keysym.M-Delete:                perl:matcher:list
+! URxvt*answerbackString:               string
+! URxvt*background.border:              boolean
+! URxvt*background.expr:                string
+! URxvt*background.interval:            seconds
+! URxvt*backspacekey:                   string
+! URxvt*bell-command:                   string
+! URxvt*blurRadius:                     HxV
+! URxvt*boldItalicFont:                 fontname
+! URxvt*borderColor:                    color
+! URxvt*borderLess:                     boolean
+! URxvt*buffered:                       boolean
+! URxvt*chdir:                          string
+! URxvt*colorRV:                        color
+! URxvt*cursorBlink:                    boolean
+! URxvt*cursorColor2:                   color
+! URxvt*cursorColor:                    color
+! URxvt*cursorUnderline:                boolean
+! URxvt*cutchars:                       string
+! URxvt*deletekey:                      string
+! URxvt*depth:                          number
+! URxvt*externalBorder:                 number
+! URxvt*fadeColor:                      color
+! URxvt*fading:                         number
+! URxvt*geometry:                       geometry
+! URxvt*highlightColor:                 color
+! URxvt*highlightTextColor:             color
+! URxvt*hold:                           boolean
+! URxvt*iconFile:                       file
+! URxvt*iconName:                       string
+! URxvt*imFont:                         fontname
+! URxvt*imLocale:                       string
+! URxvt*inheritPixmap:                  boolean
+! URxvt*inputMethod:                    name
+! URxvt*insecure:                       boolean
+! URxvt*intensityStyles:                boolean
+! URxvt*internalBorder:                 number
+! URxvt*iso14755:                       boolean
+! URxvt*iso14755_52:                    boolean
+! URxvt*italicFont:                     fontname
+! URxvt*jumpScroll:                     boolean
+! URxvt*keysym.sym:                     keysym
+! URxvt*letterSpace:                    number
+! URxvt*lineSpace:                      number
+! URxvt*loginShell:                     boolean
+! URxvt*mapAlert:                       boolean
+! URxvt*matcher.launcher.*:             string
+! URxvt*matcher.launcher:               string
+! URxvt*matcher.pattern.*:              string
+! URxvt*matcher.rend.*:                 string
+! URxvt*meta8:                          boolean
+! URxvt*modifier:                       modifier
+! URxvt*mouseWheelScrollPage:           boolean
+! URxvt*override-redirect:              boolean
+! URxvt*pastableTabs:                   boolean
+! URxvt*perl-eval:                      perl-eval
+! URxvt*perl-ext:                       string
+! URxvt*perl-lib:                       string
+! URxvt*pointerBlank:                   boolean
+! URxvt*pointerBlankDelay:              number
+! URxvt*pointerColor2:                  color
+! URxvt*pointerColor:                   color
+! URxvt*preeditType:                    style
+! URxvt*print-pipe:                     string
+! URxvt*remote-clipboard.fetch:         string
+! URxvt*remote-clipboard.store:         string
+! URxvt*scrollBar_align:                mode
+! URxvt*scrollBar_floating:             boolean
+! URxvt*scrollColor:                    color
+! URxvt*searchable-scrollback:          string
+! URxvt*secondaryScreen:                boolean
+! URxvt*secondaryScroll:                boolean
+! URxvt*selection-autotransform.*:      string
+! URxvt*selection-pastebin.cmd:         string
+! URxvt*selection-pastebin.url:         string
+! URxvt*selection.pattern-0:            string
+! URxvt*shading:                        number
+! URxvt*skipBuiltinGlyphs:              boolean
+! URxvt*skipScroll:                     boolean
+! URxvt*tab-bg:                         colour
+! URxvt*tab-fg:                         colour
+! URxvt*tabbar-bg:                      colour
+! URxvt*tabbar-fg:                      colour
+! URxvt*termName:                       string
+! URxvt*thickness:                      number
+! URxvt*tintColor:                      color
+! URxvt*title:                          string
+! URxvt*transient-for:                  windowid
+! URxvt*transparent:                    boolean
+! URxvt*tripleclickwords:               boolean
+! URxvt*troughColor:                    color
+! URxvt*underlineColor:                 color
+URxvt*urgentOnBell:                   true
+! URxvt*utmpInhibit:                    boolean
+! URxvt*visual:                         number
+! URxvt*visualBell:                     boolean
+! URxvt*xrm:                            string
+

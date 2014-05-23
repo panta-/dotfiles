@@ -1,0 +1,30 @@
+#!/bin/sh
+
+# force DPI value
+xrandr --dpi 227
+
+# add local to font path (not required)
+if [ -d /usr/share/fonts/local ]; then
+  xset +fp /usr/share/fonts/local
+  xset fp rehash
+fi
+
+# merge in defaults and keymaps
+[ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
+[ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
+[ -f ~/.xbindkeysrc ] && xbindkeys
+
+# Load ICC Color Profile
+xcalib -display :0 ~/.color/icc/Color_LCD-02129CB1-7138-2EC6-188B-1630CBD51381.icc
+
+# set background
+sh ~/.fehbg 
+
+# for stupid java applications
+#wmname LG3D
+
+#xbacklight -set 3
+#xautolock -time 5 -locker '/usr/bin/sudo /usr/bin/systemctl suspend' -detectsleep &
+urxvtd -q -o -f
+#stalonetray &
+#volumeicon &
