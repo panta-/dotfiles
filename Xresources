@@ -4,10 +4,10 @@ Xcursor*size:                         48
 Xcursor*theme:                        Vanilla-DMZ-AA
 
 ! Xft settings ---------------------------------------------------------
-Xft*antialias:                        true
 Xft*dpi:                              227	
+Xft*antialias:                        true
 Xft*hinting:                          true
-Xft*hintstyle:                        hintslight
+Xft*hintstyle:                        hintfull
 Xft*rgba:                             rgb
 
 ! dzen2 ----------------------------------------------------------------
