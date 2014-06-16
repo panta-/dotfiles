@@ -8,7 +8,7 @@ set incsearch
 set ignorecase
 set number
 set ruler
-set scrolloff=4
+"set scrolloff=4
 set shiftwidth=2
 set softtabstop=2
 set showcmd
