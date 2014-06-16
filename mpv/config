@@ -18,7 +18,7 @@ subcp=utf8:cp1253 # Greek Windows (diff ISO-8859-7 include capitals w/ accent)
 #subcp=utf8:iso-8859-7 # Greek ISO
 
 # osd
-osd-level=3
+osd-level=0
 
 # input
 joystick=no
