@@ -21,8 +21,10 @@ set title
 set wildmenu
 set wildmode=list:longest,full
 set nobackup
+"set cpoptions+=$
+set virtualedit=all
 
-"filetype plugin indent on
+filetype plugin indent on
 
 syntax on
 
