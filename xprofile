@@ -15,7 +15,7 @@ fi
 [ -f ~/.xbindkeysrc ] && xbindkeys
 
 # Load ICC Color Profile
-xcalib -display :0 ~/.color/icc/Color_LCD-02129CB1-7138-2EC6-188B-1630CBD51381.icc
+dispwin -display :0 ~/.color/icc/Color_LCD-02129CB1-7138-2EC6-188B-1630CBD51381.icc
 
 # set background
 sh ~/.fehbg 
