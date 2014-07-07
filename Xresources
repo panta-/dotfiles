@@ -32,21 +32,32 @@ XTerm*locale:													true
 !}}}
 
 ! URxvt settings {{{
-URxvt*reverseVideo:                   false
 URxvt*font:                           xft:DejaVu Sans Mono:style=Book:size=8
 URxvt*boldFont:                       xft:DejaVu Sans Mono:style=Bold:size=8
+URxvt.letterSpace:                    -1
+URxvt*reverseVideo:                   false
+URxvt*intensityStyles:                false
+URxvt*urgentOnBell:                   true
+URxvt*pointerBlank:                   true
 URxvt*saveLines:                      1000
 URxvt*scrollBar:                      false
-URxvt*scrollBar_right:                false
-URxvt*scrollstyle:                    rxvt
 URxvt*scrollTtyKeypress:              true
 URxvt*scrollTtyOutput:                false
 URxvt*scrollWithBuffer:               true
-URxvt*perl-ext-common:                default,matcher
-URxvt*matcher.button:                 1
-URxvt*url-launcher:                   /usr/bin/chromium
-URxvt*keysym.C-Delete:                perl:matcher:last
-URxvt*keysym.M-Delete:                perl:matcher:list
-URxvt*urgentOnBell:                   true
+URxvt.perl-ext-common:                default,clipboard,url-select,keyboard-select
+URxvt.url-select.button:              1
+URxvt.url-select.launcher:            /usr/bin/xdg-open
+URxvt.url-select.underline:           true
+URxvt.clipboard.copycmd:              xclip -i -selection clipboard
+URxvt.clipboard.pastecmd:             xclip -o -selection clipboard
+URxvt.keysym.M-u:                     perl:url-select:select_next
+URxvt.keysym.M-Escape:                perl:keyboard-select:activate
+URxvt.keysym.M-s:                     perl:keyboard-select:search
+URxvt.keysym.M-c:                     perl:clipboard:copy
+URxvt.keysym.M-v:                     perl:clipboard:paste
+URxvt.keysym.M-C-v:                   perl:clipboard:paste_escaped
+!URxvt.iso14755:                       false
+!URxvt.iso14755_52:                    false
 !}}}
 
+!#include "/home/panta/.Xcolors3"
