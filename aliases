@@ -10,7 +10,7 @@ alias egrep='egrep --color=auto'
 alias pss='ps -Hfljyu $USER'
 alias psc='ps xawf -eo pid,user,cgroup,args'
 #alias pss='ps -u $USER'
-alias vim='vim -p'
+alias g='gvim --remote-silent'
 
 # pacman
 alias p='pacman'
