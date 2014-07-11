@@ -1,9 +1,4 @@
 
-! Xcursor {{{
-Xcursor.size:                         0
-Xcursor.theme:                        Vanilla-DMZ-AA
-!}}}
-
 ! Xft settings {{{
 Xft.dpi:                              227
 Xft.antialias:                        true
