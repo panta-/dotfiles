@@ -1,43 +1,73 @@
 set nocompatible
-
 set backspace=indent,eol,start
-set colorcolumn=80
-set noexpandtab
-set hlsearch
-set incsearch
+
+set history=100
+
+set textwidth=80
+"set colorcolumn=78
+
+" search options
 set ignorecase
-set number
+set smartcase
+set incsearch
+set hlsearch
+
+set nonumber
+set relativenumber
 set ruler
-"set scrolloff=4
+
+set scrolloff=0
+
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
+set noexpandtab
+"set autoindent
+
 set showcmd
+set showfulltag
 set showmatch
 set showmode
-set smartcase
-set tabstop=2
+
+" tell VIM to always put a status line in, even if there is only one window
+set laststatus=2
+
+" remove statuslines and vertical separators
+set fillchars=
+
 "set t_Co=256
-set title
+"set title
+
 set wildmenu
 set wildmode=list:longest,full
-set nobackup
-"set cpoptions+=$
-set virtualedit=all
 
-filetype plugin indent on
+set nobackup
+
+set cpoptions+=$
+
+set virtualedit=block
+
+set nohidden
+
+"set background=light
+
+" ignore white space in diffs
+set diffopt+=iwhite
+
+" Automatically read a file that has changed on disk
+set autoread
+
+filetype on
+filetype plugin on
+filetype indent on
 
 syntax on
 
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+"let g:StartComment="#"
+"let g:EndComment=""
 
-nnoremap j gj
-nnoremap k gk
-
-let g:StartComment="#"
-let g:EndComment=""
-
-au FileType c,cpp     let g:StartComment = "//"
-au FileType vim       let g:StartComment = "\""
+"au FileType c,cpp let g:StartComment = "//"
+"au FileType vim let g:StartComment = "\""
 
 if has ('folding')
 	set foldenable
@@ -50,16 +80,20 @@ if has ('mouse')
 	set mouse=a
 endif
 
-"if has ("vms")
-"	set nobackup
-"else
-"	set backup
-"	set backupdir=./.backup,~/.backup,.,/tmp
-"	set backupskip=/tmp/*
-"endif
-
-if &term !=# "linux"
-	colorscheme summerfruit256
-else
-	colorscheme default
+if has("gui_running")
+	colorscheme morning
+	set guifont=DejaVu\ Sans\ Mono\ 8
+	set guioptions=ac
 endif
+
+" Write file using sudo
+nnoremap <Leader>W :w !sudo tee % > /dev/null
+
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
+
+" Toggle paste mode
+map <silent> <Leader>p :set invpaste<CR>:set paste?<CR>
+
+"nnoremap j gj
+"nnoremap k gk
+
