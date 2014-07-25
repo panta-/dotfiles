@@ -81,7 +81,7 @@ if has ('mouse')
 endif
 
 if has("gui_running")
-	colorscheme morning
+	"colorscheme morning
 	set guifont=DejaVu\ Sans\ Mono\ 8
 	set guioptions=ac
 endif
