@@ -1,15 +1,14 @@
 alias sudo='sudo '
 
-alias mv=' mv -iv'
-alias rm=' rm -Iv --one-file-system'
+alias mv=' mv -i'
+alias rm=' rm -I --one-file-system'
 alias shred=' shred -v'
 
 alias df='df -h'
-#alias grep='grep --color=auto'
+alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias pss='ps -Hfljyu $USER'
 alias psc='ps xawf -eo pid,user,cgroup,args'
-#alias pss='ps -u $USER'
 alias g='gvim --remote-silent'
 
 # pacman
@@ -17,11 +16,11 @@ alias p='pacman'
 alias pp='sudo etckeeper pre-install && sudo pacman -Syu && sudo etckeeper post-install'
 alias pcc='sudo pacman -Sc'
 #alias orphan='pacman -Qqtd'
-alias pacman-disowned-dirs="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type d -print | sed 's/\([^/]\)$/\1\//' | sort -u) <(pacman -Qlq | sort -u)"
-alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type f -print | sort -u) <(pacman -Qlq | sort -u)"
-alias backup-pacman-pkg-list='pacman -Qqne >! ~/SpiderOak\ Hive/pacman/pkg.list'
-alias backup-pacman-db='tar -cjf ~/SpiderOak\ Hive/pacman/pacman-database.tar.bz2 /var/lib/pacman/local'
-alias backup-etc='tar -cjf ~/local/etc-backup.tar.bz2 /etc'
+#alias pacman-disowned-dirs="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type d -print | sed 's/\([^/]\)$/\1\//' | sort -u) <(pacman -Qlq | sort -u)"
+#alias pacman-disowned-files="comm -23 <(sudo find / \( -path '/dev' -o -path '/sys' -o -path '/run' -o -path '/tmp' -o -path '/mnt' -o -path '/srv' -o -path '/proc' -o -path '/boot' -o -path '/home' -o -path '/root' -o -path '/media' -o -path '/var/lib/pacman' -o -path '/var/cache/pacman' \) -prune -o -type f -print | sort -u) <(pacman -Qlq | sort -u)"
+#alias backup-pacman-pkg-list='pacman -Qqne >! ~/.backup/pkg.list'
+#alias backup-pacman-db='tar -cjf ~/.backup/pacman-database.tar.bz2 /var/lib/pacman/local'
+#alias backup-etc='tar -cjf ~/local/etc-backup.tar.bz2 /etc'
 
 # cower
 alias c='cower'
@@ -42,20 +41,21 @@ alias sd='systemctl'
 alias jj='journalctl'
 
 # WebAOM
-alias webaom='javaws http://static.anidb.net/client/webaom.jnlp' 
+#alias webaom='javaws http://static.anidb.net/client/webaom.jnlp' 
 
 # PasteBin
-alias -g S='|& curl -F sprunge=@- sprunge.us'
-alias sprunge='curl -F sprunge=@- sprunge.us'
+#alias -g S='|& curl -F sprunge=@- sprunge.us'
+#alias sprunge='curl -F sprunge=@- sprunge.us'
 
 # Remove broken links
 alias dead_links_rm='find -L -maxdepth 1 -type l -delete'
 
-alias mn='mosh ion'
+# SSH
+#alias mn='mosh ion'
 
 # systemd
 #alias suspend="systemctl suspend"
 #alias reboot="systemctl reboot"
 #alias poweroff="systemctl poweroff"
 
-# vim:ft=conf:
+# vim:ft=sh:
