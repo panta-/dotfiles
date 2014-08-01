@@ -54,4 +54,4 @@ urxvt.keysym.M-C-v:                   perl:clipboard:paste_escaped
 !urxvt.iso14755_52:                    false
 !}}}
 
-!#include "/home/panta/.Xcolors3"
+!#include "/home/panta/.Xcolors"

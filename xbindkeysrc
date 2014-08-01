@@ -25,7 +25,7 @@
     m:0x0 + c:121
     XF86AudioMute
 
-# Volume
+# Volume: Refresh i3status
 "killall -USR1 i3status"
     m:0x0 + c:122
     XF86AudioLowerVolume
@@ -36,7 +36,7 @@
     m:0x0 + c:121
     XF86AudioMute
 
-# mpd@ion controls
+# mpd controls
 "mpc next"
     m:0x0 + c:171
     XF86AudioNext
