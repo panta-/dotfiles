@@ -214,6 +214,7 @@ set $WS10 10:IDE
 assign [class="^Firefox$"] "$WS2"
 assign [class="^Chromium$"] "$WS2"
 assign [class="^Chrome$"] "$WS2"
+assign [class="^Gvim$"] "$WS3"
 assign [class="^Skype$"] "$WS4"
 assign [class="^Pidgin$"] "$WS4"
 assign [class="^Worker$"] "$WS5"
@@ -279,4 +280,6 @@ hide_edge_borders both
 
 # autostart
 #exec urxvt -name scratchpad -e zsh
-exec urxvt -name mail -e sh -c "mutt"
+#exec urxvt -name mail -e sh -c "mutt"
+exec --no-startup-id dunst
+exec --no-startup-id SpiderOak
