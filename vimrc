@@ -49,8 +49,6 @@ set virtualedit=block
 
 set nohidden
 
-"set background=light
-
 " ignore white space in diffs
 set diffopt+=iwhite
 
@@ -81,19 +79,17 @@ if has ('mouse')
 endif
 
 if has("gui_running")
-	"colorscheme morning
 	set guifont=DejaVu\ Sans\ Mono\ 8
 	set guioptions=ac
 endif
 
 " Write file using sudo
 nnoremap <Leader>W :w !sudo tee % > /dev/null
-
+" Turn search highlight off
 nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>
-
 " Toggle paste mode
-map <silent> <Leader>p :set invpaste<CR>:set paste?<CR>
-
-"nnoremap j gj
-"nnoremap k gk
-
+nnoremap <silent> <Leader>p :set invpaste<CR>:set paste?<CR>
+" Dark theme
+nnoremap <silent> <Leader>d :set background=dark<CR>:colorscheme desert<CR>
+" Light theme
+nnoremap <silent> <Leader>l :set background=light<CR>:colorscheme morning<CR>
