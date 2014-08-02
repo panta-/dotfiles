@@ -4,7 +4,7 @@ alias mv=' mv -i'
 alias rm=' rm -I --one-file-system'
 alias shred=' shred -v'
 
-alias df='df -h'
+alias df='df -Th'
 alias grep='grep --color=auto'
 alias egrep='egrep --color=auto'
 alias pss='ps -Hfljyu $USER'

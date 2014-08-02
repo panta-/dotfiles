@@ -29,6 +29,7 @@ xterm*faceName:                      xft:DejaVu Sans Mono:style=Book:size=8
 urxvt.font:                           xft:DejaVu Sans Mono:style=Book:size=8
 urxvt.boldFont:                       xft:DejaVu Sans Mono:style=Bold:size=8
 urxvt.letterSpace:                    -1
+urxvt.fading:                         10
 urxvt.reverseVideo:                   false
 urxvt.intensityStyles:                false
 urxvt.urgentOnBell:                   true
