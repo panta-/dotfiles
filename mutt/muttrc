@@ -1,0 +1,41 @@
+set folder = "~/mail"
+set editor = "/usr/bin/vim -c 'set tw=80 ft=mail' -c 'set wrap' -c 'set nocp'"
+set header_cache = ~/.cache/mutt/headers
+set include
+set mail_check = 0
+set mailcap_path = ~/.mutt/mailcap
+set mbox_type = Maildir
+set menu_scroll
+set message_cachedir = ~/.cache/mutt/messages
+set pager_context = 5
+set pager_index_lines = 10
+set pager_stop
+set pipe_decode
+set reply_to
+set send_charset = "us-ascii:iso-8859-1:iso-8859-7:utf-8"
+set sleep_time = 0
+set sort = threads
+set strict_threads
+set tilde
+set timeout = 3
+
+unset move
+unset record
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+subscribe arch-announce@archlinux.org
+subscribe arch-dev-public@archlinux.org
+subscribe arch-general@archlinux.org
+subscribe arch-projects@archlinux.org
+subscribe pacman-dev@archlinux.org
+subscribe vim_use@googlegroups.com
+
+source ~/.mutt/bindings
+source /usr/share/doc/mutt/samples/colors.default # light
+#source /usr/share/doc/mutt/samples/colors.linux # dark
+source ~/.mutt/macros
+source ~/.mutt/mailboxes
+
+source ~/.mutt/accounts/gmail

@@ -202,7 +202,7 @@ bindsym $mod+Escape mode "$mode_system"
 # define workspace names
 set $WS1 1:Term
 set $WS2 2:Web
-set $WS3 3:Media
+set $WS3 3:Editor
 set $WS4 4:IM
 set $WS5 5:FM
 set $WS6 6:Sys-Mon

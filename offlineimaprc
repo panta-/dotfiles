@@ -1,0 +1,31 @@
+# vim:ft=conf:
+[general]
+accounts = gmail
+fsync = false
+
+[Account gmail]
+localrepository = gmail-local
+remoterepository = gmail-remote
+status_backend = sqlite
+#postsynchook = notmuch new
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/mail/gmail
+
+[Repository gmail-remote]
+type = Gmail
+maxconnections = 1
+remotehost = imap.gmail.com
+remoteuser = panayiotis.tembriotis@gmail.com
+realdelete = no
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"

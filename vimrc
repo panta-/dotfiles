@@ -13,7 +13,7 @@ set incsearch
 set hlsearch
 
 set nonumber
-set relativenumber
+"set relativenumber
 set ruler
 
 set scrolloff=0

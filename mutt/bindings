@@ -1,0 +1,12 @@
+# vim: ft=muttrc
+bind index gg first-entry
+bind index G  last-entry
+bind index N  search-opposite
+bind pager q  toggle-quoted
+bind pager j  next-line
+bind pager k  previous-line
+bind pager gg top
+bind pager G  bottom
+bind index,pager \# noop
+bind index,pager \& noop
+bind index,pager R  group-reply
