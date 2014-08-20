@@ -4,9 +4,6 @@ background no
 update_interval 5
 total_run_times 0
 use_spacer none
-mpd_host ion
-mpd_password mpd123!
-#$mpd_smart :: ${cpu cpu1}% ${cpu cpu2}% ${cpu cpu3}% ${cpu cpu4}% :: ${loadavg 1 2 3} :: ${downspeed enp0s10} ${upspeed enp0s10} :: ${time %a %b %d %H:%M} 
 
 TEXT
 ${downspeed wlp3s0} ${upspeed wlp3s0} :: ${battery_time} :: ${loadavg 1 2 3} :: ${time %a %b %d %H:%M} 
