@@ -280,6 +280,6 @@ hide_edge_borders both
 
 # autostart
 #exec urxvt -name scratchpad -e zsh
-#exec urxvt -name mail -e sh -c "mutt"
+exec urxvt -name mail -e sh -c "mutt"
 exec --no-startup-id dunst
 exec --no-startup-id SpiderOak

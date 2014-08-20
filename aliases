@@ -58,4 +58,6 @@ alias dead_links_rm='find -L -maxdepth 1 -type l -delete'
 #alias reboot="systemctl reboot"
 #alias poweroff="systemctl poweroff"
 
+alias diffstat='git diff -M --stat --summary'
+
 # vim:ft=sh:

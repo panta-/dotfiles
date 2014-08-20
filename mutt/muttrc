@@ -1,5 +1,5 @@
 set folder = "~/mail"
-set editor = "/usr/bin/vim -c 'set tw=80 ft=mail' -c 'set wrap' -c 'set nocp'"
+set editor = "vim --cmd 'set ft=mail'"
 set header_cache = ~/.cache/mutt/headers
 set include
 set mail_check = 0
@@ -12,7 +12,7 @@ set pager_index_lines = 10
 set pager_stop
 set pipe_decode
 set reply_to
-set send_charset = "us-ascii:iso-8859-1:iso-8859-7:utf-8"
+set send_charset = "us-ascii:utf-8"
 set sleep_time = 0
 set sort = threads
 set strict_threads

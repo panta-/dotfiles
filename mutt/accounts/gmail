@@ -1,19 +1,21 @@
 # vim:ft=muttrc:
 
 # Receive options
-set from = "panayiotis.tembriotis@gmail.com"
 set imap_user = "panayiotis.tembriotis@gmail.com"
 set spoolfile = "+gmail/INBOX"
 set postponed = "+gmail/[Gmail].Drafts"
 unset record
 
 # Send options
-set sendmail = "/usr/bin/mail"
+set sendmail = "/usr/bin/msmtp"
+set use_from = yes
 set realname = "Panayiotis Tembriotis"
+set from = "panayiotis.tembriotis@gmail.com"
+set envelope_from = yes
 
 # Connection options
 set ssl_force_tls = yes
 
 # Macros
-#macro index D "<save-message>+gmail/[Gmail].Trash<enter>"
-#macro index S "<save-message>+gmail/[Gmail].Spam<enter>"
+macro index D "<save-message>+gmail/[Gmail].Trash<enter>"
+macro index S "<save-message>+gmail/[Gmail].Spam<enter>"
