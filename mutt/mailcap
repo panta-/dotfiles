@@ -5,3 +5,4 @@ video/*; mpv %s
 audio/*; mpv %s
 text/*; vim %s
 application/pdf; xdg-open %s 
+application/vnd.openxml; libreoffice %s

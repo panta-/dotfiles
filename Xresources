@@ -1,44 +1,45 @@
 
 ! Xft settings {{{
-Xft.dpi:                              227
-Xft.antialias:                        true
-Xft.hinting:                          true
-Xft.hintstyle:                        hintfull
-Xft.rgba:                             rgb
+Xft.dpi:			227
+Xft.antialias:			true
+Xft.hinting:			true
+Xft.hintstyle:			hintfull
+Xft.rgba:			rgb
 !}}}
 
 ! XTerm {{{
-XTerm*faceName:                      xft:DejaVu Sans Mono:style=Book:size=8
+XTerm*faceName:			xft:DejaVu Sans Mono:style=Book:size=8
+UXTerm*faceName:		xft:DejaVu Sans Mono:style=Book:size=8
 !}}}
 
 ! URxvt settings {{{
-URxvt.font:                           xft:DejaVu Sans Mono:style=Book:size=8
-URxvt.boldFont:                       xft:DejaVu Sans Mono:style=Bold:size=8
-URxvt.letterSpace:                    -1
-URxvt.fading:                         10
-URxvt.reverseVideo:                   false
-URxvt.intensityStyles:                false
-URxvt.urgentOnBell:                   true
-URxvt.pointerBlank:                   true
-URxvt.saveLines:                      1000
-URxvt.scrollBar:                      false
-URxvt.scrollTtyKeypress:              true
-URxvt.scrollTtyOutput:                false
-URxvt.scrollWithBuffer:               true
-URxvt.perl-ext-common:                default,clipboard,url-select,keyboard-select
-URxvt.url-select.button:              1
-URxvt.url-select.launcher:            /usr/bin/xdg-open
-URxvt.url-select.underline:           true
-URxvt.clipboard.copycmd:              xclip -i -selection clipboard
-URxvt.clipboard.pastecmd:             xclip -o -selection clipboard
-URxvt.keysym.M-u:                     perl:url-select:select_next
-URxvt.keysym.M-Escape:                perl:keyboard-select:activate
-URxvt.keysym.M-s:                     perl:keyboard-select:search
-URxvt.keysym.M-c:                     perl:clipboard:copy
-URxvt.keysym.M-v:                     perl:clipboard:paste
-URxvt.keysym.M-C-v:                   perl:clipboard:paste_escaped
-!URxvt.iso14755:                       false
-!URxvt.iso14755_52:                    false
+URxvt.font:			xft:DejaVu Sans Mono:style=Book:size=8
+URxvt.boldFont:			xft:DejaVu Sans Mono:style=Bold:size=8
+URxvt.letterSpace:		-1
+URxvt.fading:			10
+URxvt.reverseVideo:		false
+URxvt.intensityStyles:		false
+URxvt.urgentOnBell:		true
+URxvt.pointerBlank:		true
+URxvt.saveLines:		1000
+URxvt.scrollBar:		false
+URxvt.scrollTtyKeypress:	true
+URxvt.scrollTtyOutput:		false
+URxvt.scrollWithBuffer:		true
+URxvt.perl-ext-common:		default,clipboard,url-select,keyboard-select
+URxvt.url-select.button:	1
+URxvt.url-select.launcher:	/usr/bin/xdg-open
+URxvt.url-select.underline:	true
+URxvt.clipboard.copycmd:	xclip -i -selection clipboard
+URxvt.clipboard.pastecmd:	xclip -o -selection clipboard
+URxvt.keysym.M-u:		perl:url-select:select_next
+URxvt.keysym.M-Escape:		perl:keyboard-select:activate
+URxvt.keysym.M-s:		perl:keyboard-select:search
+URxvt.keysym.M-c:		perl:clipboard:copy
+URxvt.keysym.M-v:		perl:clipboard:paste
+URxvt.keysym.M-C-v:		perl:clipboard:paste_escaped
+!URxvt.iso14755:		false
+!URxvt.iso14755_52:		false
 !}}}
 
 !#include "/home/panta/.Xcolors"

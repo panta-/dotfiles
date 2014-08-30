@@ -3,7 +3,7 @@ set backspace=indent,eol,start
 
 set history=100
 
-set textwidth=80
+"set textwidth=80
 "set colorcolumn=78
 
 " search options
@@ -18,9 +18,9 @@ set ruler
 
 set scrolloff=0
 
-set shiftwidth=4
-set softtabstop=4
-set tabstop=4
+set shiftwidth=8
+set softtabstop=8
+set tabstop=8
 set noexpandtab
 "set autoindent
 
