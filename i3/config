@@ -205,11 +205,11 @@ set $WS2 2:Web
 set $WS3 3:Editor
 set $WS4 4:IM
 set $WS5 5:FM
-set $WS6 6:Sys-Mon
+set $WS6 6:TV
 set $WS7 7:Office
-set $WS8 8:Mail
-set $WS9 9:VM
-set $WS10 10:IDE
+set $WS8 8:Sys-Mon
+set $WS9 9:Code
+set $WS10 10:Mail
 
 assign [class="^Firefox$"] "$WS2"
 assign [class="^Chromium$"] "$WS2"
@@ -218,19 +218,24 @@ assign [class="^Gvim$"] "$WS3"
 assign [class="^Skype$"] "$WS4"
 assign [class="^Pidgin$"] "$WS4"
 assign [class="^Worker$"] "$WS5"
+assign [class="^mpv$" instance="^TV$"] "$WS6"
 assign [instance="libreoffice"] "$WS7"
-assign [class="^URxvt$" instance="^mail$"] "$WS8"
-assign [title="IDE"] "$WS10"
+assign [title="IDE"] "$WS9"
+assign [class="^R$"] "$WS9"
+assign [instance="^R$"] "$WS9"
+assign [instance="^mail$"] "$WS10"
 
+for_window [class="^feh$"] floating enable
+for_window [class="^MuPDF$"] floating enable
 for_window [class="^URxvt$" instance="scratchpad"] border pixel 3; move scratchpad
 
 # switch to workspace
 workspace "$WS1"  output eDP1
 workspace "$WS2" output eDP1
-workspace "$WS3" output HDMI1
+workspace "$WS3" output eDP1
 workspace "$WS4" output eDP1
 workspace "$WS5"  output eDP1
-workspace "$WS6" output eDP1
+workspace "$WS6" output HDMI1
 workspace "$WS7"  output eDP1
 workspace "$WS8" output eDP1
 workspace "$WS9" output eDP1
@@ -280,6 +285,6 @@ hide_edge_borders both
 
 # autostart
 #exec urxvt -name scratchpad -e zsh
-exec urxvt -name mail -e sh -c "mutt"
+exec urxvt -is -name mail -e sh -c "mutt"
 exec --no-startup-id dunst
 exec --no-startup-id SpiderOak

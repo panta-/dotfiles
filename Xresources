@@ -15,6 +15,8 @@ UXTerm*faceName:		xft:DejaVu Sans Mono:style=Book:size=8
 ! URxvt settings {{{
 URxvt.font:			xft:DejaVu Sans Mono:style=Book:size=8
 URxvt.boldFont:			xft:DejaVu Sans Mono:style=Bold:size=8
+URxvt.italicFont:		xft:DejaVu Sans Mono:style=Oblique:size=8
+URxvt.boldItalicFont:		xft:DejaVu Sans Mono:style=Bold Oblique:size=8
 URxvt.letterSpace:		-1
 URxvt.fading:			10
 URxvt.reverseVideo:		false
@@ -41,5 +43,3 @@ URxvt.keysym.M-C-v:		perl:clipboard:paste_escaped
 !URxvt.iso14755:		false
 !URxvt.iso14755_52:		false
 !}}}
-
-!#include "/home/panta/.Xcolors"

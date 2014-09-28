@@ -1,6 +1,6 @@
 bindkey -v
 
-setopt NO_clobber
+setopt NO_CLOBBER
 
 export MANWIDTH=80
 
