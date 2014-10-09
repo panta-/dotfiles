@@ -38,4 +38,8 @@ alias jj='journalctl'
 alias diffstat='git diff -M --stat --summary'
 
 # rtorrent
-alias rt='dtach -A ~/torrents/session/rt rtorrent'
+alias rt='/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent'
+alias tt='/usr/bin/tmux attach-session -d -t rt'
+
+# mutt
+alias mt='urxvtc +rv -is -name mail -e sh -c "mutt"'

@@ -1,4 +1,3 @@
-# vim:ft=conf:
 [general]
 accounts = gmail
 fsync = false
@@ -7,7 +6,6 @@ fsync = false
 localrepository = gmail-local
 remoterepository = gmail-remote
 status_backend = sqlite
-#postsynchook = notmuch new
 
 [Repository gmail-local]
 type = Maildir
@@ -20,7 +18,6 @@ remotehost = imap.gmail.com
 remoteuser = panayiotis.tembriotis@gmail.com
 realdelete = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
 
 [mbnames]
 enabled = yes
