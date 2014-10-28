@@ -70,7 +70,8 @@ endif
 
 if has('gui_running')
 	set guifont=DejaVu\ Sans\ Mono\ 8
-	set guioptions=ac
+	"set guioptions=ac
+	set guioptions=aegmt
 endif
 
 colorscheme summerfruit256

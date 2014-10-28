@@ -226,7 +226,6 @@ assign [instance="^R$"] "$WS9"
 assign [instance="^mail$"] "$WS10"
 
 for_window [class="^feh$"] floating enable
-for_window [class="^MuPDF$"] floating enable
 for_window [class="^URxvt$" instance="scratchpad"] border pixel 3; move scratchpad
 
 # switch to workspace

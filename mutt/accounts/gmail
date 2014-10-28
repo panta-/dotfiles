@@ -1,6 +1,7 @@
 # vim:ft=muttrc:
 
 # Receive options
+set imap_peek = "no"
 set imap_user = "panayiotis.tembriotis@gmail.com"
 set spoolfile = "+gmail/INBOX"
 set postponed = "+gmail/[Gmail].Drafts"

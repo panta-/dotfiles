@@ -1,14 +1,3 @@
 # vim:set ft=muttrc:
-subscribe arch-announce@archlinux.org
-subscribe arch-announce@lists.archlinux.org
-subscribe arch-dev-public@archlinux.org
-subscribe arch-dev-public@lists.archlinux.org
-subscribe arch-general@archlinux.org
-subscribe arch-general@lists.archlinux.org
-
-lists arch-projects@archlinux.org
-lists arch-projects@lists.archlinux.org
-lists pacman-dev@archlinux.org
-lists pacman-dev@lists.archlinux.org
-lists vim_use@googlegroups.com
-lists vim@vim.org
+subscribe -group Vim ^vim@vim.org$ ^vim_use@googlegroups.com$
+subscribe -group Arch .+@(lists\.)?archlinux.org$

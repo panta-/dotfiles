@@ -16,8 +16,8 @@ type = Gmail
 maxconnections = 1
 remotehost = imap.gmail.com
 remoteuser = panayiotis.tembriotis@gmail.com
-realdelete = no
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+folderfilter = lambda foldername: foldername not in '[Gmail]/All Mail'
 
 [mbnames]
 enabled = yes

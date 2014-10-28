@@ -2,15 +2,15 @@
 
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
-macro index o "<shell-escape>offlineimap -f INBOX<enter>" "run offlineimap to sync inbox"
+macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # Change folder
 macro index ',c' '<change-folder>=gmail/INBOX<enter>' "go to Gmail Inbox"
 macro index ',t' '<change-folder>=gmail/[Gmail].Sent<quote-char> Mail<enter>' "go to Gmail Sent Mail"
 macro index ',a' '<change-folder>=gmail/[Gmail].All<quote-char> Mail<enter>' "go to Gmail All Mail"
 
-# Save message
-macro index 'A' '<save-message>=gmail/[Gmail].All<quote-char> Mail<enter><enter>' "archive message (Gmail)"
+# Save attachment
+macro attach s '<save-entry><bol>~/downloads/<eol>' "save attachment to downloads directory"
 
 # from notmuch-mutt(1) manual
 macro index <F8> \
