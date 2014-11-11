@@ -1,12 +1,12 @@
 # vim:ft=muttrc:
 
 # Receive options
-set imap_peek = "no"
 set delete = "yes"
+set move = "no"
 set imap_user = "panayiotis.tembriotis@gmail.com"
 set spoolfile = "+gmail/INBOX"
 set postponed = "+gmail/[Gmail].Drafts"
-unset record
+set record = "+gmail/INBOX"
 
 # Send options
 set sendmail = "/usr/bin/msmtp"
@@ -19,5 +19,10 @@ set envelope_from = yes
 set ssl_force_tls = yes
 
 # Macros
-macro index D "<save-message>+gmail/[Gmail].Trash<enter>"
-macro index S "<save-message>+gmail/[Gmail].Spam<enter>"
+macro index D "<save-message>+gmail/[Gmail].Trash<enter>" "Delete message"
+macro index S "<save-message>+gmail/[Gmail].Spam<enter>" "Mark message as Spam"
+# Change folder
+macro index 'gi' '<change-folder>=gmail/INBOX<enter>' "go to Gmail INBOX"
+macro index 'gd' '<change-folder>=gmail/[Gmail].Drafts<enter>' "go to Gmail Drafts"
+macro index 'gt' '<change-folder>=gmail/[Gmail].Sent<quote-char> Mail<enter>' "go to Gmail Sent Mail"
+macro index 'gs' '<change-folder>=gmail/[Gmail].Starred<enter>' "go to Gmail Starred"
