@@ -1,22 +1,22 @@
 # vim:ft=muttrc:
 
 # Receive options
-set delete = "yes"
-set move = "no"
-set imap_user = "panayiotis.tembriotis@gmail.com"
-set spoolfile = "+gmail/INBOX"
-set postponed = "+gmail/[Gmail].Drafts"
-set record = "+gmail/INBOX"
+set delete=yes
+set move=no
+set imap_user="panayiotis.tembriotis@gmail.com"
+set spoolfile="+gmail/INBOX"
+set postponed="+gmail/[Gmail].Drafts"
+set record="+gmail/INBOX"
 
 # Send options
-set sendmail = "/usr/bin/msmtp"
-set use_from = yes
-set realname = "Panayiotis Tembriotis"
-set from = "panayiotis.tembriotis@gmail.com"
-set envelope_from = yes
+set sendmail="/usr/bin/msmtp"
+set use_from=yes
+set realname="Panayiotis Tembriotis"
+set from="panayiotis.tembriotis@gmail.com"
+set envelope_from=yes
 
 # Connection options
-set ssl_force_tls = yes
+set ssl_force_tls=yes
 
 # Macros
 macro index D "<save-message>+gmail/[Gmail].Trash<enter>" "Delete message"

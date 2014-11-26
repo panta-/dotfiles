@@ -1,26 +1,26 @@
-set folder = "~/mail"
-set editor = "vim --cmd 'set ft=mail'"
-set header_cache = ~/.cache/mutt/headers
-set include
-set mail_check = 0
-set mailcap_path = ~/.mutt/mailcap
-set mbox_type = Maildir
-set menu_scroll
-set message_cachedir = ~/.cache/mutt/messages
-set pager_context = 5
-set pager_index_lines = 10
-set pager_stop
-set pipe_decode
-set reply_to
-set send_charset = "us-ascii:utf-8"
-set sleep_time = 0
-set sort = threads
-set sort_aux = last-date-received
-set strict_threads
-set tilde
-set timeout = 3
+set folder="~/mail"
+set editor="vim --cmd 'set ft=mail'"
+set header_cache="~/.cache/mutt/headers"
+set include=yes
+set mail_check=0
+set mailcap_path="~/.mutt/mailcap"
+set mbox_type=Maildir
+set menu_scroll=yes
+set message_cachedir="~/.cache/mutt/messages"
+set move=no
+set pager_context=5
+set pager_index_lines=10
+set pager_stop=yes
+set pipe_decode=yes
+set reply_to=yes
+set send_charset="us-ascii:utf-8"
+set sleep_time=0
+set sort=threads
+set sort_aux=last-date-received
+set strict_threads=yes
+set tilde=yes
+set timeout=3
 
-unset move
 unset record
 
 auto_view text/html
@@ -28,8 +28,7 @@ alternative_order text/plain text/enriched text/html
 
 source ~/.mutt/aliases
 source ~/.mutt/bindings
-source /usr/share/doc/mutt/samples/colors.default # light
-#source /usr/share/doc/mutt/samples/colors.linux # dark
+source /usr/share/doc/mutt/samples/colors.default
 source ~/.mutt/macros
 source ~/.mutt/mailboxes
 source ~/.mutt/mailing-lists
