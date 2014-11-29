@@ -12,6 +12,7 @@ alias g='gvim --servername GVIM --remote-silent'
 # mpv to tv
 alias tv='mpv --profile=tv'
 alias tv-sop='mpv --profile=tv http://localhost:8908/tv.asf'
+alias yt='mpv --profile=yt'
 
 # R
 alias RR='gvim --class R --servername VIM +set\ ft=r'
