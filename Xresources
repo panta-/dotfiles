@@ -2,8 +2,7 @@
 ! Xft settings {{{
 Xft.dpi:			227
 Xft.antialias:			true
-Xft.hinting:			true
-Xft.hintstyle:			hintfull
+Xft.hinting:			false
 Xft.rgba:			rgb
 !}}}
 
