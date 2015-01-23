@@ -27,5 +27,3 @@ sh ~/.fehbg &
 
 # autostart
 urxvtd -q -o -f &
-#dunst &
-#SpiderOak &

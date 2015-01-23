@@ -3,7 +3,7 @@ set backspace=indent,eol,start
 
 set history=100
 
-"set colorcolumn=80
+set colorcolumn=80
 
 " search options
 set ignorecase
@@ -51,9 +51,7 @@ set diffopt+=iwhite
 " Automatically read a file that has changed on disk
 set autoread
 
-filetype on
-filetype plugin on
-filetype indent on
+filetype plugin indent on
 
 syntax on
 

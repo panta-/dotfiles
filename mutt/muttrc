@@ -4,6 +4,7 @@ set header_cache="~/.cache/mutt/headers"
 set include=yes
 set mail_check=0
 set mailcap_path="~/.mutt/mailcap"
+set markers=no
 set mbox_type=Maildir
 set menu_scroll=yes
 set message_cachedir="~/.cache/mutt/messages"
