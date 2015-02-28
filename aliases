@@ -3,7 +3,6 @@
 alias sudo='sudo '
 
 alias df='df -Th'
-alias pss='ps -Hfljyu $USER'
 alias psc='ps xawf -eo pid,user,cgroup,args'
 
 # gvim
@@ -12,11 +11,6 @@ alias g='gvim --servername GVIM --remote-silent'
 # mpv to tv
 alias tv='mpv --profile=tv'
 alias tv-sop='mpv --profile=tv http://localhost:8908/tv.asf'
-alias yt='mpv --profile=yt'
-
-# R
-alias RR='gvim --class R --servername VIM +set\ ft=r'
-alias rr='gvim --class R --servername VIM --remote-silent'
 
 # pacman
 alias p='pacman'
@@ -30,9 +24,6 @@ alias cuv='cower -uv'
 # systemd
 alias sd='systemctl'
 alias jj='journalctl'
-
-# git
-alias diffstat='git diff -M --stat --summary'
 
 # rtorrent
 alias rt='/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent'
