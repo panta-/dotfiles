@@ -1,11 +1,4 @@
 
-! Xft settings {{{
-Xft.dpi:			227
-Xft.antialias:			true
-Xft.hinting:			false
-Xft.rgba:			rgb
-!}}}
-
 ! XTerm {{{
 XTerm*faceName:			xft:DejaVu Sans Mono:style=Book:size=8
 UXTerm*faceName:		xft:DejaVu Sans Mono:style=Book:size=8
