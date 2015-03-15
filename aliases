@@ -26,8 +26,7 @@ alias sd='systemctl'
 alias jj='journalctl'
 
 # rtorrent
-alias rt='/usr/bin/tmux new-session -s rt -n rtorrent -d rtorrent'
-alias tt='/usr/bin/tmux attach-session -d -t rt'
+alias rt='SESSIONNAME=rt && (/usr/bin/tmux attach-session -d -t $SESSIONNAME || /usr/bin/tmux new-session -s $SESSIONNAME -n rtorrent -d rtorrent)'
 
 # mutt
 alias mt='urxvtc +rv -is -name mail -e sh -c "mutt"'

@@ -24,6 +24,3 @@ xrandr-hdmi-toggle.sh
 
 # set background
 sh ~/.fehbg &
-
-# autostart
-urxvtd -q -o -f &

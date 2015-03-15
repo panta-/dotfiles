@@ -150,6 +150,7 @@ assign [class="^Chrome$"] "$WS2"
 assign [class="^Gvim$"] "$WS3"
 assign [class="^Skype$"] "$WS4"
 assign [class="^Pidgin$"] "$WS4"
+assign [instance="^IRC$"] "$WS4"
 assign [class="^Worker$"] "$WS5"
 assign [class="^mpv$" instance="^TV$"] "$WS6"
 assign [instance="libreoffice"] "$WS7"
@@ -264,7 +265,8 @@ new_float pixel 1
 hide_edge_borders both
 
 # autostart
-#exec urxvt -name scratchpad -e zsh
-exec urxvt -is -name mail -e sh -c "mutt"
 exec --no-startup-id dunst
 exec --no-startup-id SpiderOak
+exec urxvtd -q -o -f
+exec urxvt -is -name mail -e sh -c "mutt"
+exec urxvt -is -name IRC -e sh -c "weechat"
