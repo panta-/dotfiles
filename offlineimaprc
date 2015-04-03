@@ -17,12 +17,7 @@ maxconnections = 1
 remotehost = imap.gmail.com
 remoteuser = panayiotis.tembriotis@gmail.com
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-folderfilter = lambda foldername: foldername in ['INBOX', \
-						'[Gmail]/Drafts', \
-						'[Gmail]/Sent Mail', \
-						'[Gmail]/Spam', \
-						'[Gmail]/Starred', \
-						'[Gmail]/Trash']
+folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
 
 [mbnames]
 enabled = yes

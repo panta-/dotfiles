@@ -5,5 +5,4 @@
 [ -f ~/.xprofile ] && . ~/.xprofile
 
 # start window manager
-#exec openbox
 exec i3

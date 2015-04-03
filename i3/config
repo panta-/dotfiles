@@ -44,7 +44,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "-*-dejavu sans mono-medium-r-*-*-24-*-*-*-*-*-iso10646-*"'
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -fn "-*-dejavu sans mono-medium-r-*-*-28-*-*-*-*-*-iso10646-*"'
 
 # change focus
 bindsym $mod+$left  focus left
@@ -100,12 +100,12 @@ bindsym $mod+a focus parent
 set $WS1 1:Term
 set $WS2 2:Web
 set $WS3 3:Editor
-set $WS4 4:IM
+set $WS4 4:Code
 set $WS5 5:FM
 set $WS6 6:TV
 set $WS7 7:Office
 set $WS8 8:Sys-Mon
-set $WS9 9:Code
+set $WS9 9:Chat
 set $WS10 10:Mail
 
 # switch to workspace
@@ -148,15 +148,16 @@ assign [class="^Firefox$"] "$WS2"
 assign [class="^Chromium$"] "$WS2"
 assign [class="^Chrome$"] "$WS2"
 assign [class="^Gvim$"] "$WS3"
-assign [class="^Skype$"] "$WS4"
-assign [class="^Pidgin$"] "$WS4"
-assign [instance="^IRC$"] "$WS4"
+assign [class="^Skype$"] "$WS9"
+assign [class="^Pidgin$"] "$WS9"
+assign [instance="^IRC$"] "$WS9"
 assign [class="^Worker$"] "$WS5"
 assign [class="^mpv$" instance="^TV$"] "$WS6"
 assign [instance="libreoffice"] "$WS7"
-assign [title="IDE"] "$WS9"
-assign [class="^R$"] "$WS9"
-assign [instance="^R$"] "$WS9"
+assign [title="IDE"] "$WS4"
+assign [class="Scala IDE"] "$WS4"
+assign [class="^R$"] "$WS4"
+assign [instance="^R$"] "$WS4"
 assign [instance="^mail$"] "$WS10"
 
 for_window [class="^feh$"] floating enable
@@ -265,8 +266,7 @@ new_float pixel 1
 hide_edge_borders both
 
 # autostart
-exec --no-startup-id dunst
 exec --no-startup-id SpiderOak
-exec urxvtd -q -o -f
-exec urxvt -is -name mail -e sh -c "mutt"
-exec urxvt -is -name IRC -e sh -c "weechat"
+exec --no-startup-id urxvtd -q -o -f
+exec --no-startup-id urxvt -is -name mail -e sh -c "mutt"
+exec --no-startup-id urxvt -is -name IRC -e sh -c "weechat"
