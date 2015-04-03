@@ -1,5 +1,5 @@
 set folder="~/mail"
-set editor="vim --cmd 'set ft=mail'"
+set editor="vim --cmd 'set ft=mail' --cmd 'set spell spelllang=el,en'"
 set header_cache="~/.cache/mutt/headers"
 set include=yes
 set mail_check=0
