@@ -1,3 +1,5 @@
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+
 set nocompatible
 set backspace=indent,eol,start
 
@@ -50,6 +52,9 @@ set diffopt+=iwhite
 
 " Automatically read a file that has changed on disk
 set autoread
+
+
+execute pathogen#infect()
 
 filetype plugin indent on
 
