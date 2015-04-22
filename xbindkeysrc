@@ -1,4 +1,5 @@
 # vim:set ft=sh:
+
 # Display Brightness
 "xbacklight -display :0 -dec 1"
     m:0x0 + c:232
@@ -53,3 +54,13 @@
 "mpc volume -5"
     m:0x4 + c:122
     Control + XF86AudioLowerVolume
+
+# Wifi toggle
+"wifi-toggle.sh"
+    m:0x0 + c:128
+    XF86LaunchA
+
+# Bluetooth toggle
+"bluetooth-toggle.sh"
+    m:0x0 + c:212
+    XF86LaunchB
