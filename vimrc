@@ -73,7 +73,6 @@ endif
 
 if has('gui_running')
 	set guifont=DejaVu\ Sans\ Mono\ 8
-	"set guioptions=ac
 	set guioptions=aegmt
 endif
 
@@ -103,3 +102,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Change the <LocalLeader> key:
 let maplocalleader = ','
+
+" xdg-open file
+augroup nonvim
+   au!
+   au BufRead *.png,*.jpg,*.pdf,*.gif,*.xls*,*.ppt*,*.doc*,*.rtf sil exe "!xdg-open " . shellescape(expand("%:p")) | bd | let &ft=&ft
+augroup end
