@@ -13,7 +13,7 @@ set smartcase
 set incsearch
 set hlsearch
 
-set nonumber
+set number relativenumber
 set ruler
 
 set scrolloff=0
@@ -83,15 +83,13 @@ nnoremap <silent> <Leader>d :colorscheme wombat256mod<CR>
 " Light theme
 nnoremap <silent> <Leader>l :colorscheme summerfruit256<CR>
 
+let g:airline_theme_map = {'summer.*': 'light'}
+
 " Change unamed register from '+' to '*'
 if has('unnamedplus')
 	set clipboard=unnamedplus
 endif
 
-" Write file using sudo
-nnoremap <Leader>W :w !sudo tee % > /dev/null
-" Turn search highlight off
-nnoremap <silent> <Leader><Space> :nohlsearch<Bar>:echo<CR>
 " Toggle paste mode
 nnoremap <silent> <Leader>p :set invpaste<CR>:set paste?<CR>
 " Set working directory to the current file
@@ -102,6 +100,8 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " Change the <LocalLeader> key:
 let maplocalleader = ','
+
+nnoremap <C-n> :NERDTreeToggle<CR>
 
 " xdg-open file
 augroup nonvim
