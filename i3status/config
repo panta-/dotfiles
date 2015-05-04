@@ -1,84 +1,63 @@
-# i3status configuration file.
-# see "man i3status" for documentation.
-
-# It is important that this file is edited as UTF-8.
-# The following line should contain a sharp s:
-# ß
-# If the above line is not correctly displayed, fix your editor first!
-
+# ß                         
 general {
-		output_format = "i3bar"
-		colors = true
-		interval = 5
+	output_format = "i3bar"
+	colors = true
+	interval = 5
 }
 
-#order += "ipv6"
-#order += "disk /"
-#order += "run_watch DHCP"
-#order += "run_watch VPN"
-#order += "ethernet ens9"
-order += "wireless wlp3s0"
+order += "wireless _first_"
+order += "ethernet _first_"
 order += "battery 0"
 order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "load"
-order += "tztime local"
+order += "time"
 order += "volume master"
 
-wireless wlp3s0 {
-		format_up = " (%quality @ %essid) %ip"
-		format_down = ""
+wireless _first_ {
+	format_up = "%bitrate @%essid"
+	format_down = ""
 }
 
-ethernet ens9 {
-		format_up = " %ip (%speed)"
-		format_down = " down"
+ethernet _first_ {
+	format_up = ""
+	format_down = " "
 }
 
 battery 0 {
-		format = " %status %percentage %remaining (%consumption)"
-		last_full_capacity = false
-		integer_battery_capacity = true
-		low_threshold = 30
-		threshold_type = time
-}
-
-run_watch DHCP {
-		pidfile = "/var/run/dhcpcd-wlp3s0.pid"
-}
-
-run_watch VPN {
-		pidfile = "/var/run/vpnc/pid"
-}
-
-tztime local {
-		format = " %Y-%m-%d %H:%M"
+	format = "%status %percentage %remaining (%consumption)"
+	status_chr = ""
+	status_bat = ""
+	status_full = ""
+	last_full_capacity = false
+	integer_battery_capacity = true
+	low_threshold = 30
+	threshold_type = time
 }
 
 cpu_temperature 0 {
-		format = " %degrees°C"
-		max_threshold = 86
-		path = "/sys/devices/platform/applesmc.768/temp12_input"
-		#path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+	format = " %degrees°C"
+	max_threshold = 86
+	path = "/sys/devices/platform/applesmc.768/temp12_input"
 }
 
 cpu_usage {
-		format = " %usage"
+	format = " %usage"
 }
 
 load {
-		format = " %1min %5min %15min"
-		max_threshold = 4
+	format = " %1min %5min %15min"
+	max_threshold = 4
 }
 
-disk "/" {
-		format = "  %avail"
+time {
+	format = " %Y-%m-%d %H:%M"
 }
 
 volume master {
-		format = " %volume"
-		format_muted = " (%volume)"
-		device = "default"
-		mixer = "Master"
-		mixer_idx = 0
+	format = "%volume"
+	format_muted = " %volume"
+	device = "default"
+	mixer = "Master"
+	mixer_idx = 0
 }
