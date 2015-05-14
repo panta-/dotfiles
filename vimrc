@@ -47,9 +47,6 @@ set virtualedit=block
 
 set hidden
 
-" ignore white space in diffs
-set diffopt+=iwhite
-
 " Automatically read a file that has changed on disk
 set autoread
 
@@ -83,7 +80,7 @@ nnoremap <silent> <Leader>d :colorscheme wombat256mod<CR>
 " Light theme
 nnoremap <silent> <Leader>l :colorscheme summerfruit256<CR>
 
-let g:airline_theme_map = {'summer.*': 'light'}
+let g:airline_theme_map = {'summerfruit256': 'light', 'wombat256mod': 'dark'}
 
 " Change unamed register from '+' to '*'
 if has('unnamedplus')
@@ -102,6 +99,9 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let maplocalleader = ','
 
 nnoremap <C-n> :NERDTreeToggle<CR>
+
+nnoremap <Leader>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
+    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
 
 " xdg-open file
 augroup nonvim
