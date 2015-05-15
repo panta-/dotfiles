@@ -144,21 +144,21 @@ workspace "$WS8" output eDP1
 workspace "$WS9" output eDP1
 workspace "$WS10"  output eDP1
 
+assign [class="^(Libre|S)+office$"] "$WS7"
+assign [class="^Chrom(e|ium)+$"] "$WS2"
 assign [class="^Firefox$"] "$WS2"
-assign [class="^Chromium$"] "$WS2"
-assign [class="^Chrome$"] "$WS2"
 assign [class="^Gvim$"] "$WS3"
-assign [class="^Skype$"] "$WS9"
 assign [class="^Pidgin$"] "$WS9"
-assign [instance="^IRC$"] "$WS9"
-assign [class="^Worker$"] "$WS5"
-assign [class="^mpv$" instance="^TV$"] "$WS6"
-assign [instance="libreoffice"] "$WS7"
-assign [title="IDE"] "$WS4"
-assign [class="Scala IDE"] "$WS4"
 assign [class="^R$"] "$WS4"
+assign [class="^Scala IDE$"] "$WS4"
+assign [class="^Skype$"] "$WS9"
+assign [class="^Worker$"] "$WS5"
+assign [instance="^IRC$"] "$WS9"
 assign [instance="^R$"] "$WS4"
+assign [instance="^TV$" class="^mpv$"] "$WS6"
 assign [instance="^mail$"] "$WS10"
+assign [title=".*Android Studio.*" class="^jetbrains-android-studio$"] "$WS4"
+assign [title=".*Arduino.*" class="^processing-app-Base$"] "$WS4"
 
 for_window [class="^feh$"] floating enable
 for_window [class="^URxvt$" instance="scratchpad"] border pixel 3; move scratchpad
