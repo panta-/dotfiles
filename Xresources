@@ -9,15 +9,15 @@ Xft.rgba:			none
 !}}}
 
 ! XTerm {{{
-XTerm*faceName:			xft:DejaVu Sans Mono:style=Book:size=8
-UXTerm*faceName:		xft:DejaVu Sans Mono:style=Book:size=8
+XTerm*faceName:			xft:DejaVu Sans Mono:style=Book:size=9
+UXTerm*faceName:		xft:DejaVu Sans Mono:style=Book:size=9
 !}}}
 
 ! URxvt settings {{{
-URxvt.font:			xft:DejaVu Sans Mono:style=Book:size=8
-URxvt.boldFont:			xft:DejaVu Sans Mono:style=Bold:size=8
-URxvt.italicFont:		xft:DejaVu Sans Mono:style=Oblique:size=8
-URxvt.boldItalicFont:		xft:DejaVu Sans Mono:style=Bold Oblique:size=8
+URxvt.font:			xft:DejaVu Sans Mono:style=Book:size=9
+URxvt.boldFont:			xft:DejaVu Sans Mono:style=Bold:size=9
+URxvt.italicFont:		xft:DejaVu Sans Mono:style=Oblique:size=9
+URxvt.boldItalicFont:		xft:DejaVu Sans Mono:style=Bold Oblique:size=9
 URxvt.letterSpace:		-1
 URxvt.fading:			10
 URxvt.reverseVideo:		false

@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 9
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -144,7 +144,6 @@ workspace "$WS8" output eDP1
 workspace "$WS9" output eDP1
 workspace "$WS10"  output eDP1
 
-assign [class="^(Libre|S)+office$"] "$WS7"
 assign [class="^Chrom(e|ium)+$"] "$WS2"
 assign [class="^Firefox$"] "$WS2"
 assign [class="^Gvim$"] "$WS3"
@@ -156,10 +155,10 @@ assign [class="^Worker$"] "$WS5"
 assign [instance="^IRC$"] "$WS9"
 assign [instance="^R$"] "$WS4"
 assign [instance="^TV$" class="^mpv$"] "$WS6"
+assign [instance="^libreoffice$"] "$WS7"
 assign [instance="^mail$"] "$WS10"
 assign [title=".*Android Studio.*" class="^jetbrains-android-studio$"] "$WS4"
 assign [title=".*Arduino.*" class="^processing-app-Base$"] "$WS4"
-
 for_window [class="^feh$"] floating enable
 for_window [class="^URxvt$" instance="scratchpad"] border pixel 3; move scratchpad
 
@@ -207,7 +206,7 @@ bar {
 	position           	top
 	output             	eDP1
 	tray_output        	eDP1
-	font			pango:DejaVu Sans Mono, Icons 8
+	font			pango:DejaVu Sans Mono, Icons 9
 	separator_symbol	""
 	workspace_buttons  	yes
 	strip_workspace_numbers	yes
@@ -266,7 +265,7 @@ new_float pixel 1
 hide_edge_borders both
 
 # autostart
-exec --no-startup-id SpiderOak
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id urxvt -is -name mail -e sh -c "mutt"
 exec --no-startup-id urxvt -is -name IRC -e sh -c "weechat"
+exec --no-startup-id SpiderOak

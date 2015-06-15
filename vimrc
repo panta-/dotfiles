@@ -69,7 +69,7 @@ if has('mouse')
 endif
 
 if has('gui_running')
-	set guifont=DejaVu\ Sans\ Mono\ 8
+	set guifont=DejaVu\ Sans\ Mono\ 9
 	set guioptions=aegmt
 endif
 
@@ -103,8 +103,4 @@ nnoremap <C-n> :NERDTreeToggle<CR>
 nnoremap <Leader>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
     \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
 
-" xdg-open file
-augroup nonvim
-   au!
-   au BufRead *.png,*.jpg,*.pdf,*.gif,*.xls*,*.ppt*,*.doc*,*.rtf sil exe "!xdg-open " . shellescape(expand("%:p")) | bd | let &ft=&ft
-augroup end
+let g:airline#extensions#whitespace#mixed_indent_algo = 1
