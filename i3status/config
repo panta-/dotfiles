@@ -1,4 +1,4 @@
-# ß                         
+# ß                          
 general {
 	output_format = "i3bar"
 	colors = true
@@ -15,8 +15,8 @@ order += "time"
 order += "volume master"
 
 wireless _first_ {
-	format_up = "%bitrate @%essid"
-	format_down = ""
+	format_up = "%bitrate @%essid"
+	format_down = ""
 }
 
 ethernet _first_ {
