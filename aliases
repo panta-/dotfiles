@@ -25,8 +25,5 @@ alias cuv='cower -uv'
 alias sd='systemctl'
 alias jj='journalctl'
 
-# rtorrent
-alias rt='SESSIONNAME=rt && (/usr/bin/tmux attach-session -d -t $SESSIONNAME || /usr/bin/tmux new-session -s $SESSIONNAME -n rtorrent -d rtorrent)'
-
 # mutt
 alias mt='urxvtc +rv -is -name mail -e sh -c "mutt"'

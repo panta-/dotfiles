@@ -1,10 +1,10 @@
 # vim:set ft=sh:
 
 # Display Brightness
-"xbacklight -display :0 -dec 1"
+"xbacklight -display :0 -dec 5"
     m:0x0 + c:232
     XF86MonBrightnessDown
-"xbacklight -display :0 -inc 1"
+"xbacklight -display :0 -inc 5"
     m:0x0 + c:233
     XF86MonBrightnessUp
 
