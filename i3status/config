@@ -1,14 +1,11 @@
-# ß                          
 general {
 	output_format = "i3bar"
 	colors = true
-	interval = 5
+	interval = 10
 }
 
 order += "wireless _first_"
 order += "ethernet _first_"
-order += "battery 0"
-order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "load"
 order += "time"
@@ -22,23 +19,6 @@ wireless _first_ {
 ethernet _first_ {
 	format_up = ""
 	format_down = " "
-}
-
-battery 0 {
-	format = "%status %percentage %remaining (%consumption)"
-	status_chr = ""
-	status_bat = ""
-	status_full = ""
-	last_full_capacity = false
-	integer_battery_capacity = true
-	low_threshold = 30
-	threshold_type = time
-}
-
-cpu_temperature 0 {
-	format = " %degrees°C"
-	max_threshold = 86
-	path = "/sys/devices/platform/applesmc.768/temp12_input"
 }
 
 cpu_usage {

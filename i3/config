@@ -268,4 +268,5 @@ hide_edge_borders both
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id urxvt -is -name mail -e sh -c "mutt"
 exec --no-startup-id urxvt -is -name IRC -e sh -c "weechat"
+exec --no-startup-id cbatticon -u 60 -c "systemctl poweroff" -l 20 -r 3
 exec --no-startup-id SpiderOakONE
