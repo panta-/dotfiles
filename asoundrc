@@ -1,0 +1,97 @@
+# ipc_key  	  - must be unique, it has no other meaning.
+# ipc_key_add_uid - allows multi user audio when false.
+# ipc_perm 	  - sets permissions, may fix issues on multi user or tty playback.
+
+# smaller buffer/period sizes can generally reduce latency and hence give
+# better performance, but going too small can cause crackling or other sound
+# issues.
+
+# Better resampling
+defaults.pcm.rate_converter "samplerate_best"
+
+# 44100Hz
+# Lossless CD quality
+
+# HDMI device
+pcm.hdmi_hw {
+	type hw
+        card 0
+	device 3
+}
+
+# HDMI output
+pcm.hdmi_dmix {
+        type dmix
+        ipc_key 1024
+        ipc_key_add_uid false
+        ipc_perm 0660
+        slave {
+                pcm "hdmi_hw"
+		period_time 0
+		period_size 1024
+		buffer_size 8192
+		format S32_LE
+        }
+}
+
+# Set playback routes
+pcm.hdmi_asym {
+   type asym
+   playback.pcm "hdmi_dmix"
+}
+
+# Surround 5.1 -> Stereo
+pcm.!surround51 {
+   type vdownmix
+   slave.pcm "hdmi_dmix"
+}
+
+# Surround 4.0 -> Stereo
+pcm.!surround40 {
+   type vdownmix
+   slave.pcm "hdmi_dmix"
+}
+
+# OSS compatibility
+pcm.dsp0 {
+   type plug
+   slave.pcm "hdmi_asym"
+}
+
+# Headset
+pcm.headset_dmix {
+	type dmix
+        ipc_key 2048
+        ipc_key_add_uid false
+        ipc_perm 0660
+        slave {
+                pcm "hw:1,0"
+		period_time 0
+		period_size 1024
+		buffer_size 8192
+		format S32_LE
+        }
+}
+pcm.headset {
+	type plug
+	slave.pcm "headset_dmix"
+}
+
+# Audiophile
+pcm.audio_dmix {
+	type dmix
+        ipc_key 4096
+        ipc_key_add_uid false
+        ipc_perm 0660
+        slave {
+                pcm "hw:0,0"
+		period_time 0
+		period_size 1024
+		buffer_size 8192
+		format S32_LE
+        }
+}
+pcm.audio {
+	type plug
+	slave.pcm "audio_dmix"
+}

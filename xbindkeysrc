@@ -50,11 +50,11 @@
     Control + XF86AudioLowerVolume
 
 # Wifi toggle
-"wifi-toggle.sh"
+"rfkill-toggle.sh wlan"
     m:0x0 + c:128
     XF86LaunchA
 
 # Bluetooth toggle
-"bluetooth-toggle.sh"
+"rfkill-toggle.sh bluetooth"
     m:0x0 + c:212
     XF86LaunchB
