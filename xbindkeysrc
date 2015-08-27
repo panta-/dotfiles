@@ -17,10 +17,10 @@
     XF86KbdBrightnessUp
 
 # Volume
-"amixer -q -- sset Master playback 2-"
+"amixer -q -- sset Master playback 5-"
     m:0x0 + c:122
     XF86AudioLowerVolume
-"amixer -q -- sset Master playback 2+"
+"amixer -q -- sset Master playback 5+"
     m:0x0 + c:123
     XF86AudioRaiseVolume
 "amixer -q -- sset Master playback toggle"
