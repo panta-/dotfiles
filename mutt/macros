@@ -5,7 +5,10 @@ macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all ma
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
 
 # Save attachment
-macro attach s '<save-entry><bol>~/downloads/<eol>' "save attachment to downloads directory"
+macro attach s "<save-entry><bol>~/downloads/<eol>" "save attachment to downloads directory"
+
+# urlview
+macro pager \cb "<pipe-entry>urlview<enter>" 'Follow links with urlview'
 
 # from notmuch-mutt(1) manual
 macro index <F8> \
