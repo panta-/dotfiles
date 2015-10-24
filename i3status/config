@@ -1,6 +1,9 @@
 general {
 	output_format = "i3bar"
 	colors = true
+	color_good = "#000000"
+	color_degraded = "#808080"
+	color_bad = "#c0c0c0"
 	interval = 10
 }
 
@@ -17,8 +20,8 @@ wireless _first_ {
 }
 
 ethernet _first_ {
-	format_up = ""
-	format_down = " "
+	format_up = " %ip"
+	format_down = ""
 }
 
 cpu_usage {
@@ -41,3 +44,4 @@ volume master {
 	mixer = "Master"
 	mixer_idx = 0
 }
+# vim:set ft=cfg:
