@@ -272,11 +272,11 @@ bindsym $mod+Shift+b bar mode invisible bar-0
 new_window pixel 1
 new_float pixel 1
 hide_edge_borders both
+force_display_urgency_hint 500 ms
 
 # autostart
 exec --no-startup-id urxvtd -q -o -f
 exec --no-startup-id urxvt -is -name mail -e sh -c "mutt"
 exec --no-startup-id urxvt -is -name IRC -e sh -c "weechat"
 exec --no-startup-id cbatticon -u 180 -c "poweroff" -l 20 -r 3 -n
-exec --no-startup-id SpiderOakONE
-# vim:set ft=cfg:
+# vim:set ft=conf:
