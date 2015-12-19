@@ -1,4 +1,4 @@
-# vim: ft=muttrc
+# vim:ft=muttrc:
 bind index gg first-entry
 bind index G  last-entry
 bind index N  search-opposite

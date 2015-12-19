@@ -1,0 +1,6 @@
+## GooBook
+# vim:ft=muttrc:
+set query_command="goobook query '%s'"
+set query_format="%4c %t %-50.50a %-50.50n %?e?(%e)?"
+macro index,pager a "<pipe-message>goobook add<return>" "add sender to google contacts"
+bind editor <Tab> complete-query
