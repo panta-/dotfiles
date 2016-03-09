@@ -15,7 +15,7 @@ order += "time"
 order += "volume master"
 
 wireless _first_ {
-	format_up = "%bitrate @%essid"
+	format_up = "%quality @%essid"
 	format_down = ""
 }
 
