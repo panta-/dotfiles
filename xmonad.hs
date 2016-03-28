@@ -88,7 +88,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_grave   ), windows W.focusDown)
 
     -- Move focus to most recent workspace window
-		, ((modm,								xK_Tab	 ), cycleRecentWS [xK_Tab] xK_Tab xK_Tab)
+    , ((modm,               xK_Tab     ), cycleRecentWS [xK_Tab] xK_Tab xK_Tab)
 
     -- Move focus to the next window
     , ((modm,               xK_j     ), windows W.focusDown)
@@ -219,23 +219,23 @@ myLayout = avoidStruts $ tiled ||| Mirror tiled ||| Full
 --
 myManageHook = composeAll . concat $
     [
-			[ className =? c          --> doFloat        | c <- myClassFloats ]
-		, [ title     =? t          --> doFloat        | t <- myTitleFloats ]
+    [ className =? c          --> doFloat        | c <- myClassFloats ]
+    , [ title     =? t          --> doFloat        | t <- myTitleFloats ]
     , [ className =? b          --> doShift "web"  | b <- myWebBrowsers ]
     , [ className =? f          --> doShift "file" | f <- myFileMnagers ]
     , [ className =? m          --> doShift "im"   | m <- myMessengers ]
     , [ className =? d          --> doShift "jd"   | d <- myDownloaders ]
     , [ resource  =? i          --> doIgnore       | i <- myIgnores ]
-		, [ manageDocks ]
+    , [ manageDocks ]
     ]
-		where
-				myClassFloats = [ "mpv", "XFontSel", "com-sun-javaws-Main", "jd-Main", "MuPDF", "VirtualBox", "VBoxSDL", "Volwheel", "XVkbd" ]
-				myTitleFloats = [ "Event Tester" ]
-				myWebBrowsers = [ "Chromium", "Firefox" ]
-				myMessengers  = [ "Skype" ]
-				myDownloaders = [ "jd-Main" ]
-				myFileMnagers = [ "Worker" ]
-				myIgnores     = [ "stalonetray" ]
+    where
+    myClassFloats = [ "mpv", "XFontSel", "com-sun-javaws-Main", "jd-Main", "MuPDF", "VirtualBox", "VBoxSDL", "Volwheel", "XVkbd" ]
+    myTitleFloats = [ "Event Tester" ]
+    myWebBrowsers = [ "Chromium", "Firefox" ]
+    myMessengers  = [ "Skype" ]
+    myDownloaders = [ "jd-Main" ]
+    myFileMnagers = [ "Worker" ]
+    myIgnores     = [ "stalonetray" ]
 
 ------------------------------------------------------------------------
 -- Event handling

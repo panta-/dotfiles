@@ -2,59 +2,59 @@
 
 # Display Brightness
 "xbacklight -display :0 -dec 5"
-    m:0x0 + c:232
-    XF86MonBrightnessDown
+	m:0x0 + c:232
+	XF86MonBrightnessDown
 "xbacklight -display :0 -inc 5"
-    m:0x0 + c:233
-    XF86MonBrightnessUp
+	m:0x0 + c:233
+	XF86MonBrightnessUp
 
 # Kayboard Brightness
 "kbdlight down"
-    m:0x0 + c:237
-    XF86KbdBrightnessDown
+	m:0x0 + c:237
+	XF86KbdBrightnessDown
 "kbdlight up"
-    m:0x0 + c:238
-    XF86KbdBrightnessUp
+	m:0x0 + c:238
+	XF86KbdBrightnessUp
 
 # Volume
 "amixer -q -- sset Master playback 5-"
-    m:0x0 + c:122
-    XF86AudioLowerVolume
+	m:0x0 + c:122
+	XF86AudioLowerVolume
 "amixer -q -- sset Master playback 5+"
-    m:0x0 + c:123
-    XF86AudioRaiseVolume
+	m:0x0 + c:123
+	XF86AudioRaiseVolume
 "amixer -q -- sset Master playback toggle"
-    m:0x0 + c:121
-    XF86AudioMute
+	m:0x0 + c:121
+	XF86AudioMute
 
 # Refresh i3status on mute/unmute
 "killall -USR1 i3status"
-    m:0x0 + c:121
-    XF86AudioMute
+	m:0x0 + c:121
+	XF86AudioMute
 
 # mpd controls
 "mpc next"
-    m:0x0 + c:171
-    XF86AudioNext
+	m:0x0 + c:171
+	XF86AudioNext
 "mpc toggle"
-    m:0x0 + c:172
-    XF86AudioPlay
+	m:0x0 + c:172
+	XF86AudioPlay
 "mpc prev"
-    m:0x0 + c:173
-    XF86AudioPrev
+	m:0x0 + c:173
+	XF86AudioPrev
 "mpc volume +5"
-    m:0x4 + c:123
-    Control + XF86AudioRaiseVolume
+	m:0x4 + c:123
+	Control + XF86AudioRaiseVolume
 "mpc volume -5"
-    m:0x4 + c:122
-    Control + XF86AudioLowerVolume
+	m:0x4 + c:122
+	Control + XF86AudioLowerVolume
 
 # Wifi toggle
 "rfkill-toggle.sh wlan"
-    m:0x0 + c:128
-    XF86LaunchA
+	m:0x0 + c:128
+	XF86LaunchA
 
 # Bluetooth toggle
 "rfkill-toggle.sh bluetooth"
-    m:0x0 + c:212
-    XF86LaunchB
+	m:0x0 + c:212
+	XF86LaunchB

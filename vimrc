@@ -101,4 +101,4 @@ let maplocalleader = ','
 nnoremap <C-n> :NERDTreeToggle<CR>
 
 nnoremap <Leader>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
-    \ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
+			\ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>
