@@ -9,7 +9,7 @@ general {
 }
 
 order += "wireless _first_"
-order += "ethernet _first_"
+#order += "ethernet _first_"
 order += "cpu_usage"
 order += "load"
 order += "time"
