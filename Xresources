@@ -2,10 +2,10 @@
 Xft.dpi:			227
 Xft.antialias:			true
 Xft.autohint:			false
-Xft.hinting:			false
-Xft.hintstyle:			hintnone
-Xft.lcdfilter:			lcdnone
-Xft.rgba:			none
+Xft.hinting:			true
+Xft.hintstyle:			hintslight
+Xft.lcdfilter:			lcddefault
+Xft.rgba:			rgb
 !}}}
 
 ! XTerm {{{
