@@ -2,6 +2,6 @@ bindkey -v
 
 setopt NO_CLOBBER
 
-export MANWIDTH=80
+export MANWIDTH=74
 
 . $HOME/.aliases

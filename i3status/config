@@ -5,7 +5,7 @@ general {
 	color_good = "#000000"
 	color_degraded = "#808080"
 	color_bad = "#c0c0c0"
-	interval = 10
+	interval = 30
 }
 
 order += "wireless _first_"

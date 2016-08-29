@@ -29,6 +29,12 @@
 
 # Refresh i3status on mute/unmute
 "killall -USR1 i3status"
+	m:0x0 + c:122
+	XF86AudioLowerVolume
+"killall -USR1 i3status"
+	m:0x0 + c:123
+	XF86AudioRaiseVolume
+"killall -USR1 i3status"
 	m:0x0 + c:121
 	XF86AudioMute
 
