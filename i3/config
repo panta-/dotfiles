@@ -215,20 +215,22 @@ bar {
        modifier                 $mod
        position                 top
        output                   eDP1
+       output                   HDMI1
        tray_output              eDP1
-       font                     pango:DejaVu Sans Mono, Icons 9
+       tray_padding             2
+       font                     pango:DejaVu Sans Mono, Icons 10
        separator_symbol         ""
        workspace_buttons        yes
        strip_workspace_numbers  yes
        binding_mode_indicator   yes
        colors {
-       background               #eeeeee
-       statusline               #000000
-       separator                #c0c0c0
-       focused_workspace        #0000ff #0000ff #ffffff
-       active_workspace         #808080 #808080 #ffffff
-       inactive_workspace       #eeeeee #eeeeee #000000
-       urgent_workspace         #b00000 #b00000 #ffffff
+	       background               #eeeeee
+	       statusline               #000000
+	       separator                #c0c0c0
+	       focused_workspace        #0000ff #0000ff #ffffff
+	       active_workspace         #808080 #808080 #ffffff
+	       inactive_workspace       #eeeeee #eeeeee #000000
+	       urgent_workspace         #b00000 #b00000 #ffffff
        }
 }
 
