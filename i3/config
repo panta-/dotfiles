@@ -218,7 +218,7 @@ bar {
        output                   HDMI1
        tray_output              eDP1
        tray_padding             2
-       font                     pango:DejaVu Sans Mono, Icons 10
+       font                     pango:DejaVu Sans Mono, Icons 9
        separator_symbol         ""
        workspace_buttons        yes
        strip_workspace_numbers  yes
