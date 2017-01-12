@@ -16,7 +16,6 @@ alias tv-sop='mpv --profile=tv http://localhost:8908/tv.asf'
 # pacman
 alias p='pacman'
 alias pp='sudo pacman -Syu'
-alias pcc='sudo pacman -Sc'
 
 # cower
 alias c='cower'
@@ -27,4 +26,4 @@ alias sd='systemctl'
 alias jj='journalctl'
 
 # mutt
-alias mt='urxvtc +rv -is -name mail -e sh -c "mutt"'
+alias mt='urxvtc -is -name mail -e sh -c "mutt"'
