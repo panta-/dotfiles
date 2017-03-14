@@ -50,6 +50,9 @@ set hidden
 " Automatically read a file that has changed on disk
 set autoread
 
+set keymap=greek_utf-8
+set iminsert=0
+set imsearch=-1
 
 execute pathogen#infect()
 
