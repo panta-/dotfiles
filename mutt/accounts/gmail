@@ -1,12 +1,10 @@
-# vim:ft=muttrc:
-
 # Receive options
 set delete=yes
 set move=no
 set imap_user="panayiotis.tembriotis@gmail.com"
-set spoolfile="+gmail/INBOX"
-set postponed="+gmail/[Gmail].Drafts"
-set record="+gmail/INBOX"
+set spoolfile="+gmail/inbox"
+set postponed="+gmail/draft"
+set record="+gmail/inbox"
 
 # Send options
 set sendmail="/usr/bin/msmtp"
@@ -19,13 +17,15 @@ set envelope_from=yes
 set ssl_force_tls=yes
 
 # Macros
-macro index D "<save-message>+gmail/[Gmail].Trash<enter>" "Delete message"
-macro index S "<save-message>+gmail/[Gmail].Spam<enter>" "Mark message as Spam"
+macro index S "<save-message>+gmail/spam<enter>"  "Report spam"
+macro index D "<save-message>+gmail/trash<enter>" "Delete message"
 # Change folder
-macro index 'gi' '<change-folder>=gmail/INBOX<enter>' "go to Gmail INBOX"
-macro index 'gd' '<change-folder>=gmail/[Gmail].Drafts<enter>' "go to Gmail Drafts"
-macro index 'gt' '<change-folder>=gmail/[Gmail].Sent<quote-char> Mail<enter>' "go to Gmail Sent Mail"
-macro index 'gs' '<change-folder>=gmail/[Gmail].Starred<enter>' "go to Gmail Starred"
-macro index 'gli' '<change-folder>=gmail/[Gmail].Important<enter>' "go to Gmail Important"
-macro index 'gls' '<change-folder>=gmail/[Gmail].Spam<enter>' "go to Gmail Spam"
-macro index 'glt' '<change-folder>=gmail/[Gmail].Trash<enter>' "go to Gmail Trash"
+macro index 'gi'  '<change-folder>=gmail/inbox<enter>'   "go to Gmail inbox"
+macro index 'glc' '<change-folder>=gmail/chat<enter>'    "go to Gmail chat"
+macro index 'gd'  '<change-folder>=gmail/draft<enter>'   "go to Gmail draft"
+macro index 'gt'  '<change-folder>=gmail/sent<enter>'    "go to Gmail sent"
+macro index 'gls' '<change-folder>=gmail/spam<enter>'    "go to Gmail spam"
+macro index 'gs'  '<change-folder>=gmail/starred<enter>' "go to Gmail starred"
+macro index 'glt' '<change-folder>=gmail/trash<enter>'   "go to Gmail trash"
+
+# vim:ft=muttrc:

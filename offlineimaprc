@@ -1,7 +1,7 @@
-# vim:ft=cfg:
 [general]
 accounts = gmail
 fsync = false
+pythonfile = ~/.utf7.py
 
 [Account gmail]
 localrepository = gmail-local
@@ -11,6 +11,16 @@ status_backend = sqlite
 [Repository gmail-local]
 type = Maildir
 localfolders = ~/mail/gmail
+nametrans = lambda folder: re.sub('^inbox$',   'INBOX',
+                           re.sub('^chat$',    '[Gmail]/Συζητήσεις',
+                           re.sub('^draft$',   '[Gmail]/Πρόχειρα',
+                           re.sub('^spam$',    '[Gmail]/Ανεπιθύμητα',
+                           re.sub('^sent$',    '[Gmail]/Απεσταλμένα',
+                           re.sub('^starred$', '[Gmail]/Με αστέρι',
+                           re.sub('^trash$',   '[Gmail]/Κάδος απορριμμάτων',
+                           re.sub('^all$',     '[Gmail]/Όλα τα μηνύματα',
+                           folder.decode('utf-8').encode('imap4-utf-7')))))))))
+
 
 [Repository gmail-remote]
 type = Gmail
@@ -18,8 +28,19 @@ maxconnections = 1
 remotehost = imap.gmail.com
 remoteuser = panayiotis.tembriotis@gmail.com
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-folderfilter = lambda foldername: foldername not in ['[Gmail]/All Mail']
 auth_mechanisms = LOGIN
+createfolders = false
+nametrans = lambda folder: re.sub('^INBOX$',                       'inbox',
+                           re.sub('^\[Gmail\]/Συζητήσεις$',         'chat',
+                           re.sub('^\[Gmail\]/Πρόχειρα$',           'draft',
+                           re.sub('^\[Gmail\]/Ανεπιθύμητα$',        'spam',
+                           re.sub('^\[Gmail\]/Απεσταλμένα$',        'sent',
+                           re.sub('^\[Gmail\]/Με αστέρι$',          'starred',
+                           re.sub('^\[Gmail\]/Κάδος απορριμμάτων$', 'trash',
+                           re.sub('^\[Gmail\]/Όλα τα μηνύματα$',    'all',
+                           folder.decode('imap4-utf-7').encode('utf-8')))))))))
+folderfilter = lambda folder: folder.decode('imap4-utf-7').encode('utf-8') \
+                              not in ['[Gmail]/Όλα τα μηνύματα']
 
 [mbnames]
 enabled = yes
@@ -28,3 +49,5 @@ header = "mailboxes "
 peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
 footer = "\n"
+
+# vim:ft=cfg:
