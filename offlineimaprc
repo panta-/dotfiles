@@ -6,10 +6,9 @@ pythonfile = ~/.utf7.py
 [Account gmail]
 localrepository = gmail-local
 remoterepository = gmail-remote
-status_backend = sqlite
 
 [Repository gmail-local]
-type = Maildir
+type = GmailMaildir
 localfolders = ~/mail/gmail
 nametrans = lambda folder: re.sub('^inbox$',   'INBOX',
                            re.sub('^chat$',    '[Gmail]/Συζητήσεις',

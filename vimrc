@@ -19,7 +19,7 @@ set ruler
 set scrolloff=0
 
 set shiftwidth=8
-set softtabstop=8
+set softtabstop=0
 set tabstop=8
 set noexpandtab
 
@@ -46,6 +46,8 @@ set cpoptions+=$
 set virtualedit=block
 
 set hidden
+
+set list
 
 " Automatically read a file that has changed on disk
 set autoread

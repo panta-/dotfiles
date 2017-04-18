@@ -62,13 +62,13 @@ bindsym $mod+Right focus right
 # move focused window
 bindsym $mod+Shift+$left  move left
 bindsym $mod+Shift+$down  move down
-bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$up	  move up
 bindsym $mod+Shift+$right move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left  move left
 bindsym $mod+Shift+Down  move down
-bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Up	 move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
@@ -172,66 +172,66 @@ bindsym $mod+Shift+e exit
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym $left  resize shrink width  10 px or 10 ppt
-        bindsym $down  resize grow   height 10 px or 10 ppt
-        bindsym $up    resize shrink height 10 px or 10 ppt
-        bindsym $right resize grow   width  10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym $left  resize shrink width  10 px or 10 ppt
+	bindsym $down  resize grow   height 10 px or 10 ppt
+	bindsym $up    resize shrink height 10 px or 10 ppt
+	bindsym $right resize grow   width  10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left  resize shrink width  10 px or 10 ppt
-        bindsym Down  resize grow   height 10 px or 10 ppt
-        bindsym Up    resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow   width  10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left  resize shrink width  10 px or 10 ppt
+	bindsym Down  resize grow   height 10 px or 10 ppt
+	bindsym Up    resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow   width  10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 # Colors
-# class                 border  backgr. text    indicator
-client.focused          #0000ff #0000ff #ffffff #0000ff
+# class			border	backgr. text	indicator
+client.focused		#0000ff #0000ff #ffffff #0000ff
 client.focused_inactive #808080 #808080 #ffffff #808080
-client.unfocused        #444444 #c0c0c0 #444444 #444444
-client.urgent           #b00000 #b00000 #ffffff #b00000
-client.placeholder      #000000 #000000 #ffffff #000000
-client.background       #eeeeee
+client.unfocused	#444444 #c0c0c0 #444444 #444444
+client.urgent		#b00000 #b00000 #ffffff #b00000
+client.placeholder	#000000 #000000 #ffffff #000000
+client.background	#eeeeee
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-       id                       bar-0
-       status_command           i3status
-       mode                     dock
-       hidden_state             hide
-       modifier                 $mod
-       position                 top
-       output                   eDP1
-       output                   HDMI1
-       tray_output              eDP1
-       tray_padding             2
-       font                     pango:DejaVu Sans Mono, Icons 9
-       separator_symbol         ""
-       workspace_buttons        yes
-       strip_workspace_numbers  yes
-       binding_mode_indicator   yes
-       colors {
-	       background               #eeeeee
-	       statusline               #000000
-	       separator                #c0c0c0
-	       focused_workspace        #0000ff #0000ff #ffffff
-	       active_workspace         #808080 #808080 #ffffff
-	       inactive_workspace       #eeeeee #eeeeee #000000
-	       urgent_workspace         #b00000 #b00000 #ffffff
-       }
+	id			 bar-0
+	status_command		 i3status
+	mode			 dock
+	hidden_state		 hide
+	modifier		 $mod
+	position		 top
+	output			 eDP1
+	output			 HDMI1
+	tray_output		 eDP1
+	tray_padding		 2
+	font			 pango:DejaVu Sans Mono, Icons 9
+	separator_symbol	 ""
+	workspace_buttons	 yes
+	strip_workspace_numbers  yes
+	binding_mode_indicator	 yes
+	colors {
+		background		 #eeeeee
+		statusline		 #000000
+		separator		 #c0c0c0
+		focused_workspace	 #0000ff #0000ff #ffffff
+		active_workspace	 #808080 #808080 #ffffff
+		inactive_workspace	 #eeeeee #eeeeee #000000
+		urgent_workspace	 #b00000 #b00000 #ffffff
+	}
 }
 
 focus_follows_mouse yes
@@ -245,16 +245,16 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-        bindsym l exec --no-startup-id i3exit lock, mode "default"
-        bindsym e exec --no-startup-id i3exit logout, mode "default"
-        bindsym s exec --no-startup-id i3exit suspend, mode "default"
-        bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-        bindsym r exec --no-startup-id i3exit reboot, mode "default"
-        bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+	bindsym l exec --no-startup-id i3exit lock, mode "default"
+	bindsym e exec --no-startup-id i3exit logout, mode "default"
+	bindsym s exec --no-startup-id i3exit suspend, mode "default"
+	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+	bindsym r exec --no-startup-id i3exit reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+Escape mode "$mode_system"
 
