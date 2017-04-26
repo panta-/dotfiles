@@ -9,6 +9,7 @@ general {
 
 order += "wireless _first_"
 order += "path_exists mbl"
+order += "path_exists mbwe"
 order += "cpu_usage"
 order += "load"
 order += "time"
@@ -47,6 +48,12 @@ volume master {
 
 path_exists mbl {
 	path = "/media/nfs-mbl-nfs-Public"
+	format = "[%title]"
+	format_down = ""
+}
+
+path_exists mbwe {
+	path = "/media/nfs-mbwe-DataVolume-Public"
 	format = "[%title]"
 	format_down = ""
 }
