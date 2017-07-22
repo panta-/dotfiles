@@ -40,6 +40,12 @@ pcm.hdmi_asym {
 	playback.pcm "hdmi_dmix"
 }
 
+# Surround 7.1 -> Stereo
+pcm.!surround71 {
+	type vdownmix
+	slave.pcm "hdmi_dmix"
+}
+
 # Surround 5.1 -> Stereo
 pcm.!surround51 {
 	type vdownmix
