@@ -10,4 +10,4 @@ fi
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true -Dswing.defaultlaf=com.sun.java.swing.plaf.gtk.GTKLookAndFeel'
 
-[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && exec startx
+[ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
