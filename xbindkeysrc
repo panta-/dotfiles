@@ -1,20 +1,12 @@
 # vim:set ft=sh:
 
 # Display Brightness
-"xbacklight -display :0 -dec 5"
+"xbacklight -display :0 -dec 1"
 	m:0x0 + c:232
 	XF86MonBrightnessDown
-"xbacklight -display :0 -inc 5"
+"xbacklight -display :0 -inc 1"
 	m:0x0 + c:233
 	XF86MonBrightnessUp
-
-# Kayboard Brightness
-"kbdlight down"
-	m:0x0 + c:237
-	XF86KbdBrightnessDown
-"kbdlight up"
-	m:0x0 + c:238
-	XF86KbdBrightnessUp
 
 # Refresh i3status on mute/unmute
 "pkill -SIGUSR1 i3status"
@@ -54,13 +46,3 @@
 "mpc volume +5"
 	m:0x4 + c:123
 	Control + XF86AudioRaiseVolume
-
-# Wifi toggle
-"rfkill-toggle.sh wlan"
-	m:0x0 + c:128
-	XF86LaunchA
-
-# Bluetooth toggle
-"rfkill-toggle.sh bluetooth"
-	m:0x0 + c:212
-	XF86LaunchB

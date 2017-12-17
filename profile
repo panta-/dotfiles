@@ -3,10 +3,6 @@ if [ -d $HOME/.local/bin ]; then
 	PATH="$HOME/.local/bin:$PATH"
 fi
 
-if command -v ruby > /dev/null 2>&1; then
-	PATH="`ruby -e 'print Gem.user_dir'`/bin:$PATH"
-fi
-
 export EDITOR=nvim
 export MANWIDTH=74
 export QT_AUTO_SCREEN_SCALE_FACTOR=1

@@ -1,11 +1,12 @@
 ! Xft settings {{{
-Xft.dpi:       227
-Xft.antialias: true
-Xft.autohint:  false
-Xft.hinting:   true
-Xft.hintstyle: hintslight
-Xft.lcdfilter: lcddefault
-Xft.rgba:      rgb
+! force DPI value for DELL XPS 9360 QHD+
+Xft.dpi:       277
+!Xft.antialias: true
+!Xft.autohint:  false
+!Xft.hinting:   true
+!Xft.hintstyle: hintslight
+!Xft.lcdfilter: lcddefault
+!Xft.rgba:      rgb
 !}}}
 
 ! XTerm {{{

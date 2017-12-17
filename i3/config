@@ -142,7 +142,7 @@ workspace "$WS2" output eDP1
 workspace "$WS3" output eDP1
 workspace "$WS4" output eDP1
 workspace "$WS5"  output eDP1
-workspace "$WS6" output HDMI1
+workspace "$WS6" output DP1
 workspace "$WS7"  output eDP1
 workspace "$WS8" output eDP1
 workspace "$WS9" output eDP1
@@ -215,7 +215,7 @@ bar {
         modifier                $mod
         position                top
         output                  eDP1
-        output                  HDMI1
+        output                  DP1
         tray_output             eDP1
         tray_padding            2
         font                    pango:DejaVu Sans Mono, Icons 9

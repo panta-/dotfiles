@@ -8,8 +8,8 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 	unset f
 fi
 
-# force DPI value
-xrandr --dpi 227
+# force DPI value for DELL XPS 9360 QHD+
+xrandr --dpi 277
 
 # merge defaults, keymaps and keybindings
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources
@@ -19,8 +19,5 @@ xrandr --dpi 227
 # enable multiple monitors
 xrandr-hdmi-toggle.sh
 
-# load ICC color profile
-dispwin -display :0 ~/.color/icc/Color_LCD-02129CB1-7138-2EC6-188B-1630CBD51381.icc
-
 # set background
-sh ~/.fehbg
+~/.fehbg
