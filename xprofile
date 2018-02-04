@@ -21,3 +21,9 @@ xrandr-hdmi-toggle.sh
 
 # set background
 ~/.fehbg
+
+# Dell XPS 9360 QHD+ ICC profile from notebookcheck
+# https://www.notebookcheck.net/Dell-XPS-13-9360-QHD-i7-7500U-Notebook-Review.181471.0.html
+dispwin -d1 ~/.color/icc/RXN49_LQ133Z1_01.icm
+
+libinput-gestures-setup start

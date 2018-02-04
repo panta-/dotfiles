@@ -1,0 +1,6 @@
+# vim: set ft=conf:
+set sendmail=/usr/bin/msmtp
+set smtp=smtp.gmail.com:587
+set smtp-use-starttls
+set smtp-auth-user=panayiotis.tembriotis@gmail.com
+set from="Panayiotis Tembriotis <panayiotis.tembriotis@gmail.com>"
