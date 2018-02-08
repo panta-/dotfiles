@@ -1,5 +1,5 @@
 set folder="~/mail"
-set editor="vim --cmd 'set ft=mail' --cmd 'set spell spelllang=el,en'"
+set editor="vim --cmd 'setlocal filetype=mail' --cmd 'setlocal spell spelllang=el,en' --cmd 'setlocal formatoptions+=awn'"
 set header_cache="~/.cache/mutt/headers"
 set include=yes
 set mail_check=0
@@ -19,6 +19,7 @@ set sleep_time=0
 set sort=threads
 set sort_aux=last-date-received
 set strict_threads=yes
+set text_flowed=yes
 set tilde=yes
 set timeout=3
 

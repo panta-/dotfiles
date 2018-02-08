@@ -243,7 +243,7 @@ workspace_auto_back_and_forth yes
 bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
        bindsym l exec --no-startup-id i3exit lock, mode "default"
        bindsym e exec --no-startup-id i3exit logout, mode "default"
@@ -278,6 +278,6 @@ force_display_urgency_hint 500 ms
 
 # autostart
 exec --no-startup-id urxvtd -q -o -f
-exec --no-startup-id urxvt -is -name mail -e sh -c "mutt"
+exec --no-startup-id urxvt -is -name mail -e sh -c "neomutt"
 #exec --no-startup-id urxvt -is -name IRC -e sh -c "weechat"
 exec --no-startup-id cbatticon -u 180 -c "poweroff" -i symbolic -l 20 -n -r 3 BAT0

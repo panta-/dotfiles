@@ -1,5 +1,3 @@
-# vim:ft=muttrc:
-
 # Sync email
 macro index O "<shell-escape>offlineimap<enter>" "run offlineimap to sync all mail"
 macro index o "<shell-escape>offlineimap -qf INBOX<enter>" "run offlineimap to sync inbox"
@@ -30,3 +28,4 @@ macro index <F6> \
 <pipe-message>notmuch-mutt tag -- -inbox<enter>\
 <enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
       "notmuch: remove message from inbox"
+# vim:ft=muttrc:
