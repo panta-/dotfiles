@@ -20,7 +20,6 @@ nametrans = lambda folder: re.sub('^inbox$',   'INBOX',
                            re.sub('^all$',     '[Gmail]/Όλα τα μηνύματα',
                            folder.decode('utf-8').encode('imap4-utf-7')))))))))
 
-
 [Repository gmail-remote]
 type = Gmail
 maxconnections = 1
@@ -29,7 +28,7 @@ remoteuser = panayiotis.tembriotis@gmail.com
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 auth_mechanisms = LOGIN
 createfolders = false
-nametrans = lambda folder: re.sub('^INBOX$',                       'inbox',
+nametrans = lambda folder: re.sub('^INBOX$',                        'inbox',
                            re.sub('^\[Gmail\]/Συζητήσεις$',         'chat',
                            re.sub('^\[Gmail\]/Πρόχειρα$',           'draft',
                            re.sub('^\[Gmail\]/Ανεπιθύμητα$',        'spam',
@@ -39,7 +38,9 @@ nametrans = lambda folder: re.sub('^INBOX$',                       'inbox',
                            re.sub('^\[Gmail\]/Όλα τα μηνύματα$',    'all',
                            folder.decode('imap4-utf-7').encode('utf-8')))))))))
 folderfilter = lambda folder: folder.decode('imap4-utf-7').encode('utf-8') \
-                              not in ['[Gmail]/Όλα τα μηνύματα']
+                              not in ['[Gmail]/Κάδος απορριμμάτων']
+spamfolder = '[Gmail]/Ανεπιθύμητα'
+trashfolder = '[Gmail]/Κάδος απορριμμάτων'
 
 [mbnames]
 enabled = yes

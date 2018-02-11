@@ -18,9 +18,10 @@ set ssl_force_tls=yes
 
 # Macros
 macro index S "<save-message>+gmail/spam<enter>"  "Report spam"
-macro index D "<save-message>+gmail/trash<enter>" "Delete message"
+macro index D "<save-message>+gmail/all<enter>" "Archive message"
 # Change folder
 macro index 'gi'  '<change-folder>=gmail/inbox<enter>'   "go to Gmail inbox"
+macro index 'ga'  '<change-folder>=gmail/all<enter>'     "go to Gmail all"
 macro index 'glc' '<change-folder>=gmail/chat<enter>'    "go to Gmail chat"
 macro index 'gd'  '<change-folder>=gmail/draft<enter>'   "go to Gmail draft"
 macro index 'gt'  '<change-folder>=gmail/sent<enter>'    "go to Gmail sent"
