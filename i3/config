@@ -105,10 +105,10 @@ set $WS1 1:Term
 set $WS2 2:Web
 set $WS3 3:Editor
 set $WS4 4:Code
-set $WS5 5:FM
+set $WS5 5:Sys-Mon
 set $WS6 6:TV
-set $WS7 7:Office
-set $WS8 8:Sys-Mon
+set $WS7 7:Downloads
+set $WS8 8:Remote
 set $WS9 9:Chat
 set $WS10 10:Mail
 
