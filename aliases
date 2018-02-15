@@ -26,4 +26,4 @@ alias sd='systemctl'
 alias jj='journalctl'
 
 # mutt
-alias mt='urxvtc -is -name mail -e sh -c "mutt"'
+alias mt='urxvtc -name mail -e sh -c "neomutt"'

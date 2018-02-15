@@ -75,17 +75,17 @@ endif
 
 if has('gui_running')
 	set guifont=Hack\ 9
-	set guioptions=aegmt
+	set guioptions=
 endif
 
-colorscheme summerfruit256
+set t_Co=256
+set background=light
+colorscheme solarized
 
 " Dark theme
-nnoremap <silent> <Leader>d :colorscheme wombat256mod<CR>
+nnoremap <silent> <Leader>d :let g:airline_solarized_bg='dark'<CR> :set background=dark<CR>
 " Light theme
-nnoremap <silent> <Leader>l :colorscheme summerfruit256<CR>
-
-let g:airline_theme_map = {'summerfruit256': 'light', 'wombat256mod': 'dark'}
+nnoremap <silent> <Leader>l :let g:airline_solarized_bg='light'<CR> :set background=light<CR>
 
 " Change unamed register from '+' to '*'
 if has('unnamedplus')
@@ -104,6 +104,3 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let maplocalleader = ','
 
 nnoremap <C-n> :NERDTreeToggle<CR>
-
-nnoremap <Leader>L :<C-u>execute 'file '.fnameescape(resolve(expand('%:p')))<bar>
-			\ call fugitive#detect(fnameescape(expand('%:p:h')))<CR>

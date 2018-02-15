@@ -1,9 +1,9 @@
 general {
 	output_format = "i3bar"
 	colors = true
-	color_good = "#000000"
-	color_degraded = "#808080"
-	color_bad = "#c0c0c0"
+	color_good = "#657b83"
+	color_degraded = "#b58900"
+	color_bad = "#dc322f"
 	interval = 30
 }
 
@@ -22,14 +22,14 @@ wireless _first_ {
 
 cpu_usage {
 	format = " %usage"
-	color_degraded = "#cccc00"
-	color_bad = "#bb0000"
+	color_degraded = "#b58900"
+	color_bad = "#dc322f"
 }
 
 load {
 	format = " %1min %5min %15min"
 	max_threshold = 4
-	color_bad = "#bb0000"
+	color_bad = "#dc322f"
 }
 
 time {

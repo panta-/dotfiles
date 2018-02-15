@@ -48,7 +48,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb "#eeeeee" -nf "#000000" -sb "#0000ff" -sf "#ffffff"'
+bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb "#fdf6e3" -nf "#657b83" -sb "#657b83" -sf "#fdf6e3"'
 
 # change focus
 bindsym $mod+$left  focus left
@@ -198,12 +198,12 @@ bindsym $mod+r mode "resize"
 
 # Colors
 # class                 border  backgr. text    indicator
-client.focused          #0000ff #0000ff #ffffff #0000ff
-client.focused_inactive #808080 #808080 #ffffff #808080
-client.unfocused        #444444 #c0c0c0 #444444 #444444
-client.urgent           #b00000 #b00000 #ffffff #b00000
-client.placeholder      #000000 #000000 #ffffff #000000
-client.background       #eeeeee
+client.focused          #657b83 #657b83 #fdf6e3 #657b83
+client.focused_inactive #657b83 #fdf6e3 #268bd2 #657b83
+client.unfocused        #657b83 #fdf6e3 #657b83 #657b83
+client.urgent           #b58900 #b58900 #fdf6e3 #b58900
+client.placeholder      #fdf6e3 #fdf6e3 #657b83 #fdf6e3
+client.background       #fdf6e3
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -224,13 +224,13 @@ bar {
         strip_workspace_numbers yes
         binding_mode_indicator  yes
         colors {
-                background          #eeeeee
-                statusline          #000000
-                separator           #999999
-                focused_workspace   #0000ff #0000ff #ffffff
-                active_workspace    #808080 #808080 #ffffff
-                inactive_workspace  #eeeeee #eeeeee #000000
-                urgent_workspace    #b00000 #b00000 #ffffff
+                background          #fdf6e3
+                statusline          #657b83
+                separator           #657b83
+                focused_workspace   #657b83 #657b83 #fdf6e3
+                active_workspace    #657b83 #fdf6e3 #268bd2
+                inactive_workspace  #fdf6e3 #fdf6e3 #657b83
+                urgent_workspace    #b58900 #b58900 #fdf6e3
         }
 }
 
@@ -278,6 +278,6 @@ force_display_urgency_hint 500 ms
 
 # autostart
 exec --no-startup-id urxvtd -q -o -f
-exec --no-startup-id urxvt -is -name mail -e sh -c "neomutt"
-#exec --no-startup-id urxvt -is -name IRC -e sh -c "weechat"
+exec --no-startup-id urxvt -name mail -e sh -c "neomutt"
+#exec --no-startup-id urxvt -name IRC -e sh -c "weechat"
 exec --no-startup-id cbatticon -u 180 -c "poweroff" -i symbolic -l 20 -n -r 3 BAT0
