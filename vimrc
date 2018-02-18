@@ -60,7 +60,7 @@ execute pathogen#infect()
 
 filetype plugin indent on
 
-syntax on
+syntax enable
 
 if has('folding')
 	set foldenable
@@ -78,14 +78,10 @@ if has('gui_running')
 	set guioptions=
 endif
 
-set t_Co=256
+let g:airline_solarized_bg='light'
+let g:solarized_termcolors=16
 set background=light
 colorscheme solarized
-
-" Dark theme
-nnoremap <silent> <Leader>d :let g:airline_solarized_bg='dark'<CR> :set background=dark<CR>
-" Light theme
-nnoremap <silent> <Leader>l :let g:airline_solarized_bg='light'<CR> :set background=light<CR>
 
 " Change unamed register from '+' to '*'
 if has('unnamedplus')

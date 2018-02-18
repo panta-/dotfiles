@@ -16,8 +16,8 @@ order += "time"
 order += "volume master"
 
 wireless _first_ {
-	format_up = "%quality @%essid"
-	format_down = ""
+	format_up = "%quality @%essid"
+	format_down = ""
 }
 
 cpu_usage {
@@ -27,7 +27,7 @@ cpu_usage {
 }
 
 load {
-	format = " %1min %5min %15min"
+	format = " %1min %5min %15min"
 	max_threshold = 4
 	color_bad = "#dc322f"
 }
@@ -43,18 +43,18 @@ volume master {
 	mixer = "Master"
 	mixer_idx = 0
 	align = "right"
-	min_width = 80
+	min_width = 128
 }
 
 path_exists mbl {
 	path = "/media/nfs-mbl-nfs-Public"
-	format = "[%title]"
+	format = "[%title]"
 	format_down = ""
 }
 
 path_exists mbwe {
 	path = "/media/nfs-mbwe-DataVolume-Public"
-	format = "[%title]"
+	format = "[%title]"
 	format_down = ""
 }
 

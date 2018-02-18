@@ -1,40 +1,4 @@
 ! Xft settings {{{
 ! force DPI value for DELL XPS 9360 QHD+
 Xft.dpi:       277
-!Xft.antialias: true
-!Xft.autohint:  false
-!Xft.hinting:   true
-!Xft.hintstyle: hintslight
-!Xft.lcdfilter: lcddefault
-!Xft.rgba:      rgb
 !}}}
-
-! XTerm {{{
-XTerm*faceName:  xft:Hack:style=Regular:size=9
-UXTerm*faceName: xft:Hack:style=Regular:size=9
-!}}}
-
-! URxvt settings {{{
-URxvt.font:              xft:Hack:style=Regular:size=9
-URxvt.boldFont:          xft:Hack:style=Bold:size=9
-URxvt.italicFont:        xft:Hack:style=Italic:size=9
-URxvt.boldItalicFont:    xft:Hack:style=Bold Italic:size=9
-URxvt.letterSpace:       0
-URxvt.fading:            10
-URxvt.reverseVideo:      false
-URxvt.intensityStyles:   false
-URxvt.urgentOnBell:      true
-URxvt.pointerBlank:      true
-URxvt.saveLines:         1000
-URxvt.scrollBar:         false
-URxvt.scrollTtyKeypress: true
-URxvt.scrollTtyOutput:   false
-URxvt.scrollWithBuffer:  true
-URxvt.perl-ext-common:   default,selection-to-clipboard,matcher
-URxvt.url-launcher:      /usr/bin/xdg-open
-URxvt.matcher.button:    1
-URxvt.keysym.M-u:        matcher:select
-URxvt.keysym.M-l:        matcher:list
-!}}}
-
-#include ".color/xresources/Xresources.light"

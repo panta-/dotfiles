@@ -50,4 +50,4 @@ peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
 footer = "\n"
 
-# vim:ft=cfg:
+# vim:ft=dosini:

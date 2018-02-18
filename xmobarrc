@@ -1,4 +1,3 @@
--- vim: ft=haskell
 Config { font = "-*-terminus-medium-r-*-*-32-*-*-*-*-*-*-*"
 	, bgColor = "black"
 	, fgColor = "grey"
@@ -27,3 +26,4 @@ Config { font = "-*-terminus-medium-r-*-*-32-*-*-*-*-*-*-*"
 	, template = "%StdinReader% }{ %battery% %multicpu% %coretemp% <fc=#ee9a00>%date%</fc>"
 	--, template = "%StdinReader% }{ %battery% %multicpu% %wlp3s0wi% %wlp3s0% %coretemp% <fc=#ee9a00>%date%</fc>"
 	}
+-- vim: ft=haskell

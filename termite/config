@@ -1,0 +1,97 @@
+[options]
+#allow_bold = true
+#audible_bell = false
+#clickable_url = true
+#dynamic_title = true
+font = Hack, FontAwesome5Free 9
+#fullscreen = true
+#geometry = 640x480
+#icon_name = terminal
+mouse_autohide = true
+#scroll_on_output = false
+#scroll_on_keystroke = true
+# Length of the scrollback buffer, 0 disabled the scrollback buffer
+# and setting it to a negative value means "infinite scrollback"
+scrollback_lines = 10000
+#search_wrap = true
+#urgent_on_bell = true
+#hyperlinks = false
+
+# $BROWSER is used by default if set, with xdg-open as a fallback
+#browser = xdg-open
+
+# "system", "on" or "off"
+#cursor_blink = system
+
+# "block", "underline" or "ibeam"
+#cursor_shape = block
+
+# Hide links that are no longer valid in url select overlay mode
+#filter_unmatched_urls = true
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+# "off", "left" or "right"
+#scrollbar = off
+
+[colors]
+# Solarized Light
+# Author: Ethan Schoonover (http://ethanschoonover.com/solarized)
+
+cursor            = #93a1a1
+cursor_foreground = #fdf6e3
+
+foreground      = #657b83
+foreground_bold = #586e75
+background      = #fdf6e3
+
+highlight = #eee8d5
+
+# Black dark/light
+color0  = #073642
+color8  = #002b36
+
+# Red dark/light
+color1  = #dc322f
+color9  = #cb4b16
+
+# Green dark/light
+color2  = #859900
+color10 = #586e75
+
+# Yellow dark/light
+color3  = #b58900
+color11 = #657b83
+
+# Blue dark/light
+color4  = #268bd2
+color12 = #839496
+
+# Magenta dark/light
+color5  = #d33682
+color13 = #6c71c4
+
+# Cyan dark/light
+color6  = #2aa198
+color14 = #93a1a1
+
+# White dark/light
+color7  = #eee8d5
+color15 = #fdf6e3
+
+[hints]
+font = Hack 24
+foreground = #fdf6e3
+background = #b58900
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+border = #fdf6e3
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s
