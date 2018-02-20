@@ -1,7 +1,12 @@
-# vim:ft=sh:
-
 alias sudo='sudo '
 
+alias ls='ls --color=auto -F'
+alias l='ls -l'
+alias ll='l'
+alias la='ls -a'
+alias grep='grep --color=auto'
+
+alias da='du -sh'
 alias df='df -Th'
 alias psc='ps xawf -eo pid,user,cgroup,args'
 
@@ -26,4 +31,5 @@ alias sd='systemctl'
 alias jj='journalctl'
 
 # mutt
-alias mt='urxvtc -name mail -e sh -c "neomutt"'
+alias mt='termite --name=mail -e "neomutt"'
+# vim:ft=sh:

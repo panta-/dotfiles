@@ -1,0 +1,39 @@
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+bindkey -v
+bindkey -M viins '^r' history-incremental-pattern-search-backward
+bindkey -M vicmd '^r' history-incremental-pattern-search-backward
+
+setopt extendedglob
+setopt histignorespace
+setopt nocaseglob
+setopt noclobber
+
+autoload -Uz compinit
+compinit
+
+autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+
+source $HOME/.zsh_dirs
+source $HOME/.zsh_kbd
+source $HOME/.zsh_vcs
+source $HOME/.aliases
+source $HOME/.color/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' completer \
+	_complete _correct _complete:foo
+zstyle ':completion:*:complete:*:*:*' matcher-list \
+	'' 'm:{[:lower:]}={[:upper:]}'
+zstyle ':completion:*:foo:*:*:*' matcher-list \
+	'm:{[:lower:]}={[:upper:]} r:|[-_./]=* r:|=*'
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+PROMPT='%B%F{default}%n%b@%m %F{cyan}%1~%f %F{red}%0(?..[%?] )%f$ '
+RPROMPT='$vcs_info_msg_0_'
+
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

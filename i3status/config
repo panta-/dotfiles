@@ -7,54 +7,54 @@ general {
 	interval = 30
 }
 
+order += "volume master"
 order += "wireless _first_"
 order += "path_exists mbl"
 order += "path_exists mbwe"
 order += "cpu_usage"
 order += "load"
 order += "time"
-order += "volume master"
 
 wireless _first_ {
-	format_up = "%quality @%essid"
-	format_down = ""
+	format_up = "[%quality @%essid]"
+	format_down = "[]"
 }
 
 cpu_usage {
-	format = " %usage"
+	format = "[ %usage]"
 	color_degraded = "#b58900"
 	color_bad = "#dc322f"
 }
 
 load {
-	format = " %1min %5min %15min"
+	format = "[ %1min %5min %15min]"
 	max_threshold = 4
 	color_bad = "#dc322f"
 }
 
 time {
-	format = " %Y-%m-%d %H:%M"
+	format = "[ %Y-%m-%d %H:%M]"
 }
 
 volume master {
-	format = "%volume"
-	format_muted = " %volume"
+	format = "[%volume]"
+	format_muted = "[ %volume]"
 	device = "default"
 	mixer = "Master"
 	mixer_idx = 0
 	align = "right"
-	min_width = 128
+	min_width = 165
 }
 
 path_exists mbl {
 	path = "/media/nfs-mbl-nfs-Public"
-	format = "[%title]"
+	format = "[ %title]"
 	format_down = ""
 }
 
 path_exists mbwe {
 	path = "/media/nfs-mbwe-DataVolume-Public"
-	format = "[%title]"
+	format = "[ %title]"
 	format_down = ""
 }
 
