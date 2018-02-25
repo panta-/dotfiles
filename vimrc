@@ -1,6 +1,25 @@
-runtime bundle/vim-pathogen/autoload/pathogen.vim
+set nocompatible " be iMproved, required
+filetype off     " required
 
-set nocompatible
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'derekwyatt/vim-scala.git'
+Plugin 'jlanzarotta/bufexplorer'
+Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
 set backspace=indent,eol,start
 
 set history=100
@@ -47,18 +66,12 @@ set virtualedit=block
 
 set hidden
 
-set list
-
 " Automatically read a file that has changed on disk
 set autoread
 
 set keymap=greek_utf-8
 set iminsert=0
 set imsearch=-1
-
-execute pathogen#infect()
-
-filetype plugin indent on
 
 syntax enable
 
@@ -80,23 +93,12 @@ endif
 
 let g:airline_solarized_bg='light'
 let g:solarized_termcolors=16
+let g:solarized_visibility='low'
 set background=light
 colorscheme solarized
+call togglebg#map("<F5>")
 
-" Change unamed register from '+' to '*'
-if has('unnamedplus')
-	set clipboard=unnamedplus
-endif
+set showbreak=↪\ 
+set list listchars=tab:▸\ ,eol:↲,nbsp:•,trail:·,precedes:←,extends:→
 
-" Toggle paste mode
-nnoremap <silent> <Leader>p :set invpaste<CR>:set paste?<CR>
-" Set working directory to the current file
-nnoremap <Leader>cd :lcd %:p:h<CR>
-
-" Force all *.md files as Markdown
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
-" Change the <LocalLeader> key:
-let maplocalleader = ','
-
-nnoremap <C-n> :NERDTreeToggle<CR>
+nnoremap <C-l> :noh<CR>

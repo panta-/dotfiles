@@ -33,7 +33,5 @@ zstyle ':completion:*:foo:*:*:*' matcher-list \
 	'm:{[:lower:]}={[:upper:]} r:|[-_./]=* r:|=*'
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
-PROMPT='%B%F{default}%n%b@%m %F{cyan}%1~%f %F{red}%0(?..[%?] )%f$ '
+PROMPT='%B%F{default}%n%b@%m %F{cyan}%~%f %F{red}%0(?..[%?] )%f%# '
 RPROMPT='$vcs_info_msg_0_'
-
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
