@@ -122,22 +122,12 @@ workspace "$WS9" output eDP-1
 workspace "$WS10"  output eDP-1
 
 assign [class="^[Cc]hrom(e|ium)+$"] "$WS2"
-assign [class="^Firefox$"] "$WS2"
 assign [class="^Gvim$"] "$WS3"
-assign [class="^Pidgin$"] "$WS9"
-assign [class="^R$"] "$WS4"
-assign [class="^Scala IDE$"] "$WS4"
-assign [class="^Skype$"] "$WS9"
-assign [class="^Worker$"] "$WS5"
+assign [instance="^Sys-Mon$"] "$WS5"
 assign [instance="^IRC$"] "$WS9"
-assign [instance="^R$"] "$WS4"
 assign [instance="^TV$" class="^mpv$"] "$WS6"
-assign [instance="^libreoffice$"] "$WS7"
 assign [instance="^mail$"] "$WS10"
-assign [title=".*Android Studio.*" class="^jetbrains-android-studio$"] "$WS4"
-assign [title=".*Arduino.*" class="^processing-app-Base$"] "$WS4"
 for_window [class="^feh$"] floating enable
-for_window [class="^URxvt$" instance="scratchpad"] border pixel 3; move scratchpad
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -249,6 +239,7 @@ hide_edge_borders both
 force_display_urgency_hint 500 ms
 
 # autostart
-exec --no-startup-id termite --name=mail --exec="neomutt"
 exec --no-startup-id cbatticon -u 180 -c "poweroff" -i symbolic -l 20 -n -r 3 BAT0
+exec --no-startup-id termite --name=Sys-Mon --exec="dmesg -Hw"
+exec --no-startup-id termite --name=mail --exec="neomutt"
 # vim:set ft=conf:

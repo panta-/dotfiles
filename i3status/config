@@ -9,8 +9,10 @@ general {
 
 order += "volume master"
 order += "wireless _first_"
+order += "path_exists vpn"
 order += "path_exists mbl"
 order += "path_exists mbwe"
+order += "cpu_temperature 0"
 order += "cpu_usage"
 order += "load"
 order += "time"
@@ -20,8 +22,15 @@ wireless _first_ {
 	format_down = "[]"
 }
 
+cpu_temperature 0 {
+	format = "[ %degrees°C]"
+	path = "/sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input"
+	max_threshold = 80
+	format_above_threshold = "[ %degrees°C]"
+}
+
 cpu_usage {
-	format = "[ %usage]"
+	format = "[ %usage]"
 	color_degraded = "#b58900"
 	color_bad = "#dc322f"
 }
@@ -55,6 +64,12 @@ path_exists mbl {
 path_exists mbwe {
 	path = "/media/nfs-mbwe-DataVolume-Public"
 	format = "[ %title]"
+	format_down = ""
+}
+
+path_exists vpn {
+	path = "/sys/class/net/tun0"
+	format = "[]"
 	format_down = ""
 }
 
