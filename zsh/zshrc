@@ -8,9 +8,11 @@ bindkey -M vicmd '^r' history-incremental-pattern-search-backward
 
 setopt autocd
 setopt extendedglob
+setopt histignorealldups
 setopt histignorespace
 setopt nocaseglob
 setopt noclobber
+setopt pushdignoredups
 
 autoload -Uz compinit
 compinit
