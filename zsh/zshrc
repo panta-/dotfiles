@@ -21,9 +21,9 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-source $HOME/.zsh_dirs
-source $HOME/.zsh_kbd
-source $HOME/.zsh_vcs
+source $HOME/.zsh/zsh_dirs
+source $HOME/.zsh/zsh_kbd
+source $HOME/.zsh/zsh_vcs
 source $HOME/.aliases
 source $HOME/.color/zsh-dircolors-solarized/zsh-dircolors-solarized.zsh
 
