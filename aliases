@@ -6,7 +6,7 @@ alias ll='l'
 alias la='ls -a'
 alias grep='grep --color=auto'
 
-alias da='du -sh'
+alias da='du -csh'
 alias df='df -Th'
 alias psc='ps xawf -eo pid,user,cgroup,args'
 
