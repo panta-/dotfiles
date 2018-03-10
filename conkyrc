@@ -1,9 +1,0 @@
-out_to_console yes
-out_to_x no
-background no
-update_interval 5
-total_run_times 0
-use_spacer none
-
-TEXT
-${downspeed wlp3s0} ${upspeed wlp3s0} :: ${battery_time} :: ${loadavg 1 2 3} :: ${time %a %b %d %H:%M} 
