@@ -1,9 +1,12 @@
-clear control
-clear mod1
-clear lock
+clear Control
+clear Lock
+clear Mod1
+clear Mod4
 keycode  37 = ISO_Level3_Shift Multi_key ISO_Level3_Shift Multi_key
-keycode  66 = Alt_L Meta_L Alt_L Meta_L
 keycode  64 = Super_L VoidSymbol Super_L
+keycode  66 = Alt_L Meta_L Alt_L Meta_L
 keycode 108 = Super_R VoidSymbol Super_R
-add control = Control_R
-add mod1 = Alt_L Meta_L
+keycode 133 = Control_L VoidSymbol Control_L
+add Control = Control_L Control_R
+add Mod1 = Alt_L Meta_L
+add Mod4 = Super_L Super_R
