@@ -233,8 +233,8 @@ bindsym $mod+b bar mode hide bar-0
 # Set the bar instance with id 'bar-0' to always stay hidden
 bindsym $mod+Shift+b bar mode invisible bar-0
 
-new_window pixel 1
-new_float pixel 1
+default_border pixel 1
+default_floating_border pixel 1
 hide_edge_borders both
 force_display_urgency_hint 500 ms
 

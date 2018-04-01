@@ -30,6 +30,4 @@ alias cuv='cower -uv'
 alias sd='systemctl'
 alias jj='journalctl'
 
-# mutt
-alias mt='termite --name=mail -e "neomutt"'
 # vim:ft=sh:
