@@ -22,6 +22,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb "#fdf6e3" -nf "#657b83" -sb "#657b83" -sf "#fdf6e3"'
+bindsym XF86Search exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb "#fdf6e3" -nf "#657b83" -sb "#657b83" -sf "#fdf6e3"'
 
 # change focus
 bindsym $mod+$left  focus left
@@ -237,6 +238,11 @@ default_border pixel 1
 default_floating_border pixel 1
 hide_edge_borders both
 force_display_urgency_hint 500 ms
+
+# Take a screenshot upon pressing $mod+x (select an area)
+bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screenshot.png
+
+bindsym --release $mod+p exec --no-startup-id $HOME/.local/bin/xrandr-hdmi-toggle.sh
 
 # autostart
 exec --no-startup-id cbatticon -u 180 -c "poweroff" -i symbolic -l 20 -n -r 3 BAT0
