@@ -24,9 +24,10 @@ nametrans = lambda folder: re.sub('^inbox$',   'INBOX',
 type = Gmail
 maxconnections = 1
 remotehost = imap.gmail.com
+ssl_version = tls1_2
+tls_level = tls_secure
 remoteuser = panayiotis.tembriotis@gmail.com
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
-auth_mechanisms = LOGIN
 createfolders = false
 nametrans = lambda folder: re.sub('^INBOX$',                        'inbox',
                            re.sub('^\[Gmail\]/Συζητήσεις$',         'chat',
