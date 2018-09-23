@@ -17,7 +17,7 @@ xrandr --dpi 277
 [ -f ~/.xbindkeysrc ] && xbindkeys
 
 # set background
-~/.fehbg
+xsetroot -solid "#FDF6E3"
 
 # Dell XPS 9360 QHD+ ICC profile from notebookcheck
 # https://www.notebookcheck.net/Dell-XPS-13-9360-QHD-i7-7500U-Notebook-Review.181471.0.html
