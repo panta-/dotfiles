@@ -16,6 +16,7 @@ Plugin 'jlanzarotta/bufexplorer'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'iCyMind/NeoSolarized'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -92,11 +93,17 @@ if has('gui_running')
 	set guioptions=
 endif
 
+set termguicolors
+
 let g:airline_solarized_bg='light'
-let g:solarized_termcolors=16
-let g:solarized_visibility='low'
+let g:neosolarized_contrast = "normal"
+let g:neosolarized_visibility = "low"
+let g:neosolarized_vertSplitBgTrans = 1
+let g:neosolarized_bold = 1
+let g:neosolarized_underline = 1
+let g:neosolarized_italic = 1
 set background=light
-colorscheme solarized
+colorscheme NeoSolarized
 call togglebg#map("<F5>")
 
 set showbreak=↪\ 
