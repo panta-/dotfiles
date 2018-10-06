@@ -3,7 +3,7 @@
 #audible_bell = false
 clickable_url = false
 #dynamic_title = true
-font = Hack, FontAwesome5Free 9
+font = Hack, FontAwesome5Free, FontAwesome5Brands 9
 #fullscreen = true
 geometry = 1920x1440
 #icon_name = terminal

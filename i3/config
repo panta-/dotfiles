@@ -1,5 +1,7 @@
 set $mod Mod4
 
+set $tv DP-1
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:Hack, FontAwesome5Free, FontAwesome5Brands 9
@@ -81,9 +83,9 @@ set $WS3 3:Editor
 set $WS4 4:Code
 set $WS5 5:Sys-Mon
 set $WS6 6:TV
-set $WS7 7:Downloads
+set $WS7 7:Chat
 set $WS8 8:Remote
-set $WS9 9:Chat
+set $WS9 9:PM
 set $WS10 10:Mail
 
 # switch to workspace
@@ -111,23 +113,25 @@ bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS10
 
 # switch to workspace
-workspace "$WS1"  output eDP1
-workspace "$WS2" output eDP1
-workspace "$WS3" output eDP1
-workspace "$WS4" output eDP1
-workspace "$WS5"  output eDP1
-workspace "$WS6" output DP1
-workspace "$WS7"  output eDP1
-workspace "$WS8" output eDP1
-workspace "$WS9" output eDP1
-workspace "$WS10"  output eDP1
+workspace "$WS1"  output primary
+workspace "$WS2" output primary
+workspace "$WS3" output primary
+workspace "$WS4" output primary
+workspace "$WS5"  output primary
+workspace "$WS6" output $tv
+workspace "$WS7"  output primary
+workspace "$WS8" output primary
+workspace "$WS9" output primary
+workspace "$WS10"  output primary
 
 assign [class="^[Cc]hrom(e|ium)+$"] "$WS2"
-assign [class="^Gvim$"] "$WS3"
+assign [class="^[Gg]vim$"] "$WS3"
 assign [instance="^Sys-Mon$"] "$WS5"
 assign [instance="^IRC$"] "$WS9"
 assign [instance="^TV$" class="^mpv$"] "$WS6"
-assign [instance="^mail$"] "$WS10"
+assign [class="^keepassxc$"] "$WS9"
+assign [instance="^mail"] "$WS10"
+assign [class="^mail$"] "$WS10"
 for_window [class="^feh$"] floating enable
 
 # reload the configuration file
@@ -178,10 +182,10 @@ bar {
         hidden_state            hide
         modifier                $mod
         position                top
-        output                  eDP1
-        output                  DP1
-        tray_output             eDP1
-        tray_padding            0
+        output                  primary
+        tray_output             primary
+        tray_padding            2
+        font                    pango:Hack, FontAwesome5Free, FontAwesome5Brands 9
         separator_symbol        " "
         workspace_buttons       yes
         strip_workspace_numbers yes
@@ -255,7 +259,7 @@ force_display_urgency_hint 500 ms
 bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screenshot.png
 
 # autostart
-exec --no-startup-id cbatticon -u 180 -c "poweroff" -i symbolic -l 20 -n -r 3 BAT0
 exec --no-startup-id termite --name=Sys-Mon --exec="dmesg -Hw"
-exec --no-startup-id termite --name=mail --exec="neomutt"
+exec --no-startup-id keepassxc
+exec --no-startup-id chromium --incognito --user-data-dir="$(mktemp -d)" --app="https://mail.protonmail.com" --name="mail" --class="mail"
 # vim:set ft=conf:
