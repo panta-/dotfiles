@@ -68,7 +68,7 @@ battery 0 {
 	status_bat = ""
 	status_unk = ""
 	status_full = ""
-	low_threshold = 30
+	low_threshold = 60
 	threshold_type = time
 	hide_seconds = true
 	integer_battery_capacity = true
