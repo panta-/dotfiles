@@ -7,17 +7,16 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
-set background=light
-set clipboard+=unnamedplus
 set ignorecase smartcase
 set number relativenumber
-set termguicolors
-
+set clipboard+=unnamedplus
+set keymap=greek_utf-8
 set showbreak=↪
 set list listchars=tab:▸\ ,eol:↲,nbsp:•,trail:·,precedes:←,extends:→
+set background=light
+set termguicolors
 
-nnoremap <C-l> :noh<CR>
-
+let g:airline_theme='solarized'
 let g:airline_solarized_bg='light'
 let g:neosolarized_contrast = "normal"
 let g:neosolarized_visibility = "low"
@@ -25,4 +24,7 @@ let g:neosolarized_vertSplitBgTrans = 1
 let g:neosolarized_bold = 1
 let g:neosolarized_underline = 1
 let g:neosolarized_italic = 1
+
 colorscheme NeoSolarized
+
+nnoremap <C-l> :noh<CR>
