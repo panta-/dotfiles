@@ -11,6 +11,8 @@ set ignorecase smartcase
 set number relativenumber
 set clipboard+=unnamedplus
 set keymap=greek_utf-8
+set iminsert=0
+set imsearch=-1
 set showbreak=↪
 set list listchars=tab:▸\ ,eol:↲,nbsp:•,trail:·,precedes:←,extends:→
 set background=light

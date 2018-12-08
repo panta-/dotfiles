@@ -16,14 +16,14 @@ alias g='gvim --servername GVIM --remote-silent'
 # mpv profiles
 alias au='mpv --profile=audio'
 alias tv='mpv --profile=tv'
-alias tv-sop='mpv --profile=tv http://localhost:8908/tv.asf'
+alias tv-sop='mpv --profile=sop http://localhost:8908/tv.asf'
 
 # pacman
 alias p='pacman'
 alias pp='sudo pacman -Syu'
 
 # cower
-alias c='cower'
+alias c='cower --sort=votes'
 alias cuv='cower -uv'
 
 # systemd

@@ -224,12 +224,13 @@ mode "$mode_system" {
 }
 bindsym $mod+Escape mode "$mode_system"
 
-set $mode_tv External Display (d) default, (4) 4k, (u) UHD, (f) Full HD
+set $mode_tv External Display (d) default, (4) 4k, (u) UHD, (f) Full HD, (h) HD
 mode "$mode_tv" {
        bindsym d exec --no-startup-id autorandr default, mode "default"
        bindsym 4 exec --no-startup-id autorandr 4k, mode "default"
        bindsym u exec --no-startup-id autorandr uhd, mode "default"
        bindsym f exec --no-startup-id autorandr fhd, mode "default"
+       bindsym h exec --no-startup-id autorandr hd, mode "default"
        # back to normal: Enter or Escape
        bindsym Return mode "default"
        bindsym Escape mode "default"
@@ -261,6 +262,6 @@ bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screensh
 # autostart
 exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
 exec --no-startup-id termite --name=Sys-Mon --exec="dmesg -Hw"
+exec --no-startup-id termite --name=mail --exec="neomutt"
 exec --no-startup-id keepassxc
-exec --no-startup-id chromium --incognito --user-data-dir="$(mktemp -d)" --app="https://mail.protonmail.com" --name="mail" --class="mail"
 # vim:set ft=conf:

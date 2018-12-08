@@ -3,7 +3,7 @@ set editor="vim --cmd 'setlocal filetype=mail' --cmd 'setlocal spell spelllang=e
 set header_cache="~/.cache/mutt/headers"
 set include=yes
 set mail_check=0
-set mailcap_path="~/.mutt/mailcap"
+set mailcap_path="mailcap"
 set markers=no
 set mbox_type=Maildir
 set menu_scroll=yes
@@ -28,10 +28,8 @@ unset record
 auto_view text/html
 alternative_order text/plain text/enriched text/html
 
-source ~/.mutt/bindings
-source ~/.mutt/macros
-source ~/.mutt/mailboxes
-source ~/.mutt/mailing-lists
-source ~/.mutt/accounts/gmail
-source ~/.mutt/goobook
-source ~/.mutt/colors
+source bindings
+source macros
+source accounts/gmail
+source goobook
+source colors

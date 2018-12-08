@@ -45,7 +45,7 @@ trashfolder = '[Gmail]/Κάδος απορριμμάτων'
 
 [mbnames]
 enabled = yes
-filename = ~/.mutt/mailboxes
+filename = ~/.config/mutt/mailboxes
 header = "mailboxes "
 peritem = "+%(accountname)s/%(foldername)s"
 sep = " "
