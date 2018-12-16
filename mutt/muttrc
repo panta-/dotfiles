@@ -1,5 +1,5 @@
 set folder="~/mail"
-set editor="vim --cmd 'setlocal filetype=mail' --cmd 'setlocal spell spelllang=el,en' --cmd 'setlocal formatoptions+=awn'"
+set editor="nvim --cmd 'setlocal filetype=mail' --cmd 'setlocal spell spelllang=el,en' --cmd 'setlocal formatoptions+=awn'"
 set header_cache="~/.cache/mutt/headers"
 set include=yes
 set mail_check=0

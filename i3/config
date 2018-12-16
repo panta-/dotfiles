@@ -124,8 +124,9 @@ workspace "$WS8"  output primary
 workspace "$WS9"  output primary
 workspace "$WS10" output primary
 
-assign [class="^[Cc]hrom(e|ium)+$"] "$WS2"
-assign [class="^[Gg]vim$"] "$WS3"
+assign [class="^Chromium+$"] "$WS2"
+assign [class="^Firefox"] "$WS2"
+assign [class="^Gvim$"] "$WS3"
 assign [instance="^Sys-Mon$"] "$WS5"
 assign [instance="^IRC$"] "$WS9"
 assign [instance="^TV$" class="^mpv$"] "$WS6"
