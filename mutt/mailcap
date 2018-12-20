@@ -2,6 +2,5 @@ text/html; w3m -I %{charset} -T text/html; copiousoutput;
 image/*; feh %s
 video/*; mpv %s
 audio/*; mpv %s
-text/*; vim %s
+text/*; nvim %s
 application/pdf; xdg-open %s
-application/vnd.openxml; libreoffice %s
