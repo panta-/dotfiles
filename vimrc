@@ -89,7 +89,7 @@ if has('mouse')
 endif
 
 if has('gui_running')
-	set guifont=Hack\ 9
+	set guifont=FiraCode\ 9
 	set guioptions=
 endif
 

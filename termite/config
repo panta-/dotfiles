@@ -4,7 +4,7 @@
 #bold_is_bright = true
 clickable_url = false
 #dynamic_title = true
-font = Hack, FontAwesome5Free, FontAwesome5Brands 9
+font = FiraCode, FontAwesome5Free, FontAwesome5Brands 9
 #fullscreen = true
 geometry = 1920x1440
 #icon_name = terminal
@@ -44,54 +44,39 @@ hyperlinks = true
 # Author: Ethan Schoonover (http://ethanschoonover.com/solarized)
 
 cursor            = #93a1a1
-cursor_foreground = #fdf6e3
+cursor_foreground = #586e75
 
 foreground      = #657b83
-foreground_bold = #586e75
+foreground_bold = #657b83
 background      = #fdf6e3
 
-highlight = #eee8d5
+highlight = #586e75
 
-# Black dark/light
-color0  = #073642
-color8  = #002b36
-
-# Red dark/light
+color0  = #eee8d5
 color1  = #dc322f
-color9  = #cb4b16
-
-# Green dark/light
 color2  = #859900
-color10 = #586e75
-
-# Yellow dark/light
 color3  = #b58900
-color11 = #657b83
-
-# Blue dark/light
 color4  = #268bd2
-color12 = #839496
-
-# Magenta dark/light
 color5  = #d33682
-color13 = #6c71c4
-
-# Cyan dark/light
 color6  = #2aa198
-color14 = #93a1a1
-
-# White dark/light
-color7  = #eee8d5
-color15 = #fdf6e3
+color7  = #073642
+color8  = #fdf6e3
+color9  = #cb4b16
+color10 = #93a1a1
+color11 = #839496
+color12 = #657b83
+color13 = #6c71c4
+color14 = #586e75
+color15 = #002b36
 
 [hints]
-font = Hack 24
-foreground = #fdf6e3
-background = #b58900
-active_foreground = #eee8d5
-active_background = #b58900
+font = FiraCode 24
+foreground = #586e75
+background = #93a1a1
+active_foreground = #93a1a1
+active_background = #586e75
 padding = 2
-border = #b58900
+border = #586e75
 border_width = 0.5
 roundness = 0.0
 

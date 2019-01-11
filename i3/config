@@ -4,7 +4,7 @@ set $tv DP-1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Hack, FontAwesome5Free, FontAwesome5Brands 9
+font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 9
 
 # use these keys for focus, movement, and resize directions when reaching for
 # the arrows is not convenient
@@ -17,7 +17,7 @@ set $right semicolon
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec termite
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -262,7 +262,7 @@ bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screensh
 
 # autostart
 exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
-exec --no-startup-id termite --name=Sys-Mon --exec="dmesg -Hw"
-exec --no-startup-id termite --name=mail --exec="neomutt"
+exec --no-startup-id kitty --name=Sys-Mon -- dmesg -Hw
+exec --no-startup-id kitty --config $HOME/.config/kitty/kitty-mutt.conf --name=mail -- neomutt
 exec --no-startup-id keepassxc
 # vim:set ft=conf:
