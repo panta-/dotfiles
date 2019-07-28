@@ -39,7 +39,8 @@ nametrans = lambda folder: re.sub('^INBOX$',                        'inbox',
                            re.sub('^\[Gmail\]/Όλα τα μηνύματα$',    'all',
                            folder.decode('imap4-utf-7').encode('utf-8')))))))))
 folderfilter = lambda folder: folder.decode('imap4-utf-7').encode('utf-8') \
-                              not in ['[Gmail]/Κάδος απορριμμάτων']
+                              not in ['[Gmail]/Κάδος απορριμμάτων',
+                                      '[Gmail]/Όλα τα μηνύματα']
 spamfolder = '[Gmail]/Ανεπιθύμητα'
 trashfolder = '[Gmail]/Κάδος απορριμμάτων'
 
