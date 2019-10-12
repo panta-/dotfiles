@@ -7,7 +7,6 @@ bindkey -M viins '^r' history-incremental-pattern-search-backward
 bindkey -M vicmd '^r' history-incremental-pattern-search-backward
 
 setopt autocd
-setopt extendedglob
 setopt histignorealldups
 setopt histignorespace
 setopt nocaseglob
