@@ -11,14 +11,22 @@ remoterepository = gmail-remote
 type = GmailMaildir
 localfolders = ~/mail/gmail
 nametrans = lambda folder: re.sub('^inbox$',   'INBOX',
-                           re.sub('^chat$',    '[Gmail]/Συζητήσεις',
-                           re.sub('^draft$',   '[Gmail]/Πρόχειρα',
+                           re.sub('^chats$',   '[Gmail]/Chats',
+                           re.sub('^drafts$',  '[Gmail]/Drafts',
+                           re.sub('^spam$',    '[Gmail]/Spam',
+                           re.sub('^sent$',    '[Gmail]/Sent Mail',
+                           re.sub('^starred$', '[Gmail]/Starred',
+                           re.sub('^trash$',   '[Gmail]/Trash',
+                           re.sub('^all$',     '[Gmail]/All Mail',
+                           re.sub('^snoozed$', '[Gmail]/Snoozed',
+                           re.sub('^chats$',   '[Gmail]/Συζητήσεις',
+                           re.sub('^drafts$',  '[Gmail]/Πρόχειρα',
                            re.sub('^spam$',    '[Gmail]/Ανεπιθύμητα',
                            re.sub('^sent$',    '[Gmail]/Απεσταλμένα',
                            re.sub('^starred$', '[Gmail]/Με αστέρι',
                            re.sub('^trash$',   '[Gmail]/Κάδος απορριμμάτων',
                            re.sub('^all$',     '[Gmail]/Όλα τα μηνύματα',
-                           folder.decode('utf-8').encode('imap4-utf-7')))))))))
+                           folder.decode('utf-8').encode('imap4-utf-7')))))))))))))))))
 
 [Repository gmail-remote]
 type = Gmail
@@ -30,19 +38,31 @@ remoteuser = panayiotis.tembriotis@gmail.com
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 createfolders = false
 nametrans = lambda folder: re.sub('^INBOX$',                        'inbox',
-                           re.sub('^\[Gmail\]/Συζητήσεις$',         'chat',
-                           re.sub('^\[Gmail\]/Πρόχειρα$',           'draft',
+                           re.sub('^\[Gmail\]/Chats$',              'chats',
+                           re.sub('^\[Gmail\]/Drafts$',             'drafts',
+                           re.sub('^\[Gmail\]/Spam$',               'spam',
+                           re.sub('^\[Gmail\]/Sent Mail$',          'sent',
+                           re.sub('^\[Gmail\]/Starred$',            'starred',
+                           re.sub('^\[Gmail\]/Trash$',              'trash',
+                           re.sub('^\[Gmail\]/All Mail$',           'all',
+                           re.sub('^\[Gmail\]/Snoozed$',            'snoozed',
+                           re.sub('^\[Gmail\]/Συζητήσεις$',         'chats',
+                           re.sub('^\[Gmail\]/Πρόχειρα$',           'drafts',
                            re.sub('^\[Gmail\]/Ανεπιθύμητα$',        'spam',
                            re.sub('^\[Gmail\]/Απεσταλμένα$',        'sent',
                            re.sub('^\[Gmail\]/Με αστέρι$',          'starred',
                            re.sub('^\[Gmail\]/Κάδος απορριμμάτων$', 'trash',
                            re.sub('^\[Gmail\]/Όλα τα μηνύματα$',    'all',
-                           folder.decode('imap4-utf-7').encode('utf-8')))))))))
+                           folder.decode('imap4-utf-7').encode('utf-8')))))))))))))))))
 folderfilter = lambda folder: folder.decode('imap4-utf-7').encode('utf-8') \
-                              not in ['[Gmail]/Κάδος απορριμμάτων',
+                              not in ['[Gmail]/Trash',
+                                      '[Gmail]/All Mail',
+                                      '[Gmail]/Κάδος απορριμμάτων',
                                       '[Gmail]/Όλα τα μηνύματα']
-spamfolder = '[Gmail]/Ανεπιθύμητα'
-trashfolder = '[Gmail]/Κάδος απορριμμάτων'
+spamfolder = '[Gmail]/Spam'
+#spamfolder = '[Gmail]/Ανεπιθύμητα'
+trashfolder = '[Gmail]/Trash'
+#trashfolder = '[Gmail]/Κάδος απορριμμάτων'
 
 [mbnames]
 enabled = yes
