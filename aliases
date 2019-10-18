@@ -22,9 +22,8 @@ alias tv-sop='mpv --profile=sop http://localhost:8908/tv.asf'
 alias p='pacman'
 alias pp='sudo pacman -Syu'
 
-# cower
-alias c='cower --sort=votes'
-alias cuv='cower -uv'
+# AUR
+alias aur='pacman -Qqm | sort'
 
 # systemd
 alias sd='systemctl'
