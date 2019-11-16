@@ -29,4 +29,8 @@ alias aur='pacman -Qqm | sort'
 alias sd='systemctl'
 alias jj='journalctl'
 
+# kitty
+alias icat="kitty +kitten icat"
+alias d="kitty +kitten diff"
+
 # vim:ft=sh:
