@@ -131,7 +131,8 @@ assign [class="^Gvim$"] "$WS3"
 assign [instance="^Sys-Mon$"] "$WS5"
 assign [instance="^IRC$"] "$WS9"
 assign [instance="^TV$" class="^mpv$"] "$WS6"
-assign [class="^keepassxc$"] "$WS9"
+assign [class="^KeePassXC$"] "$WS9"
+assign [class="^Signal$"] "$WS7"
 assign [instance="^mail"] "$WS10"
 assign [class="^mail$"] "$WS10"
 for_window [class="^feh$"] floating enable
@@ -266,6 +267,6 @@ bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screensh
 # autostart
 exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
 exec --no-startup-id kitty --name=Sys-Mon -- dmesg -Hw
-exec --no-startup-id kitty --config $HOME/.config/kitty/kitty-mutt.conf --name=mail -- neomutt
 exec --no-startup-id keepassxc
+exec --no-startup-id chromium --user-data-dir="/home/panta/.config/chromium/mail" --class="mail" --app="https://mail.google.com"
 # vim:set ft=conf:
