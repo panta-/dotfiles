@@ -1,8 +1,8 @@
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'derekwyatt/vim-scala', { 'for' : 'scala' }
 Plug 'iCyMind/NeoSolarized'
 Plug 'jlanzarotta/bufexplorer'
+Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 call plug#end()
