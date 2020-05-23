@@ -18,3 +18,4 @@
 	st = status -sb
 	unstage = reset HEAD --
 	visual = !gitk
+	l = log --branches --remotes --tags --graph --oneline --decorate
