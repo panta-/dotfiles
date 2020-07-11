@@ -14,7 +14,7 @@ xrandr --dpi 277
 # merge defaults, keymaps and keybindings
 [ -f ~/.Xresources ] && xrdb -merge -I$HOME ~/.Xresources
 [ -f ~/.Xmodmap ] && xmodmap ~/.Xmodmap
-[ -f ~/.xbindkeysrc ] && xbindkeys
+[ -f ~/.sxhkd ] && SXHKD_FIFO=~/.config/sxhkd/sxhkd_fifo . ~/.sxhkd
 
 # set background
 xsetroot -solid "#FDF6E3"
@@ -24,3 +24,5 @@ xsetroot -solid "#FDF6E3"
 dispwin -d1 ~/.color/icc/RXN49_LQ133Z1_01.icm
 
 libinput-gestures-setup start
+
+MOZ_USE_XINPUT2=1
