@@ -24,7 +24,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-set $dmenu exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb "#fdf6e3" -nf "#657b83" -sb "#657b83" -sf "#fdf6e3"'
+set $dmenu exec --no-startup-id i3-dmenu-desktop --dmenu='dmenu -i -nb "#002b36" -nf "#657b83" -sb "#657b83" -sf "#002b36"'
 bindsym $mod+d $dmenu
 bindsym XF86Search $dmenu
 
@@ -188,12 +188,12 @@ set $blue    #268bd2
 set $cyan    #2aa198
 set $green   #859900
 # class                 border  backgr. text    indicator
-client.focused          $base00 $base00 $base3  $base00
-client.focused_inactive $base00 $base3  $blue   $base00
-client.unfocused        $base00 $base3  $base00 $base00
-client.urgent           $yellow $yellow $base3  $yellow
-client.placeholder      $base3  $base3  $base00 $base3
-client.background       $base3
+client.focused          $base00 $base00 $base03 $base00
+client.focused_inactive $base00 $base03 $blue   $base00
+client.unfocused        $base00 $base03 $base00 $base00
+client.urgent           $yellow $yellow $base03 $yellow
+client.placeholder      $base03 $base03 $base00 $base03
+client.background       $base03
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
@@ -213,13 +213,13 @@ bar {
         strip_workspace_numbers yes
         binding_mode_indicator  yes
         colors {
-                background         $base3
+                background         $base03
                 statusline         $base00
                 separator          $base00
-                focused_workspace  $base00 $base00 $base3
-                active_workspace   $base00 $base3  $blue
-                inactive_workspace $base3  $base3  $base00
-                urgent_workspace   $yellow $yellow $base3
+                focused_workspace  $base00 $base00 $base03
+                active_workspace   $base00 $base03  $blue
+                inactive_workspace $base03  $base03  $base00
+                urgent_workspace   $yellow $yellow $base03
         }
 }
 

@@ -15,11 +15,11 @@ set iminsert=0
 set imsearch=-1
 set showbreak=↪
 set list listchars=tab:▸\ ,eol:↲,nbsp:•,trail:·,precedes:←,extends:→
-set background=light
+set background=dark
 set termguicolors
 
 let g:airline_theme='solarized'
-let g:airline_solarized_bg='light'
+let g:airline_solarized_bg='dark'
 let g:neosolarized_contrast = "normal"
 let g:neosolarized_visibility = "low"
 let g:neosolarized_vertSplitBgTrans = 1
