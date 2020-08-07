@@ -10,6 +10,7 @@ general {
 order += "volume master"
 order += "wireless _first_"
 order += "path_exists vpn"
+order += "path_exists sfb"
 order += "path_exists mbl"
 order += "path_exists mbwe"
 order += "cpu_temperature 0"
@@ -46,7 +47,7 @@ load {
 
 tztime local {
 	format = "[ %a %d %b %Y %H:%M]"
-	locale = el_CY.UTF-8
+	locale = en_CY.UTF-8
 }
 
 volume master {
@@ -88,8 +89,14 @@ path_exists mbwe {
 }
 
 path_exists vpn {
-	path = "/sys/class/net/tun0"
+	path = "/sys/class/net/proton0"
 	format = "[]"
+	format_down = ""
+}
+
+path_exists sfb {
+	path = "/sys/class/net/tun0"
+	format = "[]"
 	format_down = ""
 }
 

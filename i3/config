@@ -282,8 +282,9 @@ force_display_urgency_hint 500 ms
 bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screenshot.png
 
 # autostart
-exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
-exec --no-startup-id kitty --name=Sys-Mon -- dmesg -Hw
+#exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
+#exec --no-startup-id kitty --name=Sys-Mon -- dmesg -Hw
 exec --no-startup-id keepassxc
-exec --no-startup-id chromium --user-data-dir="/home/panta/.config/chromium/mail" --class="mail" --app="https://mail.google.com"
+#exec --no-startup-id Gmail
+#exec --no-startup-id Protonmail
 # vim:set ft=conf:
