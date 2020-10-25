@@ -283,6 +283,7 @@ bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screensh
 
 # autostart
 exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
-exec --no-startup-id kitty --name=Sys-Mon -- dmesg --human --follow --level 0,1,2,3
+exec --no-startup-id kitty --name=Sys-Mon -- journalctl -b0 -p4 -f
 exec --no-startup-id keepassxc
+exec --no-startup-id chromium --app=https://mail.google.com --user-data-dir=$HOME/.mail --new-window --class=mail
 # vim:set ft=conf:

@@ -33,4 +33,14 @@ alias jj='journalctl'
 alias icat="kitty +kitten icat"
 alias d="kitty +kitten diff"
 
+# my public IP address
+alias myip="drill TXT +short o-o.myaddr.l.google.com @ns1.google.com"
+
+# transmission
+alias tt='transmission-remote -l'
+alias tl='transmission-remote -l'
+alias tlw='watch -n5 transmission-remote -l'
+alias ts='transmission-remote -tall -s'
+alias tS='transmission-remote -tall -S'
+
 # vim:ft=sh:

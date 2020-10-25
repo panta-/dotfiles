@@ -1,1 +1,293 @@
-../i3/config
+input * {
+	xkb_layout  "us,gr"
+	xkb_variant "intl,extended"
+	xkb_options "grp:shifts_toggle,grp_led:caps"
+}
+input "1:1:AT_Translated_Set_2_keyboard" xkb_model "pc105"
+input "1739:30383:DLL082A:01_06CB:76AF_Touchpad" pointer_accel 0.2
+input type:touchpad {
+	tap enabled
+	natural_scroll enabled
+}
+
+output * bg #002b36 solid_color
+output eDP-1 scale 2.365
+
+# Display Brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
+bindsym XF86AudioMute pactl   exec set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+#bindsym XF86AudioMute        exec pkill -SIGUSR1 i3status
+#bindsym XF86AudioLowerVolume exec pkill -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec pkill -SIGUSR1 i3status
+
+set $mod Mod4
+
+set $tv DP-1
+
+font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 9
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+set $dmenu exec --no-startup-id bemenu-run -i --nb "#002b36" --nf "#657b83" --sb "#657b83" --sf "#002b36" --scb "#657b83" --scf "#002b36" --tb "#657b83" --tf "#002b36" --fb "#002b36" --ff "#657b83" --hb "#002b36"
+bindsym $mod+d $dmenu
+bindsym XF86Search $dmenu
+
+# change focus
+bindsym $mod+$left  focus left
+bindsym $mod+$down  focus down
+bindsym $mod+$up    focus up
+bindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left  focus left
+bindsym $mod+Down  focus down
+bindsym $mod+Up    focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+$left  move left
+bindsym $mod+Shift+$down  move down
+bindsym $mod+Shift+$up    move up
+bindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left  move left
+bindsym $mod+Shift+Down  move down
+bindsym $mod+Shift+Up    move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+Shift+v split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# define workspace names
+set $WS1  1:Term
+set $WS2  2:Web
+set $WS3  3:Editor
+set $WS4  4:Code
+set $WS5  5:SysMon
+set $WS6  6:TV
+set $WS7  7:Chat
+set $WS8  8:Remote
+set $WS9  9:PM
+set $WS10 10:Mail
+
+# switch to workspace
+bindsym $mod+1 workspace $WS1
+bindsym $mod+2 workspace $WS2
+bindsym $mod+3 workspace $WS3
+bindsym $mod+4 workspace $WS4
+bindsym $mod+5 workspace $WS5
+bindsym $mod+6 workspace $WS6
+bindsym $mod+7 workspace $WS7
+bindsym $mod+8 workspace $WS8
+bindsym $mod+9 workspace $WS9
+bindsym $mod+0 workspace $WS10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $WS1
+bindsym $mod+Shift+2 move container to workspace $WS2
+bindsym $mod+Shift+3 move container to workspace $WS3
+bindsym $mod+Shift+4 move container to workspace $WS4
+bindsym $mod+Shift+5 move container to workspace $WS5
+bindsym $mod+Shift+6 move container to workspace $WS6
+bindsym $mod+Shift+7 move container to workspace $WS7
+bindsym $mod+Shift+8 move container to workspace $WS8
+bindsym $mod+Shift+9 move container to workspace $WS9
+bindsym $mod+Shift+0 move container to workspace $WS10
+
+# switch to workspace
+workspace "$WS1"  output primary
+workspace "$WS2"  output primary
+workspace "$WS3"  output primary
+workspace "$WS4"  output primary
+workspace "$WS5"  output primary
+workspace "$WS6"  output $tv
+workspace "$WS7"  output primary
+workspace "$WS8"  output primary
+workspace "$WS9"  output primary
+workspace "$WS10" output primary
+
+assign [class="^[Cc]hromium+$"] "$WS2"
+assign [class="^[Ff]irefox"] "$WS2"
+assign [class="^Gvim$"] "$WS3"
+assign [instance="^SysMon$"] "$WS5"
+assign [instance="^IRC$"] "$WS9"
+assign [instance="^TV$" class="^mpv$"] "$WS6"
+assign [class="^KeePassXC$"] "$WS9"
+assign [class="^Signal$"] "$WS7"
+assign [instance="^mail"] "$WS10"
+assign [class="^mail$"] "$WS10"
+for_window [class="^feh$"] floating enable
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit? This will end your session.' -B 'Yes, exit' 'swaymsg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	bindsym $down  resize grow   height 10 px or 10 ppt
+	bindsym $up    resize shrink height 10 px or 10 ppt
+	bindsym $right resize grow   width  10 px or 10 ppt
+	bindsym Left   resize shrink width  10 px or 10 ppt
+	bindsym Down   resize grow   height 10 px or 10 ppt
+	bindsym Up     resize shrink height 10 px or 10 ppt
+	bindsym Right  resize grow   width  10 px or 10 ppt
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# Colors
+set $base03  #002b36
+set $base02  #073642
+set $base01  #586e75
+set $base00  #657b83
+set $base0   #839496
+set $base1   #93a1a1
+set $base2   #eee8d5
+set $base3   #fdf6e3
+set $yellow  #b58900
+set $orange  #cb4b16
+set $red     #dc322f
+set $magenta #d33682
+set $violet  #6c71c4
+set $blue    #268bd2
+set $cyan    #2aa198
+set $green   #859900
+# class                 border  backgr. text    indicator
+client.focused          $base00 $base00 $base03 $base00
+client.focused_inactive $base00 $base03 $blue   $base00
+client.unfocused        $base00 $base03 $base00 $base00
+client.urgent           $yellow $yellow $base03 $yellow
+client.placeholder      $base03 $base03 $base00 $base03
+client.background       $base03
+bar {
+	id                      bar-0
+	status_command          i3status
+	hidden_state            hide
+	mode                    dock
+	modifier                $mod
+	position                top
+	#output                  primary
+	#tray_output             primary
+	tray_padding            2
+	font                    pango:Hack, FontAwesome5Free, FontAwesome5Brands 9
+	separator_symbol        " "
+	workspace_buttons       yes
+	strip_workspace_numbers yes
+	binding_mode_indicator  yes
+	colors {
+		background         $base03
+		statusline         $base00
+		separator          $base00
+		focused_workspace  $base00 $base00 $base03
+		active_workspace   $base00 $base03  $blue
+		inactive_workspace $base03  $base03  $base00
+		urgent_workspace   $yellow $yellow $base03
+	}
+}
+
+focus_follows_mouse yes
+popup_during_fullscreen smart
+
+# switch between the current and the previously focused one
+workspace_auto_back_and_forth yes
+bindsym $mod+Tab workspace back_and_forth
+bindsym $mod+Shift+Tab move container to workspace back_and_forth
+
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+	bindsym l exec --no-startup-id i3exit lock, mode "default"
+	bindsym e exec --no-startup-id i3exit logout, mode "default"
+	bindsym s exec --no-startup-id i3exit suspend, mode "default"
+	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+	bindsym r exec --no-startup-id i3exit reboot, mode "default"
+	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+Escape mode "$mode_system"
+
+set $mode_tv External Display (d) default, (4) 4k, (u) UHD, (f) Full HD, (h) HD
+mode "$mode_tv" {
+	bindsym d exec --no-startup-id autorandr default, mode "default"
+	bindsym 4 exec --no-startup-id autorandr 4k, mode "default"
+	bindsym u exec --no-startup-id autorandr uhd, mode "default"
+	bindsym f exec --no-startup-id autorandr fhd, mode "default"
+	bindsym h exec --no-startup-id autorandr hd, mode "default"
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+}
+bindsym $mod+p mode "$mode_tv"
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Toggle between hide state and show state
+bindsym $mod+m bar hidden_state toggle
+# Toggle between dock mode and hide mode
+bindsym $mod+n bar mode toggle
+# Set the bar instance with id 'bar-0' to switch to hide mode
+bindsym $mod+b bar mode hide bar-0
+# Set the bar instance with id 'bar-0' to always stay hidden
+bindsym $mod+Shift+b bar mode invisible bar-0
+
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders both
+force_display_urgency_hint 500 ms
+
+# Take a screenshot upon pressing $mod+x (select an area)
+bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screenshot.png
+
+# autostart
+exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
+exec --no-startup-id kitty --name=SysMon -- journalctl -b0 -p4 -f
+exec --no-startup-id keepassxc
+# vim:set ft=conf:
