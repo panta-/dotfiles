@@ -37,10 +37,10 @@ alias d="kitty +kitten diff"
 alias myip="drill TXT +short o-o.myaddr.l.google.com @ns1.google.com"
 
 # transmission
-alias tt='transmission-remote -l'
-alias tl='transmission-remote -l'
-alias tlw='watch -n5 transmission-remote -l'
-alias ts='transmission-remote -tall -s'
-alias tS='transmission-remote -tall -S'
+alias tt='transmission-remote'
+alias tl='transmission-remote --list'
+alias ts='transmission-remote -tall --start'
+alias tS='transmission-remote -tall --stop'
+alias tlw='watch -n 5 transmission-remote --list'
 
 # vim:ft=sh:
