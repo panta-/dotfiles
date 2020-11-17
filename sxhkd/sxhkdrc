@@ -1,17 +1,16 @@
 # Display Brightness
 XF86MonBrightnessDown
-	xbacklight -display :0 -dec 1
-
+	brightnessctl s 5%-
 XF86MonBrightnessUp
-	xbacklight -display :0 -inc 1
+	brightnessctl s 5%+
 
 # Volume
 XF86AudioMute
-	pulsemixer --toggle-mute
+	pactl set-sink-mute 0 toggle
 XF86AudioLowerVolume
-	pulsemixer --change-volume -5
+	pactl set-sink-volume 0 -5%
 XF86AudioRaiseVolume
-	pulsemixer --change-volume +5
+	pactl set-sink-volume 0 +5%
 
 # Refresh i3status on mute/unmute
 @XF86AudioMute
@@ -20,15 +19,3 @@ XF86AudioRaiseVolume
 	pkill -SIGUSR1 i3status
 @XF86AudioRaiseVolume
 	pkill -SIGUSR1 i3status
-
-# mpd controls
-XF86AudioNext
-	mpc next
-XF86AudioPlay
-	mpc toggle
-XF86AudioPrev
-	mpc prev
-control + XF86AudioLowerVolume
-	mpc volume -5
-control + XF86AudioRaiseVolume
-	mpc volume +5
