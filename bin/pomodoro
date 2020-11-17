@@ -1,0 +1,2 @@
+#!/bin/sh
+sleep 1500 && exec i3-nagbar -m 'Pomodoro' -t 'warning' -f 'xft:monospace 20'

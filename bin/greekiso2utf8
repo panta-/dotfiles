@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ ${#} -ne 1 ] || ! [ -f ${1} ]; then
+	echo "Usage: ${0} ISO-8859-7_FILE_NAME" >&2
+	exit 1
+fi
+
+INPUT_FILE=${1}
+OUTPUT_FILE=`date -I`-${1}
+
+iconv --from-code=ISO-8859-7 --to-code=UTF-8 ${INPUT_FILE} --output=${OUTPUT_FILE}
+sed --in-place 's/\r$//' ${OUTPUT_FILE}

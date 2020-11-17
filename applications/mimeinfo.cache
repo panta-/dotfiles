@@ -1,0 +1,3 @@
+[MIME Cache]
+x-scheme-handler/magnet=magnet.desktop;
+x-scheme-handler/sop=sopcast.desktop;

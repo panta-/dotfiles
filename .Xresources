@@ -1,0 +1,4 @@
+! Xft settings {{{
+! force DPI value for DELL XPS 9360 QHD+
+Xft.dpi:       277
+!}}}

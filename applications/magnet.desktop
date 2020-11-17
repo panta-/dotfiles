@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Magnet
+Exec=magnet %U
+MimeType=x-scheme-handler/magnet;
+NoDisplay=true
+X-Desktop-File-Install-Version=0.26

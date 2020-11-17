@@ -21,6 +21,10 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
+source ~/.zsh/antigen.zsh
+antigen bundle joel-porquet/zsh-dircolors-solarized.git
+antigen apply
+
 source $HOME/.zsh/zsh_dirs
 source $HOME/.zsh/zsh_kbd
 source $HOME/.zsh/zsh_vcs
