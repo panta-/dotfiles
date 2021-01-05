@@ -29,6 +29,9 @@ source $HOME/.zsh/zsh_dirs
 source $HOME/.zsh/zsh_kbd
 source $HOME/.zsh/zsh_vcs
 source $HOME/.aliases
+source <(skaffold completion zsh)
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 eval $(dircolors -b)
 

@@ -4,7 +4,7 @@ alias ls='ls --color=auto -F'
 alias l='ls -l'
 alias ll='l'
 alias la='ls -a'
-alias grep='grep --color=auto'
+alias cat='bat '
 
 alias da='du -csh'
 alias df='df -Th'
@@ -42,5 +42,8 @@ alias tl='transmission-remote --list'
 alias ts='transmission-remote -tall --start'
 alias tS='transmission-remote -tall --stop'
 alias tlw='watch -n 5 transmission-remote --list'
+
+# git grep
+alias gg='git grep --no-index'
 
 # vim:ft=sh:
