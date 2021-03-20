@@ -19,9 +19,6 @@ bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
 bindsym XF86AudioMute pactl   exec set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-#bindsym XF86AudioMute        exec pkill -SIGUSR1 i3status
-#bindsym XF86AudioLowerVolume exec pkill -SIGUSR1 i3status
-#bindsym XF86AudioRaiseVolume exec pkill -SIGUSR1 i3status
 
 set $mod Mod4
 
@@ -97,7 +94,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # define workspace names
 set $WS1  1:Term
@@ -290,4 +287,5 @@ bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screensh
 exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
 exec --no-startup-id kitty --name=SysMon -- journalctl -b0 -p4 -f
 exec --no-startup-id keepassxc
+exec --no-startup-id kdeconnect-indicator
 # vim:set ft=conf:
