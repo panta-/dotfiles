@@ -1,7 +1,0 @@
-#!/bin/sh
-DEVICE=$1
-if (rfkill list $DEVICE | grep " yes$" >/dev/null); then
-	rfkill unblock $DEVICE
-else
-	rfkill block $DEVICE
-fi

@@ -286,4 +286,5 @@ exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
 exec --no-startup-id kitty --name=Sys-Mon -- journalctl -b0 -p4 -f
 exec --no-startup-id keepassxc
 exec --no-startup-id chromium --app=https://mail.google.com --user-data-dir=$HOME/.mail --new-window --class=mail
+exec --no-startup-id kdeconnect-indicator
 # vim:set ft=conf:

@@ -13,6 +13,7 @@ setopt nocaseglob
 setopt noclobber
 setopt pushdignoredups
 
+fpath=(~/.zsh/completion $fpath)
 autoload -Uz compinit
 compinit
 kitty + complete setup zsh | source /dev/stdin
@@ -21,7 +22,7 @@ autoload -Uz up-line-or-beginning-search down-line-or-beginning-search
 zle -N up-line-or-beginning-search
 zle -N down-line-or-beginning-search
 
-source ~/.zsh/antigen.zsh
+source /usr/share/zsh/share/antigen.zsh
 antigen bundle joel-porquet/zsh-dircolors-solarized.git
 antigen apply
 
@@ -46,3 +47,5 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 PROMPT='%B%F{default}%n%b@%m %F{cyan}%~%f %F{red}%0(?..[%?] )%f%# '
 RPROMPT='$vcs_info_msg_0_'
+
+export GPG_TTY=$(tty)
