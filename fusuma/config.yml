@@ -1,0 +1,29 @@
+swipe:
+  3:
+    left:
+      sendkey: "LEFTALT+RIGHT" # history back
+    right:
+      sendkey: "LEFTALT+LEFT" # history forward
+    up:
+      sendkey: "LEFTCTRL+T" # open new tab
+    down:
+      sendkey: "LEFTCTRL+W" # close tab
+  4:
+    up:
+      sendkey: 'LEFTMETA+F' # fullscreen
+      keypress:
+        LEFTMETA:
+          command: 'VOLUMEUP' # not working
+        LEFTMETA+LEFTALT:
+          command: 'BRIGHTNESSUP' # not working
+    down:
+      sendkey: "LEFTMETA+F" # fullscreen
+      keypress:
+        LEFTMETA:
+          command: 'VOLUMEDOWN' # not working
+        LEFTMETA+LEFTALT:
+          command: 'BRIGHTNESSDOWN' # not working
+plugin:
+  inputs:
+    libinput_command_input:
+      show-keycodes: true
