@@ -1,33 +1,28 @@
-input * {
-	xkb_layout  "us,gr"
-	xkb_variant "intl,extended"
-	xkb_options "grp:shifts_toggle,grp_led:caps"
+input type:keyboard {
+	xkb_layout  us,gr
+	xkb_model   pc105
+	xkb_variant intl,extended
+	xkb_options grp:shifts_toggle,grp_led:caps
 }
-input "1:1:AT_Translated_Set_2_keyboard" xkb_model "pc105"
-input "1739:30383:DLL082A:01_06CB:76AF_Touchpad" pointer_accel 0.2
 input type:touchpad {
-	tap enabled
+	tap            enabled
 	natural_scroll enabled
+	scroll_factor  8.0
 }
-
 output * bg #002b36 solid_color
-output eDP-1 scale 2.365
+output eDP-1 scale 2
 
-# Display Brightness
+font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 12
+
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
-bindsym XF86AudioMute pactl   exec set-sink-mute @DEFAULT_SINK@ toggle
+bindsym XF86AudioMute         exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
 set $mod Mod4
-
 set $tv DP-1
 
-font pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 9
-
-# use these keys for focus, movement, and resize directions when reaching for
-# the arrows is not convenient
 set $up l
 set $down k
 set $left j
@@ -42,7 +37,7 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $dmenu exec --no-startup-id bemenu-run -i --nb "#002b36" --nf "#657b83" --sb "#657b83" --sf "#002b36" --scb "#657b83" --scf "#002b36" --tb "#657b83" --tf "#002b36" --fb "#002b36" --ff "#657b83" --hb "#002b36"
+set $dmenu exec bemenu-run --fn "FiraCode 12" --nb "#002b36" --nf "#657b83" --sb "#657b83" --sf "#002b36"
 bindsym $mod+d $dmenu
 bindsym XF86Search $dmenu
 
@@ -97,16 +92,16 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # define workspace names
-set $WS1  1:Term
-set $WS2  2:Web
-set $WS3  3:Editor
-set $WS4  4:Code
-set $WS5  5:SysMon
-set $WS6  6:TV
-set $WS7  7:Chat
-set $WS8  8:Remote
-set $WS9  9:PM
-set $WS10 10:Mail
+set $WS1   1:term
+set $WS2   2:web
+set $WS3   3:editor
+set $WS4   4:code
+set $WS5   5:sysmon
+set $WS6   6:tv
+set $WS7   7:chat
+set $WS8   8:remote
+set $WS9   9:pm
+set $WS10 10:mail
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -133,34 +128,24 @@ bindsym $mod+Shift+9 move container to workspace $WS9
 bindsym $mod+Shift+0 move container to workspace $WS10
 
 # switch to workspace
-workspace "$WS1"  output primary
-workspace "$WS2"  output primary
-workspace "$WS3"  output primary
-workspace "$WS4"  output primary
-workspace "$WS5"  output primary
-workspace "$WS6"  output $tv
-workspace "$WS7"  output primary
-workspace "$WS8"  output primary
-workspace "$WS9"  output primary
-workspace "$WS10" output primary
+workspace $WS1  output primary
+workspace $WS2  output primary
+workspace $WS3  output primary
+workspace $WS4  output primary
+workspace $WS5  output primary
+workspace $WS6  output $tv
+workspace $WS7  output primary
+workspace $WS8  output primary
+workspace $WS9  output primary
+workspace $WS10 output primary
 
-assign [class="^[Cc]hromium+$"] "$WS2"
-assign [class="^[Ff]irefox"] "$WS2"
-assign [class="^Gvim$"] "$WS3"
-assign [instance="^SysMon$"] "$WS5"
-assign [instance="^IRC$"] "$WS9"
-assign [instance="^TV$" class="^mpv$"] "$WS6"
-assign [class="^KeePassXC$"] "$WS9"
-assign [class="^Signal$"] "$WS7"
-assign [instance="^mail"] "$WS10"
-assign [class="^mail$"] "$WS10"
-for_window [class="^feh$"] floating enable
+assign [app_id="^Chromium$"]                $WS2
+assign [class="^Signal$"]                   $WS7
+assign [app_id="^org.keepassxc.KeePassXC$"] $WS9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
+# exit (logs you out of your X session)
 bindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit? This will end your session.' -B 'Yes, exit' 'swaymsg exit'"
 
 # resize window (you can also use the mouse for that)
@@ -201,7 +186,7 @@ client.focused_inactive $base00 $base03 $blue   $base00
 client.unfocused        $base00 $base03 $base00 $base00
 client.urgent           $yellow $yellow $base03 $yellow
 client.placeholder      $base03 $base03 $base00 $base03
-client.background       $base03
+
 bar {
 	id                      bar-0
 	status_command          i3status
@@ -209,10 +194,8 @@ bar {
 	mode                    dock
 	modifier                $mod
 	position                top
-	#output                  primary
-	#tray_output             primary
 	tray_padding            2
-	font                    pango:Hack, FontAwesome5Free, FontAwesome5Brands 9
+	font                    pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 12
 	separator_symbol        " "
 	workspace_buttons       yes
 	strip_workspace_numbers yes
@@ -238,28 +221,15 @@ bindsym $mod+Shift+Tab move container to workspace back_and_forth
 
 set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-	bindsym l exec --no-startup-id i3exit lock, mode "default"
-	bindsym e exec --no-startup-id i3exit logout, mode "default"
-	bindsym s exec --no-startup-id i3exit suspend, mode "default"
-	bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-	bindsym r exec --no-startup-id i3exit reboot, mode "default"
-	bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
+	bindsym l       exec swaylock, mode "default"
+	bindsym e       exec swaymsg exit, mode "default"
+	bindsym s       exec systemctl suspend, mode "default"
+	bindsym r       exec systemctl reboot
+	bindsym Shift+s exec systemctl poweroff
+	bindsym Return  mode "default"
+	bindsym Escape  mode "default"
 }
 bindsym $mod+Escape mode "$mode_system"
-
-set $mode_tv External Display (d) default, (4) 4k, (u) UHD, (f) Full HD, (h) HD
-mode "$mode_tv" {
-	bindsym d exec --no-startup-id autorandr default, mode "default"
-	bindsym 4 exec --no-startup-id autorandr 4k, mode "default"
-	bindsym u exec --no-startup-id autorandr uhd, mode "default"
-	bindsym f exec --no-startup-id autorandr fhd, mode "default"
-	bindsym h exec --no-startup-id autorandr hd, mode "default"
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-}
-bindsym $mod+p mode "$mode_tv"
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -281,11 +251,18 @@ hide_edge_borders both
 force_display_urgency_hint 500 ms
 
 # Take a screenshot upon pressing $mod+x (select an area)
-bindsym --release $mod+x exec --no-startup-id import $HOME/$(date -Ins)-screenshot.png
+bindsym $mod+x exec grim -g "$(slurp)" $(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 # autostart
-exec --no-startup-id i3-msg "workspace --no-auto-back-and-forth $WS5"
-exec --no-startup-id kitty --name=SysMon -- journalctl -b0 -p4 -f
-exec --no-startup-id keepassxc
-exec --no-startup-id kdeconnect-indicator
+exec kdeconnect-indicator
+exec mako
+exec fusuma
+exec keepassxc
+exec swayidle -w \
+	timeout 1800 'swaylock' \
+	timeout 1805 'swaymsg "output * dpms off"' \
+	resume       'swaymsg "output * dpms on"' \
+	before_sleep 'swaylock'
+
+workspace $WS1
 # vim:set ft=conf:
