@@ -1,0 +1,36 @@
+[Desktop Entry]
+Name=Swappy
+GenericName=Annotation Tool
+GenericName[de]=Anmerkungswerkzeug
+GenericName[fr]="Outil d'annotat"
+GenericName[pt_BR]=Ferramenta de Anotação
+Comment=A Wayland native snapshot editing tool
+Comment[de]=Ein natives Wayland Bildschirmfoto-Bearbeitungswerkzeug
+Comment[fr]="Un outil d'édition de capture d'écran avec support natif pour Wayland"
+Comment[pt_BR]=Uma ferramenta de edição de snapshot nativa do Wayland
+TryExec=swappy
+Exec=swappy -f %F
+Terminal=false
+Type=Application
+Keywords=wayland;snapshot;annotation;editing;
+Icon=swappy
+Categories=Utility;Graphics;Annotation;
+StartupNotify=true
+MimeType=image/png;image/jpeg;
+Actions=current-window;current-output;select-window;select-area;
+
+[Desktop Action current-window]
+Name=Current Window
+Exec=sh -c 'grimshot save active - | swappy -f -'
+
+[Desktop Action current-output]
+Name=Current Output
+Exec=sh -c 'grimshot save output - | swappy -f -'
+
+[Desktop Action select-window]
+Name=Select Window
+Exec=sh -c 'grimshot save window - | swappy -f -'
+
+[Desktop Action select-area]
+Name=Select Area
+Exec=sh -c 'grimshot save area - | swappy -f -'

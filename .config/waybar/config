@@ -1,0 +1,96 @@
+{
+	"layer": "bottom",
+	"modules-left": [
+		"sway/workspaces",
+		"sway/mode"
+	],
+	"modules-center": [
+		"sway/window",
+		"tray"
+	],
+	"modules-right": [
+		"network",
+		"pulseaudio",
+		"backlight",
+		"cpu",
+		"battery",
+		"sway/language",
+		"clock"
+	],
+	"sway/mode": {
+		"format": " {}"
+	},
+	"sway/window": {
+		"format": "{}",
+		"max-length": 128
+	},
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": false,
+		"format": "{icon}",
+		"format-icons": {
+			"1": "",
+			"2": "",
+			"3": "",
+			"4": "",
+			"5": "",
+			"6": "",
+			"7": "",
+			"8": "",
+			"9": "",
+			"10": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
+	"sway/language": {
+		"format": "{}"
+	},
+	"network": {
+		"interface": "wlp58s0",
+		"format": "{ifname}",
+		"format-wifi": "{essid} ({signalStrength}%) ",
+		"format-ethernet": "{ifname} ",
+		"format-disconnected": "",
+		"tooltip-format": "{ifname}",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) ",
+		"tooltip-format-ethernet": "{ifname} ",
+		"tooltip-format-disconnected": "Disconnected"
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-bluetooth": "{volume}% {icon}",
+		"format-muted": "{volume}% ",
+		"format-icons": {
+			"headphones": "",
+			"handsfree": "",
+			"headset": "",
+			"phone": "",
+			"portable": "",
+			"car": "",
+			"default": ["", ""]
+		},
+		"scroll-step": 1,
+		"on-click": "pavucontrol"
+	},
+	"backlight": {
+		"device": "intel_backlight",
+		"format": "{percent}% {icon}",
+		"format-icons": ["", ""]
+	},
+	"battery": {
+		"interval": 120,
+		"format": "{capacity}% {icon}",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"clock": {
+		"interval": 60,
+		"format": "{:%a, %d %b %H:%M}",
+		"format-alt": "{%a, %d %b %G %R}"
+	},
+	"cpu": {
+		"interval": 10,
+		"format": "{}% "
+	}
+}

@@ -37,7 +37,12 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $dmenu exec bemenu-run --fn "FiraCode 12" --nb "#002b36" --nf "#657b83" --sb "#657b83" --sf "#002b36"
+set $dmenu exec i3-dmenu-desktop --dmenu='bemenu --ignorecase \
+--fn "FiraCode 12" \
+--nb=#002b36 --nf=#657b83 \
+--hb=#b58900 --hf=#002b36 \
+--fb=#002b36 --ff=#657b83 \
+--tb=#657b83 --tf=#002b36'
 bindsym $mod+d $dmenu
 bindsym XF86Search $dmenu
 
@@ -92,16 +97,16 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # define workspace names
-set $WS1   1:term
-set $WS2   2:web
-set $WS3   3:editor
-set $WS4   4:code
-set $WS5   5:sysmon
-set $WS6   6:tv
-set $WS7   7:chat
-set $WS8   8:remote
-set $WS9   9:pm
-set $WS10 10:mail
+set $WS1   1
+set $WS2   2
+set $WS3   3
+set $WS4   4
+set $WS5   5
+set $WS6   6
+set $WS7   7
+set $WS8   8
+set $WS9   9
+set $WS10 10
 
 # switch to workspace
 bindsym $mod+1 workspace $WS1
@@ -187,30 +192,6 @@ client.unfocused        $base00 $base03 $base00 $base00
 client.urgent           $yellow $yellow $base03 $yellow
 client.placeholder      $base03 $base03 $base00 $base03
 
-bar {
-	id                      bar-0
-	status_command          i3status
-	hidden_state            hide
-	mode                    dock
-	modifier                $mod
-	position                top
-	tray_padding            2
-	font                    pango:FiraCode, FontAwesome5Free, FontAwesome5Brands 12
-	separator_symbol        " "
-	workspace_buttons       yes
-	strip_workspace_numbers yes
-	binding_mode_indicator  yes
-	colors {
-		background         $base03
-		statusline         $base00
-		separator          $base00
-		focused_workspace  $base00 $base00 $base03
-		active_workspace   $base00 $base03  $blue
-		inactive_workspace $base03  $base03  $base00
-		urgent_workspace   $yellow $yellow $base03
-	}
-}
-
 focus_follows_mouse yes
 popup_during_fullscreen smart
 
@@ -254,15 +235,21 @@ force_display_urgency_hint 500 ms
 bindsym $mod+x exec grim -g "$(slurp)" $(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 # autostart
-exec kdeconnect-indicator
-exec mako
+exec_always {
+	gsettings set org.gnome.desktop.interface document-font-name 'FiraCode 10'
+	gsettings set org.gnome.desktop.interface font-name 'FiraCode 10'
+	gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
+	gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode 10'
+}
 exec fusuma
+exec kdeconnect-indicator
 exec keepassxc
+exec mako
+exec waybar
 exec swayidle -w \
 	timeout 1800 'swaylock' \
 	timeout 1805 'swaymsg "output * dpms off"' \
 	resume       'swaymsg "output * dpms on"' \
 	before_sleep 'swaylock'
-
 workspace $WS1
 # vim:set ft=conf:

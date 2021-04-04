@@ -22,9 +22,14 @@ export PATH="$PATH:/home/pana/.cache/coursier/jvm/adopt@1.15.0-0/bin"
 #[ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] && exec startx
 
 if [ "$(tty)" = "/dev/tty1" ]; then
-	export GDK_BACKEND=wayland
-	export QT_QPA_PLATFORM=wayland
+	export BEMENU_BACKEND=wayland
+	#export GDK_BACKEND=wayland
+	export MOZ_ENABLE_WAYLAND=1
+	export QT_AUTO_SCREEN_SCALE_FACTOR=1
+	#export QT_QPA_PLATFORM=wayland-egl
+	export QT_QPA_PLATFORMTHEME=qt5ct
 	export SDL_VIDEODRIVER=wayland
 	export XDG_SESSION_TYPE=wayland
+	export _JAVA_AWT_WM_NONREPARENTING=1
 	exec dbus-run-session sway
 fi

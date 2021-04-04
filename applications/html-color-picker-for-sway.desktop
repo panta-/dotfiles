@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=HTML Color Picker for Sway
+Comment=Copies HTML color code to clipboard
+Encoding=UTF-8
+Version=1.0
+Keywords=
+Icon=
+Exec=$HOME/.local/bin/html-color-picker-for-sway
+Terminal=false
+Type=Application
+StartupNotify=true
