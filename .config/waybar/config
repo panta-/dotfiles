@@ -5,8 +5,7 @@
 		"sway/mode"
 	],
 	"modules-center": [
-		"sway/window",
-		"tray"
+		"sway/window"
 	],
 	"modules-right": [
 		"network",
@@ -15,7 +14,8 @@
 		"cpu",
 		"battery",
 		"sway/language",
-		"clock"
+		"clock",
+		"tray"
 	],
 	"sway/mode": {
 		"format": " {}"

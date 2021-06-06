@@ -10,18 +10,18 @@ swipe:
       sendkey: "LEFTCTRL+W" # close tab
   4:
     up:
-      sendkey: 'LEFTMETA+F' # fullscreen
+      sendkey: 'LEFTALT+F' # fullscreen
       keypress:
         LEFTMETA:
           command: 'VOLUMEUP' # not working
-        LEFTMETA+LEFTALT:
+        LEFTMETA+LEFTCTRL:
           command: 'BRIGHTNESSUP' # not working
     down:
-      sendkey: "LEFTMETA+F" # fullscreen
+      sendkey: "LEFTALT+F" # fullscreen
       keypress:
         LEFTMETA:
           command: 'VOLUMEDOWN' # not working
-        LEFTMETA+LEFTALT:
+        LEFTMETA+LEFTCTRL:
           command: 'BRIGHTNESSDOWN' # not working
 plugin:
   inputs:

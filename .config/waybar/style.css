@@ -28,11 +28,11 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
+window#waybar.kittyx {
     background-color: #3F3F3F;
 }
 
-window#waybar.chromium {
+window#waybar.chromiumx {
     background-color: #000000;
     border: none;
 }

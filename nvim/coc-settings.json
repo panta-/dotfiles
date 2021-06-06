@@ -1,4 +1,4 @@
 {
-				"codeLens.enable": true,
-				"coc.preferences.formatOnSaveFiletypes": ["scala"]
+	"codeLens.enable": true,
+	"coc.preferences.formatOnSaveFiletypes": ["scala"]
 }

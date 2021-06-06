@@ -1,13 +1,13 @@
 input type:keyboard {
 	xkb_layout  us,gr
 	xkb_model   pc105
-	xkb_variant intl,extended
-	xkb_options grp:shifts_toggle,grp_led:caps
+	xkb_variant ,extended
+	xkb_options grp:ctrl_alt_toggle,grp:shifts_toggle,grp_led:caps
 }
 input type:touchpad {
 	tap            enabled
 	natural_scroll enabled
-	scroll_factor  8.0
+	scroll_factor  1.0
 }
 output * bg #002b36 solid_color
 output eDP-1 scale 2
@@ -20,7 +20,7 @@ bindsym XF86AudioMute         exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioLowerVolume  exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioRaiseVolume  exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 
-set $mod Mod4
+set $mod Mod1
 set $tv DP-1
 
 set $up l
@@ -37,8 +37,8 @@ bindsym $mod+Return exec kitty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-set $dmenu exec i3-dmenu-desktop --dmenu='bemenu --ignorecase \
---fn "FiraCode 12" \
+set $dmenu exec j4-dmenu-desktop --term='kitty' --dmenu='bemenu --ignorecase \
+--fn="FiraCode 12" \
 --nb=#002b36 --nf=#657b83 \
 --hb=#b58900 --hf=#002b36 \
 --fb=#002b36 --ff=#657b83 \
@@ -97,40 +97,40 @@ bindsym $mod+a focus parent
 bindsym $mod+c focus child
 
 # define workspace names
-set $WS1   1
-set $WS2   2
-set $WS3   3
-set $WS4   4
-set $WS5   5
-set $WS6   6
-set $WS7   7
-set $WS8   8
-set $WS9   9
-set $WS10 10
+set $WS1 1
+set $WS2 2
+set $WS3 3
+set $WS4 4
+set $WS5 5
+set $WS6 6
+set $WS7 7
+set $WS8 8
+set $WS9 9
+set $WS0 0
 
 # switch to workspace
-bindsym $mod+1 workspace $WS1
-bindsym $mod+2 workspace $WS2
-bindsym $mod+3 workspace $WS3
-bindsym $mod+4 workspace $WS4
-bindsym $mod+5 workspace $WS5
-bindsym $mod+6 workspace $WS6
-bindsym $mod+7 workspace $WS7
-bindsym $mod+8 workspace $WS8
-bindsym $mod+9 workspace $WS9
-bindsym $mod+0 workspace $WS10
+bindsym $mod+g workspace $WS1
+bindsym $mod+h workspace $WS2
+bindsym $mod+t workspace $WS3
+bindsym $mod+y workspace $WS4
+bindsym $mod+b workspace $WS5
+bindsym $mod+n workspace $WS6
+bindsym $mod+u workspace $WS7
+bindsym $mod+i workspace $WS8
+bindsym $mod+o workspace $WS9
+bindsym $mod+p workspace $WS10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $WS1
-bindsym $mod+Shift+2 move container to workspace $WS2
-bindsym $mod+Shift+3 move container to workspace $WS3
-bindsym $mod+Shift+4 move container to workspace $WS4
-bindsym $mod+Shift+5 move container to workspace $WS5
-bindsym $mod+Shift+6 move container to workspace $WS6
-bindsym $mod+Shift+7 move container to workspace $WS7
-bindsym $mod+Shift+8 move container to workspace $WS8
-bindsym $mod+Shift+9 move container to workspace $WS9
-bindsym $mod+Shift+0 move container to workspace $WS10
+bindsym $mod+Shift+g move container to workspace $WS1
+bindsym $mod+Shift+h move container to workspace $WS2
+bindsym $mod+Shift+t move container to workspace $WS3
+bindsym $mod+Shift+y move container to workspace $WS4
+bindsym $mod+Shift+b move container to workspace $WS5
+bindsym $mod+Shift+n move container to workspace $WS6
+bindsym $mod+Shift+u move container to workspace $WS7
+bindsym $mod+Shift+i move container to workspace $WS8
+bindsym $mod+Shift+o move container to workspace $WS9
+bindsym $mod+Shift+p move container to workspace $WS10
 
 # switch to workspace
 workspace $WS1  output primary
@@ -217,15 +217,6 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-# Toggle between hide state and show state
-bindsym $mod+m bar hidden_state toggle
-# Toggle between dock mode and hide mode
-bindsym $mod+n bar mode toggle
-# Set the bar instance with id 'bar-0' to switch to hide mode
-bindsym $mod+b bar mode hide bar-0
-# Set the bar instance with id 'bar-0' to always stay hidden
-bindsym $mod+Shift+b bar mode invisible bar-0
-
 default_border pixel 1
 default_floating_border pixel 1
 hide_edge_borders both
@@ -235,21 +226,28 @@ force_display_urgency_hint 500 ms
 bindsym $mod+x exec grim -g "$(slurp)" $(date +'screenshot_%Y-%m-%d-%H%M%S.png')
 
 # autostart
+set $my_font 'FiraCode 10'
+set $my_cursor_size 24
+set $my_theme 'Adwaita'
+set $my_theme_dark 'Adwaita-dark'
+
+seat seat0 xcursor_theme $my_theme $my_cursor_size
 exec_always {
-	gsettings set org.gnome.desktop.interface document-font-name 'FiraCode 10'
-	gsettings set org.gnome.desktop.interface font-name 'FiraCode 10'
-	gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
-	gsettings set org.gnome.desktop.interface monospace-font-name 'FiraCode 10'
+	gsettings set org.gnome.desktop.interface cursor-size $my_cursor_size
+	gsettings set org.gnome.desktop.interface cursor-theme $my_theme
+	gsettings set org.gnome.desktop.interface document-font-name $my_font
+	gsettings set org.gnome.desktop.interface font-name $my_font
+	gsettings set org.gnome.desktop.interface gtk-theme $my_theme_dark
+	gsettings set org.gnome.desktop.interface icon-theme $my_theme
+	gsettings set org.gnome.desktop.interface monospace-font-name $my_font
 }
-exec fusuma
-exec kdeconnect-indicator
-exec keepassxc
-exec mako
 exec waybar
+exec mako
+exec fusuma
+exec keepassxc
 exec swayidle -w \
-	timeout 1800 'swaylock' \
 	timeout 1805 'swaymsg "output * dpms off"' \
 	resume       'swaymsg "output * dpms on"' \
-	before_sleep 'swaylock'
+	before-sleep 'swaylock'
 workspace $WS1
 # vim:set ft=conf:

@@ -20,10 +20,8 @@ alias tv='mpv --profile=tv'
 alias tv-sop='mpv --profile=sop http://localhost:8908/tv.asf'
 
 # pacman
-alias p='pacman'
-alias pp='sudo pacman -Syu'
-
-# AUR
+alias p='paru'
+alias pp='paru -Syua'
 alias aur='pacman -Qqm | sort'
 
 # systemd
