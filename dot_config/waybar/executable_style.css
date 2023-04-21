@@ -1,0 +1,94 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono, FontAwesome6Free, FontAwesome6Brands;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar, tooltip {
+    background-color: #073642;
+    color: #93a1a1;
+}
+
+tooltip {
+    background-color: #073642;
+    color: #93a1a1;
+}
+
+tooltip label {
+    background-color: #073642;
+    color: #93a1a1;
+}
+
+#workspaces button {
+    background-color: #073642;
+    color: #93a1a1;
+    padding: 0 8px;
+}
+
+#workspaces button.focused {
+    background-color: #93a1a1;
+    color: #073642;
+    padding: 0 8px;
+}
+
+#workspaces button.urgent {
+    background-color: #cb4b16;
+    color: #073642;
+    padding: 0 8px;
+}
+
+#mode {
+    background-color: #93a1a1;
+    color: #073642;
+    padding: 0 8px;
+}
+
+#network, #network.disconnected, #network.ethernet,
+#pulseaudio, #pulseaudio.bluetooth, #pulseaudio.muted,
+#backlight, #cpu, #memory, #battery, #language, #clock {
+    background-color: #073642;
+    border-right: 1px solid #93a1a1;
+    color: #93a1a1;
+    padding: 0 8px;
+}
+
+#network.disconnected {
+    background-color: #dc322f;
+    color: #073642;
+}
+
+#network.ethernet {
+    background-color: #859900;
+    color: #073642;
+}
+
+#pulseaudio.bluetooth {
+    background-color: #268bd2;
+    color: #073642;
+}
+
+#pulseaudio.muted {
+    background-color: #b58900;
+    color: #073642;
+}
+
+#battery.charging {
+    background-color: #2aa198;
+    color: #073642;
+}
+
+#battery.warning:not(.charging) {
+    background-color: #cb4b16;
+    color: #073642;
+}
+
+#battery.critical:not(.charging) {
+    background-color: #dc322f;
+    color: #073642;
+}
+
+#clock {
+    border-right: unset;
+}

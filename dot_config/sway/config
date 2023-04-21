@@ -1,0 +1,260 @@
+input type:keyboard {
+	xkb_layout  us,gr
+	xkb_model   pc105
+	xkb_variant ,extended
+	xkb_options grp:alt_space_toggle,grp:shifts_toggle,grp_led:caps
+}
+input type:touchpad {
+	tap            enabled
+	natural_scroll enabled
+	scroll_factor  1.0
+}
+output * bg #002b36 solid_color
+output eDP-1 scale 2.2
+
+font pango:JetBrainsMono, FontAwesome6Free, FontAwesome6Brands 12
+
+set $mybindsym bindsym --to-code
+
+$mybindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+$mybindsym XF86MonBrightnessUp   exec brightnessctl set 5%+
+$mybindsym XF86AudioMute         exec wpctl set-mute   @DEFAULT_SINK@ toggle
+$mybindsym XF86AudioLowerVolume  exec wpctl set-volume @DEFAULT_SINK@ 5%-
+$mybindsym XF86AudioRaiseVolume  exec wpctl set-volume @DEFAULT_SINK@ 5%+
+
+set $mod Mod1
+set $tv DP-1
+
+set $up l
+set $down k
+set $left j
+set $right semicolon
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+$mybindsym $mod+Return exec kitty
+
+# kill focused window
+$mybindsym $mod+Shift+q kill
+
+set $dmenu exec j4-dmenu-desktop --term='kitty' --dmenu='bemenu --ignorecase \
+--prompt ">" \
+--fn="JetBrainsMono 12" \
+--tb="#839496" --tf="#002b36" \
+--fb="#002b36" --ff="#657b83" \
+--nb="#586e75" --nf="#002b36" \
+--hb="#b58900" --hf="#002b36" \
+--ab="#073642" --af="#93a1a1"'
+$mybindsym $mod+d $dmenu
+$mybindsym XF86Search $dmenu
+
+# change focus
+$mybindsym $mod+$left  focus left
+$mybindsym $mod+$down  focus down
+$mybindsym $mod+$up    focus up
+$mybindsym $mod+$right focus right
+
+# alternatively, you can use the cursor keys:
+$mybindsym $mod+Left  focus left
+$mybindsym $mod+Down  focus down
+$mybindsym $mod+Up    focus up
+$mybindsym $mod+Right focus right
+
+# move focused window
+$mybindsym $mod+Shift+$left  move left
+$mybindsym $mod+Shift+$down  move down
+$mybindsym $mod+Shift+$up    move up
+$mybindsym $mod+Shift+$right move right
+
+# alternatively, you can use the cursor keys:
+$mybindsym $mod+Shift+Left  move left
+$mybindsym $mod+Shift+Down  move down
+$mybindsym $mod+Shift+Up    move up
+$mybindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+$mybindsym $mod+Shift+v split h
+
+# split in vertical orientation
+$mybindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+$mybindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+$mybindsym $mod+s layout stacking
+$mybindsym $mod+w layout tabbed
+$mybindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+$mybindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+$mybindsym $mod+space focus mode_toggle
+
+# focus the parent container
+$mybindsym $mod+a focus parent
+
+# focus the child container
+$mybindsym $mod+c focus child
+
+# define workspace names
+set $WS1 1
+set $WS2 2
+set $WS3 3
+set $WS4 4
+set $WS5 5
+set $WS6 6
+set $WS7 7
+set $WS8 8
+set $WS9 9
+set $WS0 0
+
+# switch to workspace
+$mybindsym $mod+g workspace $WS1
+$mybindsym $mod+h workspace $WS2
+$mybindsym $mod+t workspace $WS3
+$mybindsym $mod+y workspace $WS4
+$mybindsym $mod+b workspace $WS5
+$mybindsym $mod+n workspace $WS6
+$mybindsym $mod+u workspace $WS7
+$mybindsym $mod+i workspace $WS8
+$mybindsym $mod+o workspace $WS9
+$mybindsym $mod+p workspace $WS10
+
+# move focused container to workspace
+$mybindsym $mod+Shift+g move container to workspace $WS1
+$mybindsym $mod+Shift+h move container to workspace $WS2
+$mybindsym $mod+Shift+t move container to workspace $WS3
+$mybindsym $mod+Shift+y move container to workspace $WS4
+$mybindsym $mod+Shift+b move container to workspace $WS5
+$mybindsym $mod+Shift+n move container to workspace $WS6
+$mybindsym $mod+Shift+u move container to workspace $WS7
+$mybindsym $mod+Shift+i move container to workspace $WS8
+$mybindsym $mod+Shift+o move container to workspace $WS9
+$mybindsym $mod+Shift+p move container to workspace $WS10
+
+# workspace display
+workspace $WS1  output primary
+workspace $WS2  output primary
+workspace $WS3  output primary
+workspace $WS4  output primary
+workspace $WS5  output primary
+workspace $WS6  output $tv
+workspace $WS7  output primary
+workspace $WS8  output primary
+workspace $WS9  output primary
+workspace $WS10 output primary
+
+for_window [app_id="pavucontrol"] floating enable
+assign [app_id="^chromium$"]                $WS2
+assign [app_id="^firefox$"]                 $WS2
+assign [app_id="^Signal$"]                  $WS7
+assign [class="^Signal$"]                   $WS7
+assign [app_id="^org.keepassxc.KeePassXC$"] $WS9
+
+# reload the configuration file
+$mybindsym $mod+Shift+c reload
+# exit (logs you out of your X session)
+$mybindsym $mod+Shift+e exec "swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit? This will end your session.' -B 'Yes, exit' 'swaymsg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+	$mybindsym $left  resize shrink width  10 px or 10 ppt
+	$mybindsym $down  resize grow   height 10 px or 10 ppt
+	$mybindsym $up    resize shrink height 10 px or 10 ppt
+	$mybindsym $right resize grow   width  10 px or 10 ppt
+	$mybindsym Left   resize shrink width  10 px or 10 ppt
+	$mybindsym Down   resize grow   height 10 px or 10 ppt
+	$mybindsym Up     resize shrink height 10 px or 10 ppt
+	$mybindsym Right  resize grow   width  10 px or 10 ppt
+	$mybindsym Return mode "default"
+	$mybindsym Escape mode "default"
+}
+
+$mybindsym $mod+r mode "resize"
+
+# Colors
+set $base03  #002b36
+set $base02  #073642
+set $base01  #586e75
+set $base00  #657b83
+set $base0   #839496
+set $base1   #93a1a1
+set $base2   #eee8d5
+set $base3   #fdf6e3
+set $yellow  #b58900
+set $orange  #cb4b16
+set $red     #dc322f
+set $magenta #d33682
+set $violet  #6c71c4
+set $blue    #268bd2
+set $cyan    #2aa198
+set $green   #859900
+# class                 border  backgr. text    indicator
+client.focused          $base00 $base00 $base03 $base00
+client.focused_inactive $base00 $base03 $blue   $base00
+client.unfocused        $base00 $base03 $base00 $base00
+client.urgent           $yellow $yellow $base03 $yellow
+client.placeholder      $base03 $base03 $base00 $base03
+
+focus_follows_mouse yes
+popup_during_fullscreen smart
+
+# switch between the current and the previously focused one
+workspace_auto_back_and_forth yes
+$mybindsym $mod+Tab workspace back_and_forth
+$mybindsym $mod+Shift+Tab move container to workspace back_and_forth
+
+set $mode_system System (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
+mode "$mode_system" {
+	$mybindsym e       exec swaymsg exit, mode "default"
+	$mybindsym s       exec systemctl suspend, mode "default"
+	$mybindsym r       exec systemctl reboot
+	$mybindsym Shift+s exec systemctl poweroff
+	$mybindsym Return  mode "default"
+	$mybindsym Escape  mode "default"
+}
+$mybindsym $mod+Escape mode "$mode_system"
+
+# Make the currently focused window a scratchpad
+$mybindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+$mybindsym $mod+minus scratchpad show
+
+default_border pixel 1
+default_floating_border pixel 1
+hide_edge_borders both
+force_display_urgency_hint 500 ms
+
+# Take a screenshot upon pressing $mod+x (select an area)
+$mybindsym $mod+x exec grim -g "$(slurp)" $(date +'screenshot_%Y-%m-%d-%H%M%S.png')
+
+# autostart
+set $mono_font 'JetBrains Mono 10'
+set $sans_font 'Sans 10'
+set $title_font 'JetBrains Mono Bold 10'
+set $my_cursor_size 24
+set $my_theme 'Adwaita'
+set $my_theme_dark 'Adwaita'
+
+seat seat0 xcursor_theme $my_theme $my_cursor_size
+exec_always {
+	gsettings set org.gnome.desktop.interface font-name $sans_font
+	gsettings set org.gnome.desktop.interface document-font-name $sans_font
+	gsettings set org.gnome.desktop.interface monospace-font-name $mono_font
+	gsettings set org.gnome.desktop.wm.preferences titlebar-font $title_font
+	gsettings set org.gnome.desktop.interface icon-theme $my_theme
+	gsettings set org.gnome.desktop.interface cursor-theme $my_theme
+	gsettings set org.gnome.desktop.interface cursor-size $my_cursor_size
+	gsettings set org.gnome.desktop.interface gtk-theme $my_theme_dark
+	gsettings set org.gnome.desktop.interface enable-animations false
+}
+exec waybar
+exec swayidle -w \
+	timeout 1805 'swaymsg "output * dpms off"' \
+	resume       'swaymsg "output * dpms on"'
+workspace $WS1
+# vim:set ft=conf:
